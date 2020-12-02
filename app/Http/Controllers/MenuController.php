@@ -2,19 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Article;
 use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
-class HomeController extends FrontendController
+class MenuController extends FrontendController
 {
     public function __construct()
     {
         parent::__construct();
     }
 
-    public function index(Request $request)
+    public function index()
     {
         $categories = Category::select('id', 'c_name')->get();
         $countCate = count($categories);
@@ -32,6 +31,7 @@ class HomeController extends FrontendController
             'countCate' => $countCate
         ];
 
-        return view('home.index',$viewData);
+        return view('menu.order',$viewData);
     }
+
 }

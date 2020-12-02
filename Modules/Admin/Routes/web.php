@@ -47,4 +47,12 @@ Route::prefix('admin')->group(function() {
         Route::get('/{action}/{id}','AdminArticleController@action')->name('admin.get.action.article');
 
     });
+
+    Route::group(['prefix'=>'transaction'], function(){
+        Route::get('/','AdminTransactionController@index')->name('admin.get.list.transaction');
+    });
+
+    Route::group(['prefix'=>'user'], function(){
+        Route::get('/','AdminUserController@index')->name('admin.get.list.user');
+    });
 });

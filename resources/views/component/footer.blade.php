@@ -1,17 +1,17 @@
-<footer id="main-footer">
+<footer id="main-footer" style="background-color: lightgrey">
     <br>
     <div class="info1">
-        <i class="fa fa-map-marker" aria-hidden="true"><p>Địa chỉ: 148 Tô Vĩnh Diện, Thành phố Pleiku,Gia Lai</p></i>
-        <i class="fa fa-phone" aria-hidden="true"><p>Điện thoại: 094 923 51 68</p></i>
-        <i class="fa fa-envelope" aria-hidden="true"><p>Email: thienthu13050809@gmail.com</p></i>
+        <p><i class="fa fa-map-marker" aria-hidden="true"> <span style="padding-left: 5px;"> Địa chỉ: 148 Tô Vĩnh Diện, Thành phố Pleiku, Gia Lai </span></i></p>
+        <p><i class="fa fa-phone" aria-hidden="true"> <span style="padding-left: 5px;"> Điện thoại: 0916 534 751 </span> </i></p>
+        <p><i class="fa fa-envelope" aria-hidden="true"> <span style="padding-left: 5px;"> Email: nnguyenduchuy2000@gmail.com </span></i></p>
     </div>
     <br>
     <div class="info3">
         <ul>
-            <li>
+            <li style="font-size: 15px">
                 Monday-Friday
             </li>
-            <li>
+            <li style="font-size: 15px">
                 Saturday-Sunday
             </li>
             <br>

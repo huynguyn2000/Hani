@@ -23,7 +23,7 @@ class AdminCategoryController extends Controller
 
     public function create()
     {
-        return view('admin::product.create');
+        return view('admin::category.create');
     }
 
     public function store(RequestCategory $requestCategory)
