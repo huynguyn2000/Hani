@@ -38,7 +38,7 @@
                                     <div class="platillo">
                                         <p class="nombre">{{ $value->pro_name }}</p>
                                         <p class="precio">{{ $value->pro_price }}</p>
-                                        <p class="descripcion"></p>
+{{--                                        <p class="descripcion"></p>--}}
                                     </div>
                                     @endforeach
                                 </article>
@@ -48,18 +48,18 @@
             </div>
         </div>
     </section>
-    <section class="galeria" id="galeria">
+    <section class="galeria" id="galeria" style="margin-bottom: 30px;">
         <div class="foto">
-            <img src="https://scontent-hkg4-2.xx.fbcdn.net/v/t1.15752-9/122241234_822391491829625_309624408973423699_n.png?_nc_cat=111&_nc_sid=ae9488&_nc_ohc=tIHQS56z2AgAX9yYlZW&_nc_ht=scontent-hkg4-2.xx&oh=cdb16459b560f48a3882797dbc140b38&oe=5FB730E0" alt="">
+            <img src="{{ asset('theme_admin/image/128424967_3506155622832420_5331212983638655245_o.jpg') }}" alt="">
         </div>
         <div class="foto">
-            <img src="https://scontent-hkg4-1.xx.fbcdn.net/v/t1.15752-9/122150175_3108560285919272_6787058916496092711_n.png?_nc_cat=100&_nc_sid=ae9488&_nc_ohc=2nZWieNHfusAX8syCLB&_nc_ht=scontent-hkg4-1.xx&oh=d0c85df7ea0ac6f7ef5a23c0627b1b6c&oe=5FB6C152" alt="">
+            <img src="{{ asset('theme_admin/image/128812484_3506156009499048_3375755073180637359_o.jpg') }}" alt="">
         </div>
         <div class="foto">
-            <img src="https://scontent-hkg4-1.xx.fbcdn.net/v/t1.15752-9/121965801_761010954631478_109311369813086301_n.png?_nc_cat=106&_nc_sid=ae9488&_nc_ohc=h1EfXS_9nnkAX9WAUPm&_nc_ht=scontent-hkg4-1.xx&oh=79638992175448e4ce2983f45db063fb&oe=5FB7468B" alt="">
+            <img src="{{ asset('theme_admin/image/129003028_3506156162832366_4680126327750079344_o.jpg') }}" alt="">
         </div>
         <div class="foto">
-            <img src="https://scontent.fsgn2-1.fna.fbcdn.net/v/t1.0-9/122872342_3407650219349628_1328568537868304878_o.jpg?_nc_cat=111&ccb=2&_nc_sid=8bfeb9&_nc_ohc=qAPHmoVZjSwAX8AyLrv&_nc_ht=scontent.fsgn2-1.fna&oh=0d02ecd6dd9e40e9d30d0bbdeb54840d&oe=5FD2EB3C" alt="">
+            <img src="{{ asset('theme_admin/image/129897150_3506155819499067_3945939008353199087_o.jpg') }}" alt="">
         </div>
     </section>
 @stop

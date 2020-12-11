@@ -8,7 +8,7 @@
                @if($errors->has('pro_name'))
                    <span class="error-text">
                     {{$errors->first('pro_name')}}
-                </span>
+                    </span>
                @endif
            </div>
            <div class="form-group">
@@ -57,7 +57,7 @@
                 @if($errors->has('pro_price'))
                     <span class="error-text">
                     {{$errors->first('pro_price')}}
-                </span>
+                    </span>
                 @endif
             </div>
             <div class="form-group">

@@ -14,20 +14,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>HANI</title>
 </head>
-{{--<div class="contenedor">--}}
-{{--    <nav class="navbar">--}}
-{{--        <div class="navbar-center">--}}
-{{--            <img src="https://scontent-hkg4-2.xx.fbcdn.net/v/t1.0-9/39925165_1817478455033487_1753332579395698688_o.jpg?_nc_cat=104&ccb=2&_nc_sid=09cbfe&_nc_ohc=HaOTP2uH7bwAX8JO7u0&_nc_ht=scontent-hkg4-2.xx&oh=87cf12622631db34db26aca22c263d64&oe=5FD4A824" alt="logo" class="hani-img"/>--}}
-{{--            <a href="Hani11.1.html">Home</a>--}}
-{{--            <a href="about.html">About</a>--}}
-{{--            <a href="order.html">Menu</a>--}}
-{{--            <a href="blog.html">Store</a>--}}
-{{--            <span class=nav-icon></span>--}}
-{{--            <a href="https://www.facebook.com/HaniKafeKitchen"><i class="fa fa-facebook" ></i></a>--}}
-{{--            <a href="https://www.instagram.com/hanikafekitchen148/"><i class="fa fa-instagram"></i></a>--}}
-{{--        </div>--}}
-{{--    </nav>--}}
-{{--</div>--}}
 @include('component.header')
 <style>
     header{
@@ -53,24 +39,31 @@
 <body>
 <div class="row">
     @if( isset($categories))
-    <div class="col-sm-2">
-        <h2>Menu</h2>
-        @foreach($categories as $category)
-        <a href="#{{ $category->c_name }}">{{ $category->c_name }}</a><br>
-        @endforeach
-    </div>
+        <div class="col-sm-2">
+            <h2>Menu</h2>
+            @foreach($categories as $category)
+            <a href="#{{ $category->c_name }}">{{ $category->c_name }}</a><br>
+            @endforeach
+        </div>
+    @else
+        <div class="col-sm-2">
+            <h2>Menu</h2>
+        </div>
     @endif
 
     <div class="col-sm-10 " style="margin-bottom: 50px; position: initial;">
-        @if( isset($categories))
            @for($i=0; $i<$countCate; $i++)
-        <h2 id="{{ $categories[$i]->c_name }}" style="margin-top: 50px; border-left: 4px solid orangered; padding-left: 20px;">{{ $categories[$i]->c_name }}</h2>
-        <div class="products-center">
+            @if( isset($categories))
+                <h2 id="{{ $categories[$i]->c_name }}" style="margin-top: 50px; border-left: 4px solid orangered; padding-left: 20px;">{{ $categories[$i]->c_name }}</h2>
+            @else
+                <h2 id="searchProducts" style="margin-top: 50px; border-left: 4px solid orangered; padding-left: 20px;">Sản phẩm tìm kiếm</h2>
+            @endif
+            <div class="products-center">
             <!-- products -->
             @foreach($productsND[$i] as $key => $value)
             <article class="product">
                 <div class="img-container">
-                    <img src="{{ pare_url_file($value->pro_avatar) }}" alt="item" class="product-img">
+                    <img style="height: 345px;" src="{{ pare_url_file($value->pro_avatar) }}" alt="item" class="product-img">
 
                     <a href="{{ route('order.cart') }}">
                         <button class="bag-btn" data-id="1">
@@ -86,7 +79,6 @@
             @endforeach
         </div>
             @endfor
-            @endif
     </div>
 </div>
 @include('component.footer')

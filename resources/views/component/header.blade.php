@@ -1,6 +1,40 @@
+<style>
+    .dropbtn {
+        background-color: transparent;
+        color: white;
+        font-size: 16px;
+        border: none;
+    }
+
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f1f1f1;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 2;
+    }
+
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+    .dropdown-content a:hover {background-color: #ddd;}
+
+    .dropdown:hover .dropdown-content {display: block;}
+
+</style>
 <header>
     <div class="contenedor" id="contenedor">
-        <nav style="position: fixed" class="navbar">
+        <nav style="position: fixed; width: 100%;" class="navbar">
             <div class="navbar-header">
                 <img src="https://scontent-hkg4-2.xx.fbcdn.net/v/t1.0-9/39925165_1817478455033487_1753332579395698688_o.jpg?_nc_cat=104&ccb=2&_nc_sid=09cbfe&_nc_ohc=HaOTP2uH7bwAX8JO7u0&_nc_ht=scontent-hkg4-2.xx&oh=87cf12622631db34db26aca22c263d64&oe=5FD4A824" alt="logo" class="hani-img"/>
             </div>
@@ -11,25 +45,39 @@
                 <li><a href="blog.html">Store</a></li>
                 <li><a href="https://www.facebook.com/HaniKafeKitchen"><i class="fa fa-facebook" ></i></a></li>
                 <li><a href="https://www.instagram.com/hanikafekitchen148/"><i class="fa fa-instagram"></i></a></li>
-                <li><a href="#"><i class="fas fa-search"></i></a></li>
-                <div class="dropdown show" style="padding: 0px 77px 0px 20px;">
-                    <a class="btn btn-default dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="far fa-user"></i>
-                    </a>
-                    @if(\Illuminate\Support\Facades\Auth::check())
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                            <a class="dropdown-item" href="#">Giỏ hàng</a>
+                <li>
+                    <div class="dropdown">
+                        <button class="dropbtn" style="font-size: 20px;">
+                            <i class="fa fa-search"></i>
+                        </button>
+                            <div class="dropdown-content" >
+                                <form class="form-inline" action="{{ route('get.product.list') }}" method="get">
+                                    <div class="form-group-sm">
+                                    <input name="searchInfo" type="text" class="form-control" maxlength="128" placeholder="Trà, Kafe , ...">
+                                    </div>
+                                    <button type="submit" class="btn-default"><i class="fa fa-search"></i></button>
+                                </form>
+                            </div>
+                    </div>
+                </li>
+                    <div class="dropdown" style="margin-left: 35px; ">
+                        <button class="dropbtn" style="font-size: 20px;">
+                            <i class="far fa-user"></i>
+                        </button>
+                        @if(\Illuminate\Support\Facades\Auth::check())
+                        <div class="dropdown-content">
+                            <a class="dropdown-item" href="{{ route('order.cart') }}">Giỏ hàng</a>
                             <br>
                             <a class="dropdown-item" href="{{ route('get.logout.user') }}">Thoát</a>
                         </div>
-                    @else
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                            <a class="dropdown-item" href="{{ route('get.register') }}">Đăng ký</a>
-                            <br>
-                            <a class="dropdown-item" href="{{ route('get.login') }}">Đăng nhập</a>
-                        </div>
-                    @endif
-                </div>
+                        @else
+                            <div class="dropdown-content">
+                                <a class="dropdown-item" href="{{ route('get.register') }}">Đăng ký</a>
+                                <br>
+                                <a class="dropdown-item" href="{{ route('get.login') }}">Đăng nhập</a>
+                            </div>
+                        @endif
+                    </div>
             </ul>
         </nav>
     </div>

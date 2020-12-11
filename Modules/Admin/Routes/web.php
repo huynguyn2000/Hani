@@ -11,7 +11,16 @@
 |
 */
 
-Route::prefix('admin')->group(function() {
+use Illuminate\Support\Facades\Route;
+
+Route::prefix('authenticate')->group(function(){
+    Route::get('/','AdminAuthController@getLogin')->name('admin.login');
+    Route::post('/','AdminAuthController@postLogin');
+
+    Route::post('/register','AdminAuthController@postRegister')->name('admin.register');
+});
+
+Route::prefix('admin')->middleware('CheckLoginAdmin')->group(function() {
     // /admin
     Route::get('/', 'AdminController@index')->name('admin.home');
 
@@ -50,9 +59,22 @@ Route::prefix('admin')->group(function() {
 
     Route::group(['prefix'=>'transaction'], function(){
         Route::get('/','AdminTransactionController@index')->name('admin.get.list.transaction');
+        Route::get('/view/{id}','AdminTransactionController@viewOrder')->name('admin.get.view.order');
+        Route::get('/action/{id}','AdminTransactionController@actionTransaction')->name('admin.get.active.transaction');
+
     });
 
     Route::group(['prefix'=>'user'], function(){
         Route::get('/','AdminUserController@index')->name('admin.get.list.user');
+    });
+
+    Route::group(['prefix'=>'coupon'], function(){
+        Route::get('/','AdminCouponController@index')->name('admin.get.list.coupon');
+        Route::get('/create','AdminCouponController@create')->name('admin.get.create.coupon');
+        Route::post('/create','AdminCouponController@store');
+        Route::get('/update/{id}','AdminCouponController@edit')->name('admin.get.edit.coupon');
+        Route::post ('/update/{id}','AdminCouponController@update');
+
+        Route::get('/{action}/{id}','AdminCouponController@action')->name('admin.get.action.coupon');
     });
 });

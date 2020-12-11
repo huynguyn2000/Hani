@@ -15,10 +15,9 @@ class AdminProductController extends Controller
 
         $products = Product::with('category:id,c_name');
 
-
-        if($request->name) $products->where('pro_name','like','%'.$request->name.'% ');
+        if($request->name)
+            $products->where('pro_name','like','%'.$request->name.'%');
         if($request->cate) $products->where('pro_category_id',$request->cate);
-
         $products = $products->orderByDesc('id')->paginate(10);
 
         $categories = $this->getCategories();
@@ -55,7 +54,6 @@ class AdminProductController extends Controller
 
     public function update(RequestProduct $requestProduct,$id){
         $this->insertOrUpdate($requestProduct,$id);
-
         return redirect()->back();
     }
 

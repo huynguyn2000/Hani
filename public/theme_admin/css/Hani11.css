@@ -89,10 +89,9 @@ body {
   /*  letter-spacing: 0.01rem;*/
   /*  font-family: 'Quicksand', sans-serif;*/
   /*}*/
-
     header {
     width: 100%;
-    background: url('https://scontent.fsgn2-1.fna.fbcdn.net/v/t1.15752-9/121074979_403282204012823_2698163731878855801_n.png?_nc_cat=105&ccb=2&_nc_sid=ae9488&_nc_ohc=q82IHwAxVlIAX8l0Oke&_nc_ht=scontent.fsgn2-1.fna&oh=26fd533372721181dc5730537e1ef866&oe=5FD1715C') #281a0c;
+    background: url('https://scontent.fsgn2-6.fna.fbcdn.net/v/t1.0-9/128428440_3503788439735805_8110969443695901063_o.jpg?_nc_cat=100&ccb=2&_nc_sid=e3f864&_nc_eui2=AeEe3asMHwEJtynclFkxoAUouHM6TMZ59q24czpMxnn2rYYlYooSrq-ST-LCnRltvWpHnOjaX5IYiL9eyYC7QiN9&_nc_ohc=wnl8P6a3z-cAX9aGEmz&_nc_ht=scontent.fsgn2-6.fna&oh=51f46df89acd484fdc865daf492ad48a&oe=5FF6225B');
     background-size: cover;
     background-attachment: fixed;
     background-position: center 0;
@@ -152,7 +151,8 @@ body {
   }
   .img-container {
     position: relative;
-    overflow: hidden;.hani-img
+    overflow: hidden;
+      width: 280px;
   }
   .bag-btn {
     position: absolute;
@@ -179,6 +179,7 @@ body {
     transform: translateX(-60%);
   }
   .product-img {
+      border-radius: 10%;
       z-index: 1;
     display: inline-block;
      width: 100%;
@@ -190,11 +191,12 @@ body {
   }
 
   .product h3 {
-    font-size: 0.85rem;
+    height: 30px;
+    font-size: 18px;
     margin-top: 0.6rem;
     padding-left: 3px;
-  font-weight: lighter;
-    color : #999898;
+    font-weight: lighter;
+    color : black;
     letter-spacing: 0.05rem;
     font-family:"Open Sans", Arial, Verdana;
   }

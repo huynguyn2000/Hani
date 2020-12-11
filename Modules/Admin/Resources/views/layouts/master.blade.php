@@ -9,6 +9,8 @@
         <meta name="author" content="">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
         <link rel="icon" href="../../favicon.ico">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
         <link rel="canonical" href="https://getbootstrap.com/docs/3.3/examples/dashboard/">
         <title>Admin System</title>
         <!-- Bootstrap core CSS -->
@@ -20,7 +22,27 @@
 
         <!-- <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script> -->
+        <script>
+            $(function(){
+                $(".js_order_item").click(function(event){
+                    event.preventDefault();
+                    let $this = $(this);
+                    let url = $this.attr('href');
+                    $('#md_content').html('');
+                    $(".transaction_id").text('').text($this.attr('data-id'));
+
+                    $("#myModal").modal('show');
+
+                    $.ajax({
+                       url: url,
+                    }).done(function (result){
+                        $('#md_content').append(result);
+                    });
+                });
+            })
+        </script>
     </head>
+
     <body>
         <nav class="navbar navbar-inverse navbar-fixed-top">
             <div class="container-fluid">
@@ -56,6 +78,8 @@
                         <li><a href="{{ route('admin.get.list.article') }}">Tin tức</a></li>
                         <li class="{{ \Request::route()->getName() == 'admin.get.list.transaction' ? 'active' : '' }}"><a href="{{ route('admin.get.list.transaction') }}">Đơn hàng</a></li>
                         <li class="{{ \Request::route()->getName() == 'admin.get.list.user' ? 'active' : '' }}"><a href="{{ route('admin.get.list.user') }}">Thành viên</a></li>
+                        <li ><a href="{{ route('admin.get.list.coupon') }}">Mã khuyến giá</a></li>
+
                     </ul>
                 </div>
                 <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">

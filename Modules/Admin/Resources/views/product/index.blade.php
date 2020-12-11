@@ -10,7 +10,7 @@
     </div>
     <div class="row">
         <div class="col-sm-12">
-            <form class="form-inline" action="" style="margin-bottom: 10px;">
+            <form method="get" class="form-inline" action="" style="margin-bottom: 10px;">
                 <div class="form-group">
                     <input type="text" class="form-control" id="email" placeholder="Tên sản phẩm ..." name="name" value="{{ \Request::get('name') }}">
                 </div>

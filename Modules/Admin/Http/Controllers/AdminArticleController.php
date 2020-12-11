@@ -4,9 +4,10 @@ namespace Modules\Admin\Http\Controllers;
 
 use App\Http\Requests\RequestArticle;
 use App\Models\Article;
-use Illuminate\Contracts\Support\Renderable;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+
 
 class AdminArticleController extends Controller
 {
@@ -14,7 +15,8 @@ class AdminArticleController extends Controller
 
         $articles = Article::whereRaw(1);
 
-        if($request->name) $articles->where('a_name','like','%'.$request->name.'%');
+        if($request->name)
+            $articles->where('a_name', 'like', '%' . $request->name . '%');
 
         $articles = $articles->paginate(10);
 
@@ -30,7 +32,6 @@ class AdminArticleController extends Controller
 
     public function store(RequestArticle $requestArticle){
         $this->insertOrUpdate($requestArticle);
-
         return redirect()->back();
     }
 
@@ -46,14 +47,14 @@ class AdminArticleController extends Controller
 
     public function update(RequestArticle $requestArticle,$id){
         $this->insertOrUpdate($requestArticle,$id);
-
         return redirect()->back();
     }
 
     public function insertOrUpdate($requestarticle, $id=''){
-        $article = new article();
 
-        if($id) $article = article::find($id);
+        $article = new Article();
+
+        if($id) $article = Article::find($id);
 
         $article->a_name = $requestarticle->a_name;
         $article->a_slug = str_slug($requestarticle->a_name);
