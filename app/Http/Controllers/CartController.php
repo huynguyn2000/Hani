@@ -84,7 +84,6 @@ class CartController extends FrontendController
             $newCart = new Cart($oldCart);
             $newCart->AddCart($product, $id, $quantity, $detail, $i);
             $this->totalPrice += $newCart->totalPrice;
-            var_dump($this->totalPrice);
 
             //1 session key la` Cart, object la $newCart
             $request->session()->put('cart', $newCart);

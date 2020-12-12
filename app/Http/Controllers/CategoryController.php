@@ -42,7 +42,7 @@ class CategoryController extends Controller
 
         $productsBySearchInfo
             = $products->where('pro_name','like','%'.$request->searchInfo.'%')
-            ->select('pro_category_id','pro_name','pro_price','pro_avatar')->get();
+            ->select('id','pro_category_id','pro_name','pro_price','pro_avatar','pro_slug')->get();
 
         //lay ra id danh muc cua san pham tim duoc
         $cateIdByProducts = $productsBySearchInfo->get(0)->only('pro_category_id');

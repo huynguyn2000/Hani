@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use App\Http\Requests\RequestCategory;
 use Illuminate\Support\Facades\Log;
+use function GuzzleHttp\Promise\all;
 
 class AdminCategoryController extends Controller
 {
@@ -48,17 +49,13 @@ class AdminCategoryController extends Controller
 
     public function insertOrUpdate($requestCategory, $id = '')
     {
-
         try {
             $category = new Category();
 
-            if ($id) {
-                $category = Category::find($id);
-            }
+            if ($id) $category = Category::find($id);
 
             $category->c_name = $requestCategory->name;
             $category->c_slug = str_slug($requestCategory->name);
-            $category->c_icon = str_slug($requestCategory->icon);
             $category->c_title_seo = $requestCategory->c_title_seo ? $requestCategory->c_title_seo : $requestCategory->name;
             $category->c_description_seo = $requestCategory->c_description_seo;
             $category->save();

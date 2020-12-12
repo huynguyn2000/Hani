@@ -1,93 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-        <meta name="description" content="">
-        <meta name="author" content="">
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
-        <link rel="icon" href="../../favicon.ico">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <link href="{{ asset('theme_admin/css/styles.css') }}" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+    <link rel="icon" href="../../favicon.ico">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="canonical" href="https://getbootstrap.com/docs/3.3/examples/dashboard/">
+    <link href="{{ asset('theme_admin/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('theme_admin/css/dashboard.css') }}" rel="stylesheet">
 
-        <link rel="canonical" href="https://getbootstrap.com/docs/3.3/examples/dashboard/">
-        <title>Admin System</title>
-        <!-- Bootstrap core CSS -->
-        <link href="{{ asset('theme_admin/css/bootstrap.min.css') }}" rel="stylesheet">
-        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-        <!--<link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">-->
-        <!-- Custom styles for this template -->
-        <link href="{{ asset('theme_admin/css/dashboard.css') }}" rel="stylesheet">
-
-        <!-- <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script> -->
-        <script>
-            $(function(){
-                $(".js_order_item").click(function(event){
-                    event.preventDefault();
-                    let $this = $(this);
-                    let url = $this.attr('href');
-                    $('#md_content').html('');
-                    $(".transaction_id").text('').text($this.attr('data-id'));
-
-                    $("#myModal").modal('show');
-
-                    $.ajax({
-                       url: url,
-                    }).done(function (result){
-                        $('#md_content').append(result);
-                    });
+    <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js" crossorigin="anonymous"></script>
+    <script>
+        $(function(){
+            $(".js_order_item").click(function(event){
+                event.preventDefault();
+                let $this = $(this);
+                let url = $this.attr('href');
+                $('#md_content').html('');
+                $(".transaction_id").text('').text($this.attr('data-id'));
+                $("#myModal").modal('show');
+                $.ajax({
+                    url: url,
+                }).done(function (result){
+                    $('#md_content').append(result);
                 });
-            })
-        </script>
-    </head>
-
-    <body>
-        <nav class="navbar navbar-inverse navbar-fixed-top">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="#" style="color: white;">Hani</a>
-                </div>
-                <div id="navbar" class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#">Dashboard</a></li>
-                        <li><a href="#">Settings</a></li>
-                        <li><a href="#">Profile</a></li>
-                        <li><a href="#">Help</a></li>
-                    </ul>
-                    <form class="navbar-form navbar-right">
-                        <input type="text" class="form-control" placeholder="Search...">
-                    </form>
+            });
+        })
+    </script>
+</head>
+<body class="sb-nav-fixed">
+<nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+    <a class="navbar-brand" href="index.html">Hani</a>
+    <button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#"><i class="fas fa-bars"></i></button>
+    <!-- Navbar Search-->
+    <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
+        <div class="input-group">
+            <input class="form-control" style="width: 80%" type="text" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2" />
+            <div class="input-group-append">
+                <button class="btn btn-primary" type="button"><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+    </form>
+    <!-- Navbar-->
+    <ul class="navbar-nav ml-auto ml-md-0">
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="userDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+                <a class="dropdown-item" href="#">Settings</a>
+                <a class="dropdown-item" href="#">Activity Log</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="{{{ route('admin.login') }}}">Logout</a>
+            </div>
+        </li>
+    </ul>
+</nav>
+<div id="layoutSidenav">
+    <div id="layoutSidenav_nav">
+        <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+            <div class="sb-sidenav-menu">
+                <div class="nav">
+                    <div class="sb-sidenav-menu-heading">Core</div>
+                    <a class="nav-link" href="{{ route('admin.home') }}">
+                        <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                        Dashboard
+                    </a>
+                    <div class="sb-sidenav-menu-heading">Addons</div>
+                    <a class="nav-link" href="{{ route('admin.get.list.category') }}">
+                        <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                        Danh Mục
+                    </a>
+                    <a class="nav-link" href="{{ route('admin.get.list.product') }}">
+                        <div class="sb-nav-link-icon"><i class="fas fa-coffee"></i></div>
+                        Sản Phẩm
+                    </a>
+                    <a class="nav-link" href="{{ route('admin.get.list.article') }}">
+                        <div class="sb-nav-link-icon"><i class="far fa-newspaper"></i></div>
+                        Bài Viết
+                    </a>
+                    <a class="nav-link" href="{{ route('admin.get.list.transaction') }}">
+                        <div class="sb-nav-link-icon"><i class="fas fa-file-invoice-dollar"></i></div>
+                        Đơn Hàng
+                    </a>
+                    <a class="nav-link" href="{{ route('admin.get.list.user') }}">
+                        <div class="sb-nav-link-icon"><i class="fas fa-users"></i></div>
+                        Thành Viên
+                    </a>
+                    <a class="nav-link" href="{{ route('admin.get.list.coupon') }}">
+                        <div class="sb-nav-link-icon"><i class="fas fa-tags"></i></div>
+                        Mã Giảm Gía
+                    </a>
+                    <a class="nav-link" href="#">
+                        <div class="sb-nav-link-icon"><i class="fas fa-comments"></i></div>
+                        Bình Luận
+                    </a>
                 </div>
             </div>
+            <div class="sb-sidenav-footer">
+                <div class="small">Logged in as: Admin</div>
+            </div>
         </nav>
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-sm-3 col-md-2 sidebar">
-                    <ul class="nav nav-sidebar">
-                        <li class="{{ \Request::route()->getName() == 'admin.home' ? 'active' : '' }}"><a href="{{ route('admin.home') }}">Trang Tổng Quan <span class="sr-only">(current)</span></a></li>
-                        <li class="{{ \Request::route()->getName() == 'admin.get.list.category' ? 'active' : '' }}"><a href="{{ route('admin.get.list.category') }}">Danh Mục</a></li>
-                        <li class="{{ \Request::route()->getName() == 'admin.get.list.product' ? 'active' : '' }}"><a href="{{ route('admin.get.list.product') }}">Sản Phẩm</a></li>
-                        <li><a href="{{ route('admin.get.list.article') }}">Tin tức</a></li>
-                        <li class="{{ \Request::route()->getName() == 'admin.get.list.transaction' ? 'active' : '' }}"><a href="{{ route('admin.get.list.transaction') }}">Đơn hàng</a></li>
-                        <li class="{{ \Request::route()->getName() == 'admin.get.list.user' ? 'active' : '' }}"><a href="{{ route('admin.get.list.user') }}">Thành viên</a></li>
-                        <li ><a href="{{ route('admin.get.list.coupon') }}">Mã khuyến giá</a></li>
+    </div>
+@yield('content')
 
-                    </ul>
-                </div>
-                <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-                    @yield('content')
-        <!-- Bootstrap core JavaScript
-            ================================================== -->
-        <!-- Placed at the end of the document so the pages load faster -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-        <script src="{{ asset('theme_admin/js/bootstrap.min.js') }}"></script>
-    </body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+<script src="{{ asset('theme_admin/js/scripts.js') }}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+<script src="{{ asset('theme_admin/assets/demo/chart-area-demo.js') }}"></script>
+<script src="{{ asset('theme_admin/assets/demo/chart-bar-demo.js') }}"></script>
+<script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
+<script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
+<script src="{{ asset('theme_admin/assets/demo/datatables-demo.js') }}"></script>
+<script src="{{ asset('theme_admin/js/bootstrap.min.js') }}"></script>
+
+</body>
 </html>

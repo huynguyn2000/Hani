@@ -10,6 +10,7 @@
             <th>Giá</th>
             <th>Số lượng</th>
             <th>Thành tiền</th>
+            <th>Thao tác</th>
         </tr>
         </thead>
         <tbody>
@@ -23,9 +24,9 @@
                 <td>{{ number_format($order->or_price)  }}</td>
                 <td>{{ $order->or_qty  }}</td>
                 <td>{{ number_format($order->or_price*$order->or_qty)  }}</td>
-{{--                <td>--}}
-{{--                    <a style="padding: 5px 10px; border: 1px solid #eee; font-size: 11px;" href="{{ route('admin.get.action.article',['delete',$order->id]) }}"><i class="fas fa-trash-alt"></i> Xóa</a>--}}
-{{--                </td>--}}
+                <td>
+                    <a style="padding: 5px 10px; border: 1px solid #eee; font-size: 11px;" href="{{ route('admin.get.action.article',['delete',$order->id]) }}"><i class="fas fa-trash-alt"></i> Xóa</a>
+                </td>
             </tr>
         @endforeach
         </tbody>

@@ -50,12 +50,12 @@
                         <button class="dropbtn" style="font-size: 20px;">
                             <i class="fa fa-search"></i>
                         </button>
-                            <div class="dropdown-content" >
+                            <div class="dropdown-content">
                                 <form class="form-inline" action="{{ route('get.product.list') }}" method="get">
-                                    <div class="form-group-sm">
-                                    <input name="searchInfo" type="text" class="form-control" maxlength="128" placeholder="Trà, Kafe , ...">
+                                    <div class="form-group">
+                                        <input name="searchInfo" type="text" class="form-control" maxlength="128" placeholder="Trà, Kafe , ...">
                                     </div>
-                                    <button type="submit" class="btn-default"><i class="fa fa-search"></i></button>
+                                        <button type="submit" class="btn-default"><i class="fa fa-search"></i></button>
                                 </form>
                             </div>
                     </div>
@@ -66,9 +66,9 @@
                         </button>
                         @if(\Illuminate\Support\Facades\Auth::check())
                         <div class="dropdown-content">
-                            <a class="dropdown-item" href="{{ route('order.cart') }}">Giỏ hàng</a>
+                            <a class="dropdown-item" href="{{ route('order.cart') }}"><i class="fas fa-shopping-cart"></i><span> Giỏ hàng</span></a>
                             <br>
-                            <a class="dropdown-item" href="{{ route('get.logout.user') }}">Thoát</a>
+                            <a class="dropdown-item" href="{{ route('get.logout.user') }}"><i class="fas fa-sign-out-alt"></i><span> Thoát</span></a>
                         </div>
                         @else
                             <div class="dropdown-content">

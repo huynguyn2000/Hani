@@ -28,6 +28,7 @@
 <script>
     $(document).ready(function() {
         $(".textos").children("h3").text("A bad day with news is better than a good day without it.")
+
     });
 </script>
 <body>
@@ -39,90 +40,74 @@
                     <div class="row">
                         <div class="col-12">
                             @if( isset($articles))
-                            <div class="blog-detail">
                                 @foreach($articles as $article)
-                                <h2 class="blog-title">{{ $article->a_name }}</h2>
-                                <div class="content">
-                                    <p>
-                                        {{ substr($article->a_content,0,500) }} ...
-                                    </p>
-                                </div>
-                                <br>
-                                    <a style=" cursor:pointer; font-weight:bold" name="ctn-btn" href="{{ route('article.detail',[$article->a_slug.'-'.$article->id]) }}">CONTINUE READING <span><i class="fas fa-arrow-right"></i> </span></a>
-                                <div class="blog-meta">
-                                    <span class="author"><a href="#"><i class="fa fa-user"></i>By Admin</a><a href="#"><i class="fa fa-calendar"></i>{{ $article->created_at }}</a><a href="#"><i class="fa fa-comments"></i>Comment (1)</a></span>
-                                </div>
+                                    <div class="blog-detail">
+
+                                    <h2 class="blog-title">{{ $article->a_name }}</h2>
+                                    <div class="content">
+                                        <p>
+                                            {{ substr($article->a_content,0,200) }} ...
+                                        </p>
+                                    </div>
+                                    <br>
+                                    <a style="color: blue; cursor: pointer" data-id="{{ $article->id }}" name="ctn-btn">CONTINUE READING</a>
+                                    <div class="blog-meta">
+                                        <span class="author"><a href="#"><i class="fa fa-user"></i>By Admin</a><a href="#"><i class="fa fa-calendar"></i>{{ $article->created_at }}</a></span>
+                                    </div>
+
+                                    </div>
                                 @endforeach
                                 {{ $articles->links() }}
-                            </div>
+                            @else
+                                <h2 class="blog-title">Không tìm thấy kết quả tìm kiếm !!!</h2>
                             @endif
-
+                                <div class="col-12" style="z-index: 1;">
+                                    <div class="comments">
+                                        <h3 class="comment-title">Comments ({{ $countCMT }})</h3>
+                                        <!-- Single Comment -->
+                                        @if(isset($comments))
+                                        @foreach($comments as $comment)
+                                        <div class="single-comment">
+                                            <img src="https://via.placeholder.com/80x80" alt="#">
+                                            <div class="content">
+                                                <h4>{{ $comment->cmt_name }}<span>At {{ $comment->created_at }}</span></h4>
+                                                <p>{{ $comment->cmt_content }}</p>
+                                                <div class="button">
+                                                    <a href="#" class="btn"><i class="fa fa-reply" aria-hidden="true"></i>Reply</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        @endforeach
+                                        @endif
+                                        <!-- End Single Comment -->
+                                    </div>
+                                </div>
+                                <div class="col-12" style="z-index: 1">
+                                    <div class="reply">
+                                        <div class="reply-head">
+                                            <h2 class="reply-title">Bình luận</h2>
+                                            <!-- Comment Form -->
+                                            <form>
+                                                <div class="form-group">
+                                                    <label>Tên:</label>
+                                                    <input type="text" class="comment_name" name="comment_name">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Email:</label>
+                                                    <input type="email" name="email">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Nội dung:</label>
+                                                    <textarea name="comment_content" class="comment_content"></textarea>
+                                                </div>
+                                                <button id="btnAddCmt" class="btn btn-primary send-comment">Đăng bình luận</button>
+                                                <div id="notify-comment"></div>
+                                            </form>
+                                            <!-- End Comment Form -->
+                                        </div>
+                                    </div>
+                                </div>
                         </div>
-{{--                        <div class="col-12" style="z-index: 1;">--}}
-{{--                            <div class="comments">--}}
-{{--                                <h3 class="comment-title">Comments (3)</h3>--}}
-{{--                                <!-- Single Comment -->--}}
-{{--                                <div class="single-comment">--}}
-{{--                                    <img src="https://via.placeholder.com/80x80" alt="#">--}}
-{{--                                    <div class="content">--}}
-{{--                                        <h4>Alisa harm <span>At 8:59 pm On Feb 28, 2018</span></h4>--}}
-{{--                                        <p>Enthusiastically leverage existing premium quality vectors with enterprise-wide innovation collaboration Phosfluorescently leverage others enterprisee  Phosfluorescently leverage.</p>--}}
-{{--                                        <div class="button">--}}
-{{--                                            <a href="#" class="btn"><i class="fa fa-reply" aria-hidden="true"></i>Reply</a>--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                                <!-- End Single Comment -->--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                        <div class="col-12" style="z-index: 1">--}}
-{{--                            <div class="reply">--}}
-{{--                                <div class="reply-head">--}}
-{{--                                    <h2 class="reply-title">Bình luận</h2>--}}
-{{--                                    <!-- Comment Form -->--}}
-{{--                                    <form class="form" action="#">--}}
-{{--                                        <div class="row">--}}
-{{--                                            <div class="col-lg-6 col-md-6 col-12">--}}
-{{--                                                <div id="divTen" class="form-group">--}}
-{{--                                                    <label>Tên:<span>*</span></label>--}}
-{{--                                                    <input type="text" name="name" placeholder="" required="required">--}}
-{{--                                                </div>--}}
-{{--                                            </div>--}}
-{{--                                            <div class="col-lg-6 col-md-6 col-12">--}}
-{{--                                                <div id="divEmail" class="form-group">--}}
-{{--                                                    <label>Email:<span>*</span></label>--}}
-{{--                                                    <input type="email" name="email" placeholder="" required="required">--}}
-{{--                                                </div>--}}
-{{--                                            </div>--}}
-{{--                                            <div class="col-12">--}}
-{{--                                                <div class="form-group">--}}
-{{--                                                    <label>Bình luận:<span>*</span></label>--}}
-{{--                                                    <textarea name="message" placeholder=""></textarea>--}}
-{{--                                                </div>--}}
-{{--                                            </div>--}}
-{{--                                            <div class="col-12">--}}
-{{--                                                <table>--}}
-{{--                                                    <tbody><tr>--}}
-{{--                                                        <td>--}}
-{{--                                                            <div class="form-group button">--}}
-{{--                                                                <button type="submit" class="btn">Đăng bình luận</button>--}}
-{{--                                                            </div>--}}
-{{--                                                        </td>--}}
-{{--                                                        <td><div id="divHoac"><p><strong>Hoặc:</strong></p></div></td>--}}
-{{--                                                        <td>--}}
-{{--                                                            <div id="btnLogin" class="form-group button">--}}
-{{--                                                                <a class="btn" data-toggle="modal" data-target="#fast_login">Đăng nhập để bình luận</a>--}}
-{{--                                                            </div>--}}
-{{--                                                        </td>--}}
-{{--                                                    </tr>--}}
-{{--                                                    </tbody></table>--}}
-{{--                                            </div>--}}
-{{--                                        </div>--}}
-{{--                                    </form>--}}
-{{--                                    <!-- End Comment Form -->--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
                     </div>
                 </div>
             </div>
@@ -132,8 +117,10 @@
                     <!-- Single Widget -->
                     <div class="single-widget search">
                         <div class="form">
-                            <input type="email" placeholder="Search Here...">
-                            <a class="button" href="#"><i class="fa fa-search"></i></a>
+                            <form method="get" action="{{ route('get.article.list') }}">
+                                <input type="text" name="searchInfo" placeholder="Search Here..." maxlength="128">
+                                <button type="submit" class="button"><i class="fa fa-search"></i></button>
+                            </form>
                         </div>
                     </div>
                     <!--/ End Single Widget -->
@@ -145,7 +132,7 @@
                         <div class="single-post">
                             <div class="content">
                                 @foreach($categories as $category)
-                                <h4>{{ $category->c_name }}</h4>
+                                <a href="{{ route('order') }}#{{ $category->c_name }}">{{ $category->c_name }}</a><br>
                                 @endforeach
                             </div>
                         </div>
@@ -203,5 +190,55 @@
 {{--<a href="#contenedor" style="margin: 0px 0px 30px 50px; width: 50px; border: 1px solid black"><i class="fas fa-arrow-up" style="margin: 20px;"></i></a>--}}
 <a id="scrollUp" href="#contenedor" style="position: fixed; z-index: 2147483647; display: none;"><span><i class="fa fa-angle-up"></i></span></a>
 @include('component.footer')
+<script>
+    $(document).ready(function(){
+        $("a[name='ctn-btn']").click(function(){
+            var $this = $(this);
+            console.log($(this).data("id"));
+            $.ajax({
+                url: 'article-Detail/'+$(this).data("id"),
+                type: 'GET',
+            }).done(function(response){
+                console.log($this.data("id"));
+                    $this.parent('.blog-detail').html(response);
+            });
+        });
+
+        load_comment();
+        function load_comment(){
+            alert('OK')
+            $.ajax({
+                url: 'Load-Comment',
+                type: 'POST',
+                data: {
+                    _token: "{{ csrf_token() }}"
+                },
+            }).done(function(response){
+                console.log(response)
+                $(".comments").empty();
+                $(".comments").html(response);
+            });
+        }
+
+        $("#btnAddCmt").click(function(){
+            var comment_name = $('.comment_name').val();
+            var comment_content = $('.comment_content').val();
+            console.log(comment_name)
+            $.ajax({
+                url: 'Send-Comment',
+                type: 'POST',
+                data: {
+                    _token: "{{ csrf_token() }}",
+                    comment_name : comment_name,
+                    comment_content : comment_content
+                },
+            }).done(function(){
+                load_comment();
+                $('#notify-comment').html('<p class="text text-success">Thêm bình luận thành công</p>');
+            });
+        });
+    });
+</script>
 </body>
+</html>
 

@@ -299,16 +299,16 @@
                     <img  src="https://scontent-hkg4-2.xx.fbcdn.net/v/t1.0-9/39925165_1817478455033487_1753332579395698688_o.jpg?_nc_cat=104&ccb=2&_nc_sid=09cbfe&_nc_ohc=HaOTP2uH7bwAX8JO7u0&_nc_ht=scontent-hkg4-2.xx&oh=87cf12622631db34db26aca22c263d64&oe=5FD4A824" alt="logo" class="hani-img" />
                 </a>
             </div>
-            <div class="search">
-                <form class="form-inline" action="{{ route('get.product.list.cart') }}" method="get">
-                    <div class="form-group">
-                        <input type= "text" class="searchTerm" name="searchInfo" placeholder="Trà, Kafe, ..." style="margin-left: 30px;">
-                    </div>
-                    <button type="submit" class="searchButton">
-                        <i class="fa fa-search"></i>
-                    </button>
-                </form>
-            </div>
+{{--            <div class="search">--}}
+{{--                <form class="form-inline" action="{{ route('get.product.list.cart') }}" method="get">--}}
+{{--                    <div class="form-group">--}}
+{{--                        <input type= "text" class="searchTerm" name="searchInfo" placeholder="Trà, Kafe, ..." style="margin-left: 30px;">--}}
+{{--                    </div>--}}
+{{--                    <button type="submit" class="searchButton">--}}
+{{--                        <i class="fa fa-search"></i>--}}
+{{--                    </button>--}}
+{{--                </form>--}}
+{{--            </div>--}}
         </nav>
     </div>
     <div class="container-fluid" style="margin-top: 30px;">
@@ -874,6 +874,6 @@
                 //         $("#tt").text(parseInt(tt)+parseInt(price)+',000đ')
                 //     });
                 // });
-            </script>
-    </body>
-    </html>
+        </script>
+</body>
+</html>

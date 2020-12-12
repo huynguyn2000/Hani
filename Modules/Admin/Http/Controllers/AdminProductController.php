@@ -13,18 +13,18 @@ class AdminProductController extends Controller
 {
     public function index(Request $request){
 
-        $products = Product::with('category:id,c_name');
+        $products = Product::all();
 
-        if($request->name)
-            $products->where('pro_name','like','%'.$request->name.'%');
-        if($request->cate) $products->where('pro_category_id',$request->cate);
-        $products = $products->orderByDesc('id')->paginate(10);
+//        if($request->name)
+//            $products->where('pro_name','like','%'.$request->name.'%');
+//        if($request->cate) $products->where('pro_category_id',$request->cate);
+//        $products = $products->orderByDesc('id')->paginate(10);
 
-        $categories = $this->getCategories();
+//        $categories = $this->getCategories();
 
         $viewData = [
           'products' => $products,
-            'categories' => $categories
+//            'categories' => $categories
         ];
 
         return view('admin::product.index',$viewData);
@@ -79,15 +79,6 @@ class AdminProductController extends Controller
                 $product->pro_avatar = $file['name'];
             }
         }
-//
-//        if($requestProduct->hasFile('avatar')){
-//            $fileName = $_FILES['avatar']['name'];
-//            $fileTmpName = $_FILES['avatar']['tmp_name'];
-//            $file = upload_image($fileName, $fileTmpName);
-//            if(isset($file['name'])){
-//                $product->pro_avatar = $file['name'];
-//            }
-//        }
 
         $product->save();
     }

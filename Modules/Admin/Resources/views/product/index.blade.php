@@ -1,38 +1,24 @@
 @extends('admin::layouts.master')
 
 @section('content')
-    <div class="page-header">
-        <ol class="breadcrumb">
-        <li><a href="#">Trang chủ</a></li>
-        <li><a href="#">Sản phẩm</a></li>
-        <li class="active">Trang danh sách</li>
-        </ol>
-    </div>
-    <div class="row">
-        <div class="col-sm-12">
-            <form method="get" class="form-inline" action="" style="margin-bottom: 10px;">
-                <div class="form-group">
-                    <input type="text" class="form-control" id="email" placeholder="Tên sản phẩm ..." name="name" value="{{ \Request::get('name') }}">
-                </div>
-
-                <div class="form-group">
-                    <select name="cate" id="" class="form-control">
-                        <option value="">Danh mục</option>
-                        @if ( isset($categories))
-                            @foreach($categories as $category)
-                                <option value="{{ $category->id }}" {{ \Request::get('cate') == $category->id ? "selected='selected'" : "" }}>{{ $category->c_name }}</option>
-                            @endforeach
-                        @endif
-                    </select>
-                </div>
-                <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
-            </form>
-        </div>
-    </div>
-    <div class="table-responsive">
-                        <h2>Quản Lý Sản Phẩm <a href="{{ route('admin.get.create.product') }}" class="pull-right"><i class="fas fa-plus-square"></i></a></h2>
-                        <table class="table table-striped">
-                            <thead>
+    <div id="layoutSidenav_content">
+        <main>
+            <div class="container-fluid">
+                <ol class="breadcrumb mb-4">
+                    <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
+                    <li class="breadcrumb-item"><a href="{{ route('admin.get.list.product') }}">Sản phẩm</a></li>
+                    <li class="breadcrumb-item active">Trang danh sách</li>
+                </ol>
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <i class="fas fa-table mr-1"></i>
+                        Sản phẩm
+                        <a href="{{ route('admin.get.create.product') }}" class="pull-right">Thêm mới</a>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                <thead>
                                 <tr>
                                     <th>#</th>
                                     <th>Tên sản phẩm</th>
@@ -42,8 +28,19 @@
                                     <th>Nổi bật</th>
                                     <th>Thao tác</th>
                                 </tr>
-                            </thead>
-                            <tbody>
+                                </thead>
+                                <tfoot>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Tên sản phẩm</th>
+                                    <th>Loại sản phẩm</th>
+                                    <th>Hình ảnh</th>
+                                    <th>Trạng thái</th>
+                                    <th>Nổi bật</th>
+                                    <th>Thao tác</th>
+                                </tr>
+                                </tfoot>
+                                <tbody>
                                 @if(isset($products))
                                     @foreach($products as $product)
                                         <tr>
@@ -72,7 +69,25 @@
                                         </tr>
                                     @endforeach
                                 @endif
-                            </tbody>
-                        </table>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
+                </div>
+            </div>
+        </main>
+        <footer class="py-4 bg-light mt-auto">
+            <div class="container-fluid">
+                <div class="d-flex align-items-center justify-content-between small">
+                    <div class="text-muted">Copyright &copy; Your Website 2020</div>
+                    <div>
+                        <a href="#">Privacy Policy</a>
+                        &middot;
+                        <a href="#">Terms &amp; Conditions</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    </div>
 @stop

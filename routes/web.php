@@ -27,10 +27,13 @@ Route::group(['namespace' => 'Auth'],function (){
 
 Route::get('/', 'HomeController@index')->name('home');
 
+Route::post('/Load-Comment','ArticleController@loadComment');
+Route::post('/Send-Comment','ArticleController@sendComment');
+Route::get('/article-Detail/{id}','ArticleController@getDetailArticle');
+
 Route::group(['prefix'=>'about'], function(){
     Route::get('/','ArticleController@index')->name('article');
-    Route::get('/{a_slug}','ArticleController@getDetailArticle')->name('article.detail');
-    Route::get('/postcomment','ArticleController@PostComment')->name('article.detail.comment');
+    Route::get('/bai-viet','ArticleController@getArticleList')->name('get.article.list');
 
 });
 

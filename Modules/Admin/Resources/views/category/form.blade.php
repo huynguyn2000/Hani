@@ -1,4 +1,4 @@
-<form action="" method="POST">
+<form action="{{ route('admin.get.store.category') }}" method="POST">
     @csrf
     <div class="form-group">
         <label for="name">Tên danh mục: </label>
@@ -6,15 +6,6 @@
         @if($errors->has('name'))
             <span class="error-text">
                 {{$errors->first('name')}}
-            </span>
-        @endif
-    </div>
-    <div class="form-group">
-        <label for="name">Icon: </label>
-        <input type="text" class="form-control" placeholder="fa fa-home" value="{{ old('icon',isset($category->c_icon) ? $category->c_icon : '') }}" name="icon">
-        @if($errors->has('icon'))
-            <span class="error-text">
-                {{$errors->first('icon')}}
             </span>
         @endif
     </div>
