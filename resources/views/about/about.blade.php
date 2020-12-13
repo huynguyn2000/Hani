@@ -206,7 +206,6 @@
 
         load_comment();
         function load_comment(){
-            alert('OK')
             $.ajax({
                 url: 'Load-Comment',
                 type: 'POST',

@@ -53,6 +53,10 @@ Route::group(['prefix'=>'order'], function(){
 
 });
 
+Route::group(['prefix'=>'store'], function(){
+    Route::get('/','StoreController@index')->name('store');
+});
+
 Route::group(['prefix'=>'checkout'], function(){
     Route::get('/','PaymentController@index')->name('payment');
     Route::post('/','PaymentController@saveInfo');

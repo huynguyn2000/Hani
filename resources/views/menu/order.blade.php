@@ -18,6 +18,7 @@
 <style>
     header{
         background: url("https://alltop.vn/backend/media/images/posts/94/Hani_Kafe__Kitchen-9191.jpg");
+        height: 500px;
     }
 </style>
 <script>
@@ -42,7 +43,7 @@
     .product{
         font-family: 'M PLUS 1p', sans-serif;
     }
-  
+
 </style>
 <body>
 <div class="row">
@@ -82,7 +83,7 @@
                 </div>
                 <h3><b>{{ $value->pro_name }}</b></h3>
                 <h4 style="font-size: 17px;">{{ number_format($value->pro_price) }}đ</h4>
-            </article>  
+            </article>
 
             @endforeach
         </div>
