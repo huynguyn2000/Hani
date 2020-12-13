@@ -42,7 +42,7 @@
                 <li class="active"><a href="{{ route('home') }}">Home</a></li>
                 <li><a href="{{ route('article') }}">About</a> </li>
                 <li><a href="{{ route('order') }}">Menu</a></li>
-                <li><a href="blog.html">Store</a></li>
+                <li><a href="{{ route('store') }}">Store</a></li>
                 <li><a href="https://www.facebook.com/HaniKafeKitchen"><i class="fa fa-facebook" ></i></a></li>
                 <li><a href="https://www.instagram.com/hanikafekitchen148/"><i class="fa fa-instagram"></i></a></li>
                 <li>

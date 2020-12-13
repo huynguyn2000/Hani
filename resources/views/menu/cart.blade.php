@@ -66,13 +66,14 @@
                 transition: var(--mainTransition);
                 border-radius: 5px;
             }
+            @import url('https://fonts.googleapis.com/css2?family=Nerko+One&family=Ubuntu:wght@300&display=swap');
             .col-sm-4, .col-sm-2, .col-sm-5{
                 border: 5px dotted rgb(134, 146, 141);
                 width: 70%;
                 border-radius: 15px;
                 margin-left: 35px;
                 max-width: 600px;
-            }
+                
             .img-container:hover .bag-btn1 {
                 transform: translateX(-50%);
             }
@@ -124,15 +125,12 @@
                 border-collapse: separate;
                 border: 1px solid rgb(248, 247, 247);
             }
-
             th, td {
                 border: 1px solid rgb(252, 243, 243);
                 padding: 20px;
                 margin : 50px;
                 width: 150px;
             }
-        </style>
-        <style>
             .btn-minus{
                 cursor:pointer;
                 font-size:7px;
@@ -314,7 +312,7 @@
     <div class="container-fluid" style="margin-top: 30px;">
 
         <div class="row">
-            <div class="col-sm-2" style="background-color:#b6ccd4; padding: 10px 10px 0px 10px;">
+            <div class="col-sm-2" style="background-color:hsl(177, 30%, 85%); padding: 10px 10px 0px 10px;">
                 @if( isset($odd) && isset($even))
                 <h1>Drinks </h1>
                 @for($i=0; $i<count($odd); $i++)
@@ -613,6 +611,7 @@
                      @if( \Illuminate\Support\Facades\Session::has("cart") != null)
                     <table id="gh" border="1px" style="font-size: 13px;">
                         <tr>
+            
                             <th>Sản phẩm</th>
                             <th>Số lượng</th>
                             <th>Đơn giá</th>
