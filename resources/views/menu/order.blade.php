@@ -26,15 +26,23 @@
     });
 </script>
 <style>
+    @import url('https://fonts.googleapis.com/css2?family=M+PLUS+1p&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nerko+One&family=Ubuntu:wght@300&display=swap');
     .col-sm-2{
         padding-left: 80px;
         padding-top: 30px ;
         max-width: 600px;
+        font-family: 'Fredoka One', cursive;
+        font-size:25px;
     }
-    .row .col-sm-2 .h2{
-        font-family: 'Open Sans', sans-serif;
+    .col-sm-10{
+        font-family: 'Fredoka One', cursive;
     }
+    .product{
+        font-family: 'M PLUS 1p', sans-serif;
+    }
+  
 </style>
 <body>
 <div class="row">
@@ -74,7 +82,7 @@
                 </div>
                 <h3><b>{{ $value->pro_name }}</b></h3>
                 <h4 style="font-size: 17px;">{{ number_format($value->pro_price) }}đ</h4>
-            </article>
+            </article>  
 
             @endforeach
         </div>
