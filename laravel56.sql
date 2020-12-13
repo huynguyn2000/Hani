@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 11, 2020 at 07:39 PM
+-- Generation Time: Dec 13, 2020 at 07:16 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.2.33
 
@@ -73,7 +73,8 @@ CREATE TABLE `articles` (
 --
 
 INSERT INTO `articles` (`id`, `a_name`, `a_slug`, `a_title_seo`, `a_content`, `a_description`, `a_active`, `a_avatar`, `a_description_seo`, `created_at`, `updated_at`) VALUES
-(1, 'Trải nghiệm cà phê', 'trai-nghiem-ca-phe', 'Trải nghiệm cà phê', 'Mỗi người chúng ta đều có một sở thích uống cà phê khác nhau. Người thích Espresso, người thích Cappuccino, Mocha… hay chỉ đơn giản là một tách Latte nóng thơm nồng giữa những ngày trời mưa giông bão.\r\nVà để có được một cốc 𝗟𝗮𝘁𝘁𝗲 đậm đà, bạn cần rất nhiều sự khéo léo và tinh tế trong đó. Đôi lúc, kinh nghiệm và công thức làm chỉ là một phần tạo nên cách pha ly cà phê ngon, mà điều quan trọng làm nên hương vị đặc trưng của cách pha cà phê #latte đó là nghệ thuật pha cùng với sự đam mê, yêu thích cà phê nữa.\r\nVà bạn biết không!?\r\nTrời mưa, thì đi uống cà phê khá là thú vị đấy!\r\n𝗟𝗮𝘁𝘁𝗲 - Với hương vị đắng nhẹ, thơm nồng hòa cùng không khí của những ngày mưa dầm dề, sẽ làm bạn có thêm nhiều hứng khởi và làm việc hiệu quả.\r\nHãy thưởng thức món 𝗟𝗮𝘁𝘁𝗲 ấm nồng cùng với #Hani bạn nhé ☕', 'Trải nghiệm cà phê', 1, '2020-11-21__120199541-3324887317625919-8047858071268706537-o.jpg', 'Trải nghiệm cà phê', '2020-11-13 10:38:39', '2020-12-11 09:32:31');
+(1, 'Trải nghiệm cà phê', 'trai-nghiem-ca-phe', 'Trải nghiệm cà phê', 'Mỗi người chúng ta đều có một sở thích uống cà phê khác nhau. Người thích Espresso, người thích Cappuccino, Mocha… hay chỉ đơn giản là một tách Latte nóng thơm nồng giữa những ngày trời mưa giông bão.\r\nVà để có được một cốc 𝗟𝗮𝘁𝘁𝗲 đậm đà, bạn cần rất nhiều sự khéo léo và tinh tế trong đó. Đôi lúc, kinh nghiệm và công thức làm chỉ là một phần tạo nên cách pha ly cà phê ngon, mà điều quan trọng làm nên hương vị đặc trưng của cách pha cà phê #latte đó là nghệ thuật pha cùng với sự đam mê, yêu thích cà phê nữa.\r\nVà bạn biết không!?\r\nTrời mưa, thì đi uống cà phê khá là thú vị đấy!\r\n𝗟𝗮𝘁𝘁𝗲 - Với hương vị đắng nhẹ, thơm nồng hòa cùng không khí của những ngày mưa dầm dề, sẽ làm bạn có thêm nhiều hứng khởi và làm việc hiệu quả.\r\nHãy thưởng thức món 𝗟𝗮𝘁𝘁𝗲 ấm nồng cùng với #Hani bạn nhé ☕', 'Trải nghiệm cà phê', 1, '2020-11-21__120199541-3324887317625919-8047858071268706537-o.jpg', 'Trải nghiệm cà phê', '2020-11-13 10:38:39', '2020-12-11 09:32:31'),
+(5, 'Top 5 Quán cà phê đẹp và đồ uống ngon nhất Tp. Pleiku, Gia Lai\r\n', 'Top-5-Quan-ca-phe-dep-va-do-uong-ngon-nhat-Tp-Pleiku-Gia-Lai\r\n', NULL, 'Là một trong những quán cafe theo phong cách hiện đại được giới trẻ quan tâm nhất tại Pleiku, Hani Kafe & Kitchen được xem như điểm hẹn hò quen thuộc của giới trẻ yêu cà phê. Dù chỉ mới xuất hiện chưa lâu nhưng quán đã tạo nên một làn sóng lớn những người yêu thích mình. Với một không gian đa dạng, nhiều phong cách, Hani Kafe & Kitchen thu hút nhiều độ tuổi tới với quán mà không ai cảm thấy rằng đã tới nhầm chỗ.\r\n\r\nĐội ngũ nhân viên pha chế của Hani Kafe & Kitchen trải qua một quá trình đào tạo tập luyện từ chính những người am hiểu và đam mê cà phê vì vậy khi uống cà phê của Hani Kafe & Kitchen bạn sẽ nhận thấy được sự khác biệt về hương vị so với những địa chỉ cà phê thông thường. Đây chính là điểm thu hút khách hàng Hani Kafe & Kitchen đã vô cùng thành công.\r\n\r\nThực đơn quán khá đa dạng với các món đồ uống từ cà phê, trà nóng đến nước ép... Thật tuyệt vời khi hâm nhi tách cà phê ấm nóng giữa tiết trời se lạnh là trải nghiệm chinh phục trái tim những kẻ trót phải lòng thành phố núi rừng. Đặc biệt không gian thông thoáng với nhiều vị trí ngồi khác nhau, cho phép khách hàng thỏa sức sống ảo.\r\n\r\nVới sự kì công và tâm huyết của chủ quán cộng thêm sự niềm nở, chu đáo của nhân viên đã khiến du khách có thêm nhiều ấn tượng và sự hài lòng khi đến đây. Chắc chắn bạn sẽ không khỏi bất ngờ và thoải mái khi đến với quán cafe đậm chất Bắc Âu này.\r\n\r\nMỌI CHI TIẾT XIN LIÊN HỆ:\r\n\r\nĐịa chỉ: Số 148 Tô Vĩnh Diện, TP. Pleiku, Gia Lai\r\nHotline: 094 923 51 68\r\nFanpage: https://www.facebook.com/HaniKafeKitchen/', NULL, 1, NULL, NULL, '2020-12-12 14:33:53', '2020-12-12 14:33:53');
 
 -- --------------------------------------------------------
 
@@ -84,7 +85,6 @@ INSERT INTO `articles` (`id`, `a_name`, `a_slug`, `a_title_seo`, `a_content`, `a
 CREATE TABLE `categories` (
   `id` int(10) UNSIGNED NOT NULL,
   `c_name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `c_slug` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `c_icon` char(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `c_avatar` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `c_active` tinyint(4) NOT NULL DEFAULT 1,
@@ -100,11 +100,36 @@ CREATE TABLE `categories` (
 -- Dumping data for table `categories`
 --
 
-INSERT INTO `categories` (`id`, `c_name`, `c_slug`, `c_icon`, `c_avatar`, `c_active`, `c_total_product`, `c_title_seo`, `c_description_seo`, `c_keyword_seo`, `created_at`, `updated_at`) VALUES
-(1, 'Trà', 'tra', 'fas fa-coffee', NULL, 1, 0, 'Trà', 'Trà', NULL, '2020-11-10 07:01:30', '2020-11-10 08:16:10'),
-(2, 'Kafe', 'kafe', 'fas fa-coffee', NULL, 0, 0, 'Kafe', 'Kafe\r\n', NULL, '2020-11-10 07:04:49', '2020-11-10 07:04:49'),
-(5, 'Dessert', 'dessert', 'fas-fa-utensils', NULL, 1, 0, 'Food', NULL, NULL, '2020-11-24 00:10:43', '2020-11-24 01:16:47'),
-(6, 'Pizza', 'pizza', 'fas-fa-pizza-slice', NULL, 1, 0, 'Pizza', NULL, NULL, '2020-11-24 01:17:49', '2020-11-24 01:17:49');
+INSERT INTO `categories` (`id`, `c_name`, `c_icon`, `c_avatar`, `c_active`, `c_total_product`, `c_title_seo`, `c_description_seo`, `c_keyword_seo`, `created_at`, `updated_at`) VALUES
+(1, 'Trà', 'fas fa-coffee', NULL, 1, 0, 'Trà', 'Trà', NULL, '2020-11-10 07:01:30', '2020-11-10 08:16:10'),
+(2, 'Kafe', 'fas fa-coffee', NULL, 0, 0, 'Kafe', 'Kafe\r\n', NULL, '2020-11-10 07:04:49', '2020-11-10 07:04:49'),
+(5, 'Dessert', 'fas-fa-utensils', NULL, 1, 0, 'Food', NULL, NULL, '2020-11-24 00:10:43', '2020-11-24 01:16:47'),
+(6, 'Pizza', 'fas-fa-pizza-slice', NULL, 1, 0, 'Pizza', NULL, NULL, '2020-11-24 01:17:49', '2020-11-24 01:17:49');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `comments`
+--
+
+CREATE TABLE `comments` (
+  `cmt_id` int(11) NOT NULL,
+  `cmt_name` varchar(150) COLLATE utf8_unicode_ci NOT NULL,
+  `cmt_content` varchar(300) COLLATE utf8_unicode_ci NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `comments`
+--
+
+INSERT INTO `comments` (`cmt_id`, `cmt_name`, `cmt_content`, `created_at`, `updated_at`) VALUES
+(1, 'Nguyen Duc Huy', 'Cà phê rất ngon !!!', '2020-12-12 07:39:52', '2020-12-12 07:46:06'),
+(3, 'Mi', 'I love coffee', '2020-12-12 00:46:47', '2020-12-12 00:46:47'),
+(9, 'huy', '123123', '2020-12-12 13:06:40', '2020-12-12 13:06:40'),
+(10, 'huy2', '5465645645', '2020-12-12 13:07:14', '2020-12-12 13:07:14'),
+(11, 'Thịnh', 'Tôi k thích', '2020-12-12 23:07:22', '2020-12-12 23:07:22');
 
 -- --------------------------------------------------------
 
@@ -238,7 +263,7 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `pro_name`, `pro_slug`, `pro_category_id`, `pro_price`, `pro_author_id`, `pro_sale`, `pro_active`, `pro_hot`, `pro_view`, `pro_description`, `pro_avatar`, `pro_description_seo`, `pro_keyword_seo`, `created_at`, `updated_at`, `pro_title_seo`, `pro_content`, `pro_pay`, `pro_number`) VALUES
-(5, 'Trà đào', 'tra-dao', 1, 30000, 0, 0, 1, 0, 0, 'Trà đào', '2020-11-28__95612180-2903470383100950-7348392888281071616-o.jpg', 'Trà đào', NULL, '2020-11-20 07:09:24', '2020-11-28 08:01:06', 'Trà đào', 'Trà đào', 1, 1),
+(5, 'Trà đào', 'tra-dao', 1, 30000, 0, 0, 1, 0, 0, 'Trà đào', '2020-11-28__95612180-2903470383100950-7348392888281071616-o.jpg', 'Trà đào', NULL, '2020-11-20 07:09:24', '2020-12-12 05:43:36', 'Trà đào', 'Trà đào', 1, 1),
 (6, 'Trà đào hạt chia', 'tra-dao-hat-chia', 1, 40000, 0, 0, 1, 0, 0, 'Trà đào hạt chia', '2020-11-28__120540052-3338448509603133-6340957194455703467-o.jpg', 'Trà đào hạt chia', NULL, '2020-11-20 07:11:33', '2020-11-28 08:00:47', 'Trà đào hạt chia', 'Trà đào hạt chia', 1, 1),
 (7, 'Trà phúc bồn tử', 'tra-phuc-bon-tu', 1, 40000, 0, 0, 1, 0, 0, 'Trà phúc bồn tử', '2020-11-28__120757130-3338448682936449-3847794334232231967-o.jpg', 'Trà phúc bồn tử', NULL, '2020-11-20 07:12:06', '2020-11-28 07:59:56', 'Trà phúc bồn tử', 'Trà phúc bồn tử', 1, 1),
 (8, 'Trà táo', 'tra-tao', 1, 40000, 0, 0, 1, 0, 0, 'Mojito táo', '2020-11-28__120495948-3338449076269743-8317661418530527880-o.jpg', 'Mojito táo', NULL, '2020-11-20 07:12:20', '2020-11-28 07:59:29', 'Mojito táo', 'Mojito táo', 1, 1),
@@ -277,8 +302,8 @@ CREATE TABLE `transactions` (
 INSERT INTO `transactions` (`id`, `tr_user_id`, `tr_name`, `tr_total`, `tr_note`, `tr_address`, `tr_phone`, `tr_status`, `created_at`, `updated_at`) VALUES
 (11, NULL, 'quân', 117000, 'giao từ từ', '419A Ba Đình', '0916534751', 1, '2020-12-04 10:18:37', '2020-12-11 11:14:05'),
 (12, 1, NULL, 259000, 'thêm tương ớt', '419A Ba Đình P.9 Q.8 Tp. HCM', '0916534751', 1, '2020-12-04 10:24:33', '2020-12-11 11:14:09'),
-(13, NULL, 'mey', 55000, 'giao trước nhà', '419A Ba Đình P.9 Q.8 Tp. HCM', '0938630631', 0, '2020-12-04 10:37:42', '2020-12-04 10:37:42'),
-(14, NULL, 'Mi', 95000, 'giao nhanh', '419A Ba Dinh', '0916534751', 0, '2020-12-07 01:42:38', '2020-12-07 01:42:38'),
+(13, NULL, 'mey', 55000, 'giao trước nhà', '419A Ba Đình P.9 Q.8 Tp. HCM', '0938630631', 1, '2020-12-04 10:37:42', '2020-12-12 02:22:36'),
+(14, NULL, 'Mi', 95000, 'giao nhanh', '419A Ba Dinh', '0916534751', 1, '2020-12-07 01:42:38', '2020-12-12 02:25:46'),
 (15, NULL, 'minh', 47000, 'giao từ từ', '419A Ba Dinh', '0916534751', 0, '2020-12-08 03:14:39', '2020-12-08 03:14:39');
 
 -- --------------------------------------------------------
@@ -306,7 +331,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `phone`, `avatar`, `active`, `password`, `remember_token`, `created_at`, `updated_at`, `total_pay`) VALUES
-(1, 'huy', 'nnguyenduchuy2000@gmail.com', '0916534751', NULL, 1, '$2y$10$OR7JVew6bnzRNxdjnsWw2OC6nJ7.e7LlEuyIeORdf.QSthjeTjVdm', '3LisEMpasfCyLwPVTI0bWevYwurK3pRRYloibbvWt91BPhjtVw3gFelPhL8q', '2020-11-28 01:34:37', '2020-11-28 01:34:37', 1),
+(1, 'huy', 'nnguyenduchuy2000@gmail.com', '0916534751', NULL, 1, '$2y$10$OR7JVew6bnzRNxdjnsWw2OC6nJ7.e7LlEuyIeORdf.QSthjeTjVdm', 'YTzQOwocpAzmSdwZNKIDwqdJGRvpje8J6cnd43Nk0lIID7QJthQgx7kErqZa', '2020-11-28 01:34:37', '2020-11-28 01:34:37', 1),
 (2, 'huy2', 'nnguyenduchuy2001@gmail.com', '0916534751', NULL, 1, '$2y$10$zoFNLZCfHTLPtiFIjANuL.3mXA9wr5lJejPG9Xf81A.n9cfy7K6Bq', NULL, '2020-11-28 01:45:37', '2020-11-28 01:45:37', 0),
 (3, 'huy3', 'nnguyenduchuy2002@gmail.com', '0916534751', NULL, 1, '$2y$10$/t4wCplwQ9LPtUnXA0A8OOAh9hHXmpzO.lVB8gONd/voZeUYjf.C.', NULL, '2020-11-28 02:00:20', '2020-11-28 02:00:20', 0);
 
@@ -336,8 +361,13 @@ ALTER TABLE `articles`
 ALTER TABLE `categories`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `categories_c_name_unique` (`c_name`),
-  ADD KEY `categories_c_slug_index` (`c_slug`),
   ADD KEY `categories_c_active_index` (`c_active`);
+
+--
+-- Indexes for table `comments`
+--
+ALTER TABLE `comments`
+  ADD PRIMARY KEY (`cmt_id`);
 
 --
 -- Indexes for table `coupons`
@@ -405,7 +435,7 @@ ALTER TABLE `admins`
 -- AUTO_INCREMENT for table `articles`
 --
 ALTER TABLE `articles`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `categories`
@@ -414,10 +444,16 @@ ALTER TABLE `categories`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
+-- AUTO_INCREMENT for table `comments`
+--
+ALTER TABLE `comments`
+  MODIFY `cmt_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
 -- AUTO_INCREMENT for table `coupons`
 --
 ALTER TABLE `coupons`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `migrations`
