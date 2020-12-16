@@ -7,6 +7,7 @@ use App\Models\Article;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\Log;
 
 
 class AdminArticleController extends Controller
@@ -26,72 +27,57 @@ class AdminArticleController extends Controller
         return view('admin::article.index',$viewData);
     }
 
-    public function create(){
+    public function create()
+    {
         return view('admin::article.create');
     }
 
-    public function store(RequestArticle $requestArticle){
-        $this->insertOrUpdate($requestArticle);
+    public function store(Request $request)
+    {
+        $this->insertOrUpdate($request);
         return redirect()->back();
     }
 
-    public function getCategories(){
-        return Category::all();
-    }
-
-    public function edit($id){
+    public function edit($id)
+    {
         $article = Article::find($id);
-
-        return view('admin::article.edit',compact('article'));
+        return view('admin::article.edit', compact('article'));
     }
 
-    public function update(RequestArticle $requestArticle,$id){
-        $this->insertOrUpdate($requestArticle,$id);
+    public function update(Request $request, $id)
+    {
+        $this->insertOrUpdate($request, $id);
+
         return redirect()->back();
     }
 
-    public function insertOrUpdate($requestarticle, $id=''){
-
+    public function insertOrUpdate($request, $id = '')
+    {
         $article = new Article();
+        if ($id) $article = Article::find($id);
 
-        if($id) $article = Article::find($id);
+        $article->a_name = $request->a_name;
+        $article->a_slug = str_slug($request->a_name);
+        $article->a_content = $request->a_content;
 
-        $article->a_name = $requestarticle->a_name;
-        $article->a_slug = str_slug($requestarticle->a_name);
-        $article->a_content = $requestarticle->a_content;
-        $article->a_description = $requestarticle->a_description;
-        $article->a_title_seo = $requestarticle->a_title_seo ? $requestarticle->a_title_seo : $requestarticle->a_name;
-        $article->a_description_seo = $requestarticle->a_description_seo ? $requestarticle->a_description_seo : $requestarticle->a_name;
-
-        if ($requestarticle->hasFile('avatar')) {
+        if ($request->hasFile('avatar')) {
             $file = upload_image('avatar');
 
             if(isset($file['name'])){
                 $article->a_avatar = $file['name'];
             }
         }
-
         $article->save();
     }
 
     public function action($action,$id)
     {
-        $article = article::find($id);
-
         if($action){
+            $article = Article::find($id);
             switch($action){
                 case 'delete':
                     $article->delete();
                     break;
-
-                case 'active':
-                    $article->a_active = $article->a_active ? 0 : 1;
-                    $article->save();
-                    break;
-//                case 'hot':
-//                    $article->a_hot = $article->a_hot ? 0 : 1;
-//                    $article->save();
-//                    break;
             }
         }
 

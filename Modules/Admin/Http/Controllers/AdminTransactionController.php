@@ -37,6 +37,7 @@ class AdminTransactionController extends Controller
         $transaction->tr_status = Transaction::STATUS_DONE;
         $transaction->save();
 
-        return redirect()->back()->with('success','Xử lý đơn hàng thành công');
+        session()->flash('msg', 'Duyệt đơn hàng thành công');
+        return redirect()->back();
     }
 }

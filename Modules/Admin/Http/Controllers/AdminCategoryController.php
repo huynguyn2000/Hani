@@ -7,8 +7,9 @@ use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use App\Http\Requests\RequestCategory;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
-use function GuzzleHttp\Promise\all;
+use Illuminate\Support\Facades\Session;
 
 class AdminCategoryController extends Controller
 {
@@ -27,44 +28,34 @@ class AdminCategoryController extends Controller
         return view('admin::category.create');
     }
 
-    public function store(RequestCategory $requestCategory)
+    public function store(RequestCategory $request)
     {
-        $this->insertOrUpdate($requestCategory);
-
+        $this->insertOrUpdate($request);
         return redirect()->back();
     }
 
     public function edit($id)
     {
         $category = Category::find($id);
-        return view('admin::category.edit', compact('category'));
+        return view('admin::category.edit',compact('category'));
     }
 
-    public function update(RequestCategory $requestCategory, $id)
+    public function update(RequestCategory $request, $id)
     {
-        $this->insertOrUpdate($requestCategory, $id);
-
+        $this->insertOrUpdate($request, $id);
         return redirect()->back();
     }
 
-    public function insertOrUpdate($requestCategory, $id = '')
+    public function insertOrUpdate($request, $id = '')
     {
-        try {
-            $category = new Category();
+        $category = new Category();
+        if ($id) $category = Category::find($id);
 
-            if ($id) $category = Category::find($id);
+        $category->c_name = $request->name;
+//        $category->c_title_seo = $request->c_title_seo ? $request->c_title_seo : $request->name;
+//        $category->c_description_seo = $request->c_description_seo ? $request->c_description_seo : $request->name;
 
-            $category->c_name = $requestCategory->name;
-            $category->c_slug = str_slug($requestCategory->name);
-            $category->c_title_seo = $requestCategory->c_title_seo ? $requestCategory->c_title_seo : $requestCategory->name;
-            $category->c_description_seo = $requestCategory->c_description_seo;
-            $category->save();
-        } catch (\Exception $exception) {
-            return 0;
-            Log::error("[Error insertOrUpdate Categories ]" . $exception->getMessage());
-        }
-
-        return 1;
+        $category->save();
     }
 
     public function action($action,$id)

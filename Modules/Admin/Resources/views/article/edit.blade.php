@@ -7,7 +7,7 @@
                 <ol class="breadcrumb mb-4">
                     <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
                     <li class="breadcrumb-item"><a href="{{ route('admin.get.list.article') }}">Bài Viết</a></li>
-                    <li class="breadcrumb-item active">Trang danh sách</li>
+                    <li class="breadcrumb-item active">Sửa bài viết</li>
                 </ol>
                 <div class="card mb-4">
                     <div class="card-header">
@@ -15,7 +15,7 @@
                         Bài Viết
                     </div>
                     <div class="card-body">
-                        @include("admin::category.form")
+                        @include("admin::article.form")
                     </div>
                 </div>
             </div>

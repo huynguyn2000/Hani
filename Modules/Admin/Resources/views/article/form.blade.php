@@ -2,6 +2,7 @@
     @csrf
     <div class="row" style="padding: 10px 200px 50px 200px;">
         <div class="col-sm-12">
+
            <div class="form-group">
                <label for="a_name">Tên bài viết: </label>
                <input type="text" class="form-control" placeholder="Tên bài viết" value="{{ old('a_name',isset($article->a_name) ? $article->a_name : '') }}" name="a_name">
@@ -13,7 +14,7 @@
            </div>
            <div class="form-group">
                <label for="a_description">Mô tả: </label>
-               <textarea class="form-control" name="a_description" id="" cols="30" rows="3" placeholder="Mô tả ngắn bài viết">{{ old('a_description',isset($article->a_description) ? $article->a_description  : '') }}</textarea>
+               <textarea class="form-control" name="a_description" cols="30" rows="3" placeholder="Mô tả ngắn bài viết">{{ old('a_description',isset($article->a_description) ? $article->a_description  : '') }}</textarea>
                @if($errors->has('a_description'))
                    <span class="error-text">
                     {{$errors->first('a_description')}}
@@ -22,7 +23,7 @@
            </div>
            <div class="form-group">
                <label for="a_content">Nội dung: </label>
-               <textarea class="form-control" name="a_content" id="" cols="30" rows="3" placeholder="Nội dung bài viết">{{ old('a_content',isset($article->a_content) ? $article->a_content  : '') }}</textarea>
+               <textarea class="form-control" name="a_content" cols="30" rows="3" placeholder="Nội dung bài viết">{{ old('a_content',isset($article->a_content) ? $article->a_content  : '') }}</textarea>
                @if($errors->has('a_content'))
                    <span class="error-text">
                     {{$errors->first('a_content')}}
@@ -30,7 +31,7 @@
                @endif
            </div>
            <div class="form-group">
-               <label for="a_description_seo">Meta Description</label>
+               <label for="a_description_seo">Title Description</label>
                <input type="text" class="form-control" placeholder="Meta Title" value="{{ old('a_title_seo',isset($article->a_title_seo) ? $article->a_title_seo  : '') }}" name="a_title_seo">
            </div>
            <div class="form-group">

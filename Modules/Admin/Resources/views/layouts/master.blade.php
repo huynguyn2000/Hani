@@ -33,10 +33,18 @@
             });
         })
     </script>
+    <style>
+        .sb-sidenav-menu-heading span{
+            font-size: 18px;
+        }
+        .nav-link{
+            font-size: 16px;
+        }
+    </style>
 </head>
 <body class="sb-nav-fixed">
 <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
-    <a class="navbar-brand" href="index.html">Hani</a>
+    <a class="navbar-brand" href="{{ route('admin.home') }}">Hani</a>
     <button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#"><i class="fas fa-bars"></i></button>
     <!-- Navbar Search-->
     <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
@@ -65,12 +73,12 @@
         <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
             <div class="sb-sidenav-menu">
                 <div class="nav">
-                    <div class="sb-sidenav-menu-heading">Core</div>
+                    <div class="sb-sidenav-menu-heading"><span>Core</span></div>
                     <a class="nav-link" href="{{ route('admin.home') }}">
                         <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                         Dashboard
                     </a>
-                    <div class="sb-sidenav-menu-heading">Addons</div>
+                    <div class="sb-sidenav-menu-heading"><span>Addons</span></div>
                     <a class="nav-link" href="{{ route('admin.get.list.category') }}">
                         <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                         Danh Mục
@@ -95,7 +103,7 @@
                         <div class="sb-nav-link-icon"><i class="fas fa-tags"></i></div>
                         Mã Giảm Gía
                     </a>
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="{{ route('admin.get.list.comment') }}">
                         <div class="sb-nav-link-icon"><i class="fas fa-comments"></i></div>
                         Bình Luận
                     </a>

@@ -77,4 +77,10 @@ Route::prefix('admin')->middleware('CheckLoginAdmin')->group(function() {
 
         Route::get('/{action}/{id}','AdminCouponController@action')->name('admin.get.action.coupon');
     });
+
+    Route::group(['prefix'=>'comment'], function(){
+        Route::get('/','AdminCommentController@index')->name('admin.get.list.comment');
+
+        Route::get('/{action}/{id}','AdminCommentController@action')->name('admin.get.action.comment');
+    });
 });

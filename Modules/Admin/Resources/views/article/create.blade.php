@@ -7,7 +7,7 @@
                 <ol class="breadcrumb mb-4">
                     <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
                     <li class="breadcrumb-item"><a href="{{ route('admin.get.list.article') }}">Bài viết</a></li>
-                    <li class="breadcrumb-item active">Trang danh sách</li>
+                    <li class="breadcrumb-item active">Thêm bài viết</li>
                 </ol>
                 <div class="card mb-4">
                     <div class="card-header">

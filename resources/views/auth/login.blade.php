@@ -99,10 +99,16 @@
         padding-top: 30px;
         background-color: rgba(2555,255,255,.3);
     }
+
 </style>
+<script>
+    $(document).ready(function() {
+        $(".textos").remove();
+    });
+</script>
 <div class="panel panel-default" style="margin: 100px 300px;">
     <div class="panel-heading">
-        <div class="panel-title text-center">Đăng nhập khách hàng</div>
+        <div class="panel-title text-center">Đăng nhập khách hàng Hani</div>
     </div>
 
     <div class="panel-body" >

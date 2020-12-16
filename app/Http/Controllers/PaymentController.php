@@ -74,7 +74,8 @@ class PaymentController extends CartController
         }
         Session::forget('cart');
 
-        return redirect('/')->with('success','Bạn đã đặt hàng thành công');
+        session()->flash('success', 'Đặt hàng thành công');
+        return redirect('/');
     }
 
     public function checkCoupon(Request $request){

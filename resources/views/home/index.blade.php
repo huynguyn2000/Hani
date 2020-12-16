@@ -1,11 +1,18 @@
 @extends('layouts.app')
 @section('content')
+    <script>
+        $(document).ready(function(){
+            @if(Session::has('success'))
+                alertify.success('{{ Session::get("success") }}')
+            @endif
+        });
+    </script>
     <section class="content1" id="content1">
         <div class="content-contenedor">
             <div class="foto">
                 <img src="{{ asset('theme_admin/image/120199541_3324887317625919_8047858071268706537_o.jpg') }}" alt="">
                 <aside>
-                    
+
                     <h4>It’s time for Coffee & Tea!</h4>
                     <h4><p>The Hani's drinks create the amazing stories of your lives.</p>
                         <p>Replay your good memories now!</p>
@@ -66,9 +73,9 @@
       <circle cx="200.072" cy="146.059" r="5.62" fill="#300403"/>
       <path d="M176.713 165.422s2.459-3.995 6.454 0M197.306 165.422s2.459-3.995 6.454 0" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1.844"/>
     </g>
-    </svg>   
+    </svg>
     <style>
-@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Leckerli+One&family=Nerko+One&family=Ubuntu:wght@300&display=swap');       
+    @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Leckerli+One&family=Nerko+One&family=Ubuntu:wght@300&display=swap');
     .Menu1{
       font-family: 'Fredoka One', cursive;
     }
@@ -116,8 +123,17 @@
             <img src="{{ asset('theme_admin/image/129897150_3506155819499067_3945939008353199087_o.jpg') }}" alt="">
         </div>
     </section>
-    <style>
+    <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
 
+    <!-- CSS -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
+    <!-- Default theme -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css"/>
+    <!-- Semantic UI theme -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/semantic.min.css"/>
+    <!-- Bootstrap theme -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css"/>
+<style>
 .noel-image{
   position: absolute;
   height: 300px;
@@ -125,7 +141,7 @@
   -webkit-transform: translate(-50%,-50%);
       -ms-transform: translate(-50%,-50%);
           transform: translate(-50%,-50%);
-  
+
   top: 80%;
   left: 85%;
 }
@@ -159,7 +175,7 @@ svg{
           animation: wave 1.5s infinite;
   -webkit-transform-origin: center;
       -ms-transform-origin: center;
-          transform-origin: center; 
+          transform-origin: center;
 }
 .blade{
   -webkit-animation:spin 1s infinite linear;

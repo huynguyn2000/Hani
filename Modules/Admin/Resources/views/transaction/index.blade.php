@@ -14,6 +14,9 @@
                         <i class="fas fa-table mr-1"></i>
                         Đơn Hàng
                     </div>
+                    @if(Session::has('msg'))
+                        <h5 style="color: green; margin: 20px 30px 0px 30px;"><i>{{  Session::get("msg") }}</i></h5>
+                    @endif
                     <div class="card-body">
                         <div class="table-responsive">
                             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -23,9 +26,10 @@
                                     <th>Tên khách hàng</th>
                                     <th>Địa chỉ</th>
                                     <th>SĐT</th>
+                                    <th>Ghi chú</th>
                                     <th>Tổng tiền</th>
                                     <th>Trạng thái</th>
-                                    <th>Thao tác</th>
+                                    <th style="width: 10px;">Thao tác</th>
                                 </tr>
                                 </thead>
                                 <tfoot>
@@ -34,6 +38,7 @@
                                     <th>Tên khách hàng</th>
                                     <th>Địa chỉ</th>
                                     <th>SĐT</th>
+                                    <th>Ghi chú</th>
                                     <th>Tổng tiền</th>
                                     <th>Trạng thái</th>
                                     <th>Thao tác</th>
@@ -47,6 +52,7 @@
                                             <td>{{ isset($transaction->user->name) ? $transaction->user->name : $transaction->tr_name }}</td>
                                             <td>{{ $transaction->tr_address }}</td>
                                             <td>{{ $transaction->tr_phone }}</td>
+                                            <td>{{ $transaction->tr_note }}</td>
                                             <td>{{ number_format($transaction->tr_total) }}đ</td>
                                             <td>
                                                 @if( $transaction->tr_status == 1)
@@ -56,7 +62,7 @@
                                                 @endif
                                             </td>
                                             <td>
-                                                <a class="btn_customer_action" style="padding: 5px 10px; border: 1px solid #eee; font-size: 11px;" href="#"><i class="fas fa-trash-alt"></i> Xóa</a>
+{{--                                                <a class="btn_customer_action" style="padding: 5px 10px; border: 1px solid #eee; font-size: 11px;" href="#"><i class="fas fa-trash-alt"></i> Xóa</a>--}}
                                                 <a class="js_order_item" data-id="{{ $transaction->id }}"  style="padding: 5px 10px; border: 1px solid #eee; font-size: 11px;" href="{{ route('admin.get.view.order',$transaction->id) }}"><i class="fas fa-eye"></i></a>
                                             </td>
                                         </tr>

@@ -75,7 +75,7 @@ class ArticleController extends FrontendController
 
     public function loadComment()
     {
-        $comments = Comment::paginate(5);
+        $comments = Comment::paginate(10);
 
         $countCMT = count($comments);
 

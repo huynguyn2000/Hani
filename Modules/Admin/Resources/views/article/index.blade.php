@@ -23,8 +23,6 @@
                                     <th>#</th>
                                     <th style="width: 20%;">Tên bài viết</th>
                                     <th >Hình ảnh</th>
-                                    <th style="width: 10%;">Mô tả</th>
-                                    <th style="width: 10%;">Trạng thái</th>
                                     <th >Ngày tạo</th>
                                     <th>Thao tác</th>
                                 </tr>
@@ -34,8 +32,6 @@
                                     <th>#</th>
                                     <th style="width: 20%;">Tên bài viết</th>
                                     <th >Hình ảnh</th>
-                                    <th style="width: 10%;">Mô tả</th>
-                                    <th style="width: 10%;">Trạng thái</th>
                                     <th >Ngày tạo</th>
                                     <th>Thao tác</th>
                                 </tr>
@@ -50,12 +46,6 @@
                                             </td>
                                             <td>
                                                 <img src="{{ pare_url_file($article->a_avatar) }}" alt="" class="img img-responsive" style="width: 80px; height: 80px;">
-                                            </td>
-                                            <td>
-                                                {{ $article->a_description }}
-                                            </td>
-                                            <td>
-                                                <a href="{{ route('admin.get.action.article',['active',$article->id]) }}" class="label {{ $article->getStatus($article->a_active)['class'] }} " >{{ $article->getStatus($article->a_active)['name'] }}</a>
                                             </td>
                                             <td>
                                                 {{ $article->created_at }}

@@ -39,8 +39,8 @@
                                             <td>{{ $category->id }}</td>
                                             <td>{{ $category->c_name }}</td>
                                             <td>
-                                                <a href="{{ route('admin.get.edit.category',$category->id) }}">Edit</a>
-                                                <a href="{{ route('admin.get.action.category',['delete',$category->id]) }}">Delete</a>
+                                                <a style="padding: 5px 10px; border: 1px solid #eee; font-size: 11px;" href="{{ route('admin.get.edit.category',$category->id) }}"><i class="fas fa-pen"></i> Cập nhật</a>
+                                                <a style="padding: 5px 10px; border: 1px solid #eee; font-size: 11px;" href="{{ route('admin.get.action.category',['delete',$category->id]) }}"><i class="fas fa-trash-alt"></i> Xóa</a>
                                             </td>
                                         </tr>
                                     @endforeach

@@ -1,42 +1,8 @@
-<style>
-    .dropbtn {
-        background-color: transparent;
-        color: white;
-        font-size: 16px;
-        border: none;
-    }
-
-    .dropdown {
-        position: relative;
-        display: inline-block;
-    }
-
-    .dropdown-content {
-        display: none;
-        position: absolute;
-        background-color: #f1f1f1;
-        min-width: 160px;
-        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-        z-index: 2;
-    }
-
-    .dropdown-content a {
-        color: black;
-        padding: 12px 16px;
-        text-decoration: none;
-        display: block;
-    }
-
-    .dropdown-content a:hover {background-color: #ddd;}
-
-    .dropdown:hover .dropdown-content {display: block;}
-
-</style>
 <header>
     <div class="contenedor" id="contenedor">
         <nav style="position: fixed; width: 100%;" class="navbar">
             <div class="navbar-header">
-                <img src="https://scontent.fsgn5-2.fna.fbcdn.net/v/t1.0-9/128796640_3503787783069204_4321913313741636998_o.jpg?_nc_cat=105&ccb=2&_nc_sid=09cbfe&_nc_ohc=EtbgkFHfpEUAX-OI7x6&_nc_ht=scontent.fsgn5-2.fna&oh=93f73358a6a32101756210deb5e0607f&oe=5FFD4429" alt="logo" class="hani-img"/>
+                    <img src="https://scontent.fsgn5-2.fna.fbcdn.net/v/t1.0-9/128796640_3503787783069204_4321913313741636998_o.jpg?_nc_cat=105&ccb=2&_nc_sid=09cbfe&_nc_ohc=EtbgkFHfpEUAX-OI7x6&_nc_ht=scontent.fsgn5-2.fna&oh=93f73358a6a32101756210deb5e0607f&oe=5FFD4429" alt="logo" class="hani-img"/>
             </div>
             <ul class="nav navbar-nav">
                 <li class="active"><a href="{{ route('home') }}">Home</a></li>
@@ -85,4 +51,37 @@
         <h1 class="nombre">Hani <span> kafé & kitchen </span></h1>
         <h3>A bad day with coffee is better than a good day without it.</h3>
     </div>
+    <style>
+        .dropbtn {
+            background-color: transparent;
+            color: white;
+            font-size: 16px;
+            border: none;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f1f1f1;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 2;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {background-color: #ddd;}
+
+        .dropdown:hover .dropdown-content {display: block;}
+    </style>
 </header>

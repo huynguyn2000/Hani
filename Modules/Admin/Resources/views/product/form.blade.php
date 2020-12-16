@@ -4,7 +4,7 @@
        <div class="col-sm-8">
            <div class="form-group">
                <label for="pro_name">Tên sản phẩm: </label>
-               <input type="text" class="form-control" placeholder="Tên danh mục" value="{{ old('pro_name',isset($product->pro_name) ? $product->pro_name : '') }}" name="pro_name">
+               <input type="text" class="form-control" placeholder="Tên sản phẩm" value="{{ old('pro_name',isset($product->pro_name) ? $product->pro_name : '') }}" name="pro_name">
                @if($errors->has('pro_name'))
                    <span class="error-text">
                     {{$errors->first('pro_name')}}

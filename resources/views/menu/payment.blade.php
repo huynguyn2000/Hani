@@ -148,13 +148,21 @@
 
     </style>
     <script>
-        function myMap() {
-            var mapProp = {
-                center:new google.maps.LatLng(51.508742,-0.120850),
-                zoom:5,
-            };
-            var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
-        }
+
+        $(function () {
+            $('a[name="print"]').click(function () {
+                var pageTitle = 'Hóa dơn đặt hàng',
+                    stylesheet = '//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css',
+                    win = window.open('', 'Print', 'width=900,height=600');
+                win.document.write('<html><head><title>' + pageTitle + '</title>' +
+                    '<link rel="stylesheet" href="' + stylesheet + '">' +
+                    '<style>@media print{.dontprint{display:none;}}</style>' +
+                    '</head><body>' + $('.table')[0].outerHTML + '</body></html>');
+                win.document.close();
+                win.print();
+                return false;
+            });
+        });
     </script>
 </head>
     <div class="contenedor">
@@ -289,7 +297,7 @@
                         <h6 style="color: red"><i>{{ Session::get("error") }}</i></h6>
                     @endif
                 @if( \Illuminate\Support\Facades\Session::has("cart") != null)
-                        <table id="gh" border="1px" style="font-size: 14px;">
+                        <table class="table" id="gh" border="1px" style="font-size: 14px;">
                             <tr>
                                 <th>Sản phẩm</th>
                                 <th>Số lượng</th>
@@ -329,14 +337,14 @@
                             @endforeach
                             </tbody>
                             @if(\Illuminate\Support\Facades\Session::get('cart'))
-                            <tr>
+                            <tr class="dontprint">
                                 <td>
                                     Mã khuyến mãi
                                 </td>
                                 <td colspan="2">
                                     <form method="post" action="{{ url('checkout/check_coupon') }}">
                                         @csrf
-                                        <input class="form-control" name="coupon" style="float: right" placeholder="CODE123">
+                                        <input class="form-control" name="coupon" style="float: right" placeholder="CODE123" value="{{ old('coupon',isset(\Illuminate\Support\Facades\Session::get('coupon')->cp_code) ? \Illuminate\Support\Facades\Session::get('coupon')->cp_code : '') }}"">
                                         <input style="margin-top: 10px; width: 100%" type="submit" class="btn-default check_coupon" name="check_coupon" value="Sử dụng mã giảm giá">
                                         @if(\Illuminate\Support\Facades\Session::get('coupon'))
                                             <a href="{{ url('checkout/unset_coupon') }}" class="btn-default" style="float: right; margin-top: 3px;">Xóa mã giảm giá</a>
@@ -350,7 +358,7 @@
                                 <td colspan="2" id="tt" style="text-align: right;">{{ \Illuminate\Support\Facades\Session::get('cart') ->totalQuantity }}</td>
                             </tr>
                             <tr>
-                                <td>Tổng</td>
+                                <td>Tổng tiền</td>
                                 <td colspan="2" id="tt" style="text-align: right;">{{ number_format(\Illuminate\Support\Facades\Session::get('cart') ->totalPrice) }}đ</td>
                             </tr>
                             <tr>
@@ -358,7 +366,7 @@
                                 <td colspan="2" id="tt" style="text-align: right;">15.000đ</td>
                             </tr>
                             <tr>
-                                <td>Tổng</td>
+                                <td>Tổng trả</td>
                                 <td colspan="2" id="tt" style="text-align: right;">{{ number_format(\Illuminate\Support\Facades\Session::get('cart')->totalPrice + 15000) }}đ</td>
                             </tr>
                             @if(\Illuminate\Support\Facades\Session::get('coupon'))
@@ -372,14 +380,14 @@
                             </tr>
                             <tr>
                                 @php
-                                    $total_cp = (\Illuminate\Support\Facades\Session::get('cart')->totalPrice*$cou['cp_value'])/100;
+                                    $total_cp = ((\Illuminate\Support\Facades\Session::get('cart')->totalPrice+15000)*$cou['cp_value'])/100;
                                     echo '<td>Tổng giảm:</td>'.'<td colspan="2" style="text-align: right;">'.number_format($total_cp).'đ</td>';
                                 @endphp
                             </tr>
                             <tr>
                                 <td>Tổng đã giảm: </td>
                                 <td colspan="2" style="text-align: right;">
-                                    {{ number_format(\Illuminate\Support\Facades\Session::get('cart')->totalPrice-$total_cp) }}
+                                    {{ number_format((\Illuminate\Support\Facades\Session::get('cart')->totalPrice+15000)-$total_cp) }}đ
                                 </td>
                             </tr>
                             @elseif($cou['cp_func'] == 1)
@@ -389,16 +397,16 @@
                                     <b>{{ number_format($cou['cp_value']) }} đ</b>
                                 </td>
                             </tr>
-                            <tr>
-                                @php
-                                    $total_cp = \Illuminate\Support\Facades\Session::get('cart')->totalPrice-$cou['cp_value'];
-                                    echo '<td>Tổng giảm:</td>'.'<td colspan="2" style="text-align: right;">'.number_format($total_cp).'đ</td>';
-                                @endphp
-                            </tr>
+{{--                            <tr>--}}
+{{--                                @php--}}
+{{--                                    $total_cp = \Illuminate\Support\Facades\Session::get('cart')->totalPrice-$cou['cp_value'];--}}
+{{--                                    echo '<td>Tổng giảm:</td>'.'<td colspan="2" style="text-align: right;">'.number_format($total_cp).'đ</td>';--}}
+{{--                                @endphp--}}
+{{--                            </tr>--}}
                             <tr>
                                 <td>Tổng đã giảm: </td>
                                 <td colspan="2" style="text-align: right;">
-                                    {{ number_format(\Illuminate\Support\Facades\Session::get('cart')->totalPrice-$total_cp) }}
+                                    {{ number_format((\Illuminate\Support\Facades\Session::get('cart')->totalPrice+15000)-$cou['cp_value']) }}đ
                                 </td>
                             </tr>
                             @endif
@@ -407,6 +415,7 @@
                         </table>
                     @endif
                     <a class="btn-ttmh" href="{{ route('order.cart') }}" >Tiếp tục mua hàng</a>
+                    <a class="btn-ttmh" name="print" style="color: #5666a5;">In hóa đơn</a>
                 </div>
             </div>
         </div>
@@ -423,11 +432,11 @@
 <!-- Bootstrap theme -->
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css"/>
 <script>
-    $(document).ready(function(){
-        $(".btn-dh").click(function (){
-           alertify.success("Đã đặt hàng thành công");
-        });
-    });
+    // $(document).ready(function(){
+    //     $(".btn-dh").click(function (){
+    //        alertify.success("Đã đặt hàng thành công");
+    //     });
+    // });
 </script>
 </body>
 </html>

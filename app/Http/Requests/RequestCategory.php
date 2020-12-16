@@ -25,7 +25,6 @@ class RequestCategory extends FormRequest
     {
         return [
             'name' => 'required|unique:categories,c_name,'.$this->id,
-            'icon' => 'required'
         ];
     }
 
@@ -34,7 +33,6 @@ class RequestCategory extends FormRequest
         return [
             'name.required' => 'Trường này không được để trống',
             'name.unique' => 'Tên danh mục đã tồn tại',
-            'icon.required' => 'Trường này không được để trống'
         ];
     }
 }

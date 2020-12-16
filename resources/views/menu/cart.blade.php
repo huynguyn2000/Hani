@@ -19,14 +19,15 @@
         <style>
             @import url(https://fonts.googleapis.com/css?family=Open+Sans);
             /* product*/
-            .h1{
-                color: #080808 ;
+            .h1 {
+                color: #080808;
                 padding-left: 230px;
                 padding-top: 20px;
                 position: sticky;
             }
-            .h2{
-                color: #074949 ;
+
+            .h2 {
+                color: #074949;
                 padding-left: 40px;
                 padding-top: 20px;
             }
@@ -43,6 +44,7 @@
                 grid-row-gap: 2rem;
                 padding-top: 10px;
             }
+
             .search {
                 width: 30%;
                 position: relative;
@@ -59,6 +61,7 @@
                 outline: none;
                 color: #9DBFAF;
             }
+
             .product-img1 {
                 display: inline-block;
                 width: 100%;
@@ -66,13 +69,14 @@
                 transition: var(--mainTransition);
                 border-radius: 5px;
             }
-            @import url('https://fonts.googleapis.com/css2?family=Nerko+One&family=Ubuntu:wght@300&display=swap');
-            .col-sm-4, .col-sm-2, .col-sm-5{
+
+            .col-sm-4, .col-sm-2, .col-sm-5 {
                 border: 5px dotted rgb(134, 146, 141);
                 width: 70%;
                 border-radius: 15px;
                 margin-left: 35px;
                 max-width: 600px;
+            }
 
             .img-container:hover .bag-btn1 {
                 transform: translateX(-50%);
@@ -80,15 +84,15 @@
             /*btn thanh toán */
             @import url(https://fonts.googleapis.com/css?family=Raleway:400);
             .btn-tt {
+                margin-left: 20px;
+                width: 90%;
+                text-align: center;
                 font-family: 'Raleway', Arial, sans-serif;
                 border: none;
                 background-color: #5666a5;
-                border-radius: 5px;
                 color: #ffffff;
                 cursor: pointer;
-                padding: 0px 30px;
                 display: inline-block;
-                margin: 15px 50px;
                 text-transform: uppercase;
                 line-height: 46px;
                 font-weight: 400;
@@ -96,7 +100,6 @@
                 outline: none;
                 position: relative;
                 overflow: hidden;
-                font-size: 16px;
                 border-radius: 23px;
                 letter-spacing: 3px;
                 -webkit-transform: translateZ(0);
@@ -106,9 +109,10 @@
                 box-sizing: border-box;
             }
             /*Search bar */
-            .searchTerm:focus{
+            .searchTerm:focus {
                 color: #00B4CC;
             }
+
             .searchButton {
                 width: 40px;
                 height: 36px;
@@ -121,64 +125,122 @@
                 font-size: 20px;
             }
             /*table*/
-            table{
+            table {
                 border-collapse: separate;
                 border: 1px solid rgb(248, 247, 247);
             }
+
             th, td {
                 border: 1px solid rgb(252, 243, 243);
                 padding: 20px;
-                margin : 50px;
+                margin: 50px;
                 width: 150px;
             }
-            .btn-minus{
-                cursor:pointer;
-                font-size:7px;
-                display:flex;
-                align-items:center;
-                padding:5px;
-                padding-left:10px;
-                padding-right:10px;
-                border:1px solid gray;
-                border-radius:2px;
-                border-right:0;}
-            .btn-plus{
-                cursor:pointer;
-                font-size:7px;
-                display:flex;
-                align-items:center;
-                padding:5px;
-                padding-left:10px;
-                padding-right:10px;
-                border:1px solid gray;
-                border-radius:2px;
-                border-left:0;
+            .btn-minus {
+                cursor: pointer;
+                font-size: 7px;
+                display: flex;
+                align-items: center;
+                padding: 5px;
+                padding-left: 10px;
+                padding-right: 10px;
+                border: 1px solid gray;
+                border-radius: 2px;
+                border-right: 0;
             }
-            .form-check-label{
+
+            .btn-plus {
+                cursor: pointer;
+                font-size: 7px;
+                display: flex;
+                align-items: center;
+                padding: 5px;
+                padding-left: 10px;
+                padding-right: 10px;
+                border: 1px solid gray;
+                border-radius: 2px;
+                border-left: 0;
+            }
+
+            .form-check-label {
                 padding-left: 0.25rem;
             }
 
-            .collapse{
+            .collapse {
                 margin: 0px 20px;
             }
-            div.section > div {width:100%;display:inline-flex;}
-            div.section > div > input {margin:0;padding-left:5px;font-size:10px;padding-right:5px;max-width:18%;text-align:center;}
+
+            div.section > div {
+                width: 100%;
+                display: inline-flex;
+            }
+
+            div.section > div > input {
+                margin: 0;
+                padding-left: 5px;
+                font-size: 10px;
+                padding-right: 5px;
+                max-width: 18%;
+                text-align: center;
+            }
+
+            .dropbtn {
+                background-color: transparent;
+                color: white;
+                font-size: 16px;
+                border: none;
+            }
+
+            .dropdown {
+                position: relative;
+                display: inline-block;
+            }
+
+            .dropdown-content {
+                display: none;
+                position: absolute;
+                background-color: #f1f1f1;
+                min-width: 160px;
+                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                z-index: 2;
+            }
+
+            .dropdown-content a {
+                color: black;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+            }
+
+            .dropdown-content a:hover {background-color: #ddd;}
+
+            .dropdown:hover .dropdown-content {display: block;}
 
             @media (max-width: 600px) {
-                .container {margin-top:0px !important;}
-                .container > .row{padding:0 !important;}
-                .container > .row > .col-xs-12.col-sm-5{
-                    padding-right:0 ;
+                .container {
+                    margin-top: 0px !important;
                 }
-                .container > .row > .col-xs-12.col-sm-9 > div > p{
-                    padding-left:0 !important;
-                    padding-right:0 !important;
-                }
-                .container > .row > .col-xs-12.col-sm-9 > div > ul{
-                    padding-left:10px !important;
 
+                .container > .row {
+                    padding: 0 !important;
                 }
-                .section{width:104%;}
+
+                .container > .row > .col-xs-12.col-sm-5 {
+                    padding-right: 0;
+                }
+
+                .container > .row > .col-xs-12.col-sm-9 > div > p {
+                    padding-left: 0 !important;
+                    padding-right: 0 !important;
+                }
+
+                .container > .row > .col-xs-12.col-sm-9 > div > ul {
+                    padding-left: 10px !important;
+                }
+
+                .section {
+                    width: 104%;
+                }
             }
         </style>
         <script>
@@ -263,25 +325,25 @@
                     }
                 });
 
-                $("input[id='sizeL']").click( function(){
-                    var productprice = $(this).parents(".col-lg-7").find("input[type=hidden]").val();
-
-                    var sl = $(this).parents(".col-lg-7").find("input[type=text]").val()
-                    var value = $(this).parents(".col-lg-7").children(".h4-responsive").text();
-                    var res = value.substring(1,7)
-                    var price = $(this).val();
-
-                    console.log(productprice+" "+sl+" "+value+" "+res+" "+price)
-                    if( $(this).is(':checked')){
-                        alert('CHECKED')
-                        // totalprice = parseInt(price) + parseInt(productprice)
-                        // addprice = parseInt(res) + (parseInt(sl)*parseInt(price));
-                        // var replace = value.replace(res,addprice);
-                        // console.log(totalprice+" "+addprice+" "+replace)
-                        // $(this).parents(".col-lg-7").children(".h4-responsive").text(replace);
-                        // $(this).parents(".col-lg-7").find("input[type=hidden]").val(totalprice);
-                    }
-                });
+                // $("input[id='sizeL']").click( function(){
+                //     var productprice = $(this).parents(".col-lg-7").find("input[type=hidden]").val();
+                //
+                //     var sl = $(this).parents(".col-lg-7").find("input[type=text]").val()
+                //     var value = $(this).parents(".col-lg-7").children(".h4-responsive").text();
+                //     var res = value.substring(1,7)
+                //     var price = $(this).val();
+                //
+                //     console.log(productprice+" "+sl+" "+value+" "+res+" "+price)
+                //     if( $(this).is(':checked')){
+                //         alert('CHECKED')
+                //         // totalprice = parseInt(price) + parseInt(productprice)
+                //         // addprice = parseInt(res) + (parseInt(sl)*parseInt(price));
+                //         // var replace = value.replace(res,addprice);
+                //         // console.log(totalprice+" "+addprice+" "+replace)
+                //         // $(this).parents(".col-lg-7").children(".h4-responsive").text(replace);
+                //         // $(this).parents(".col-lg-7").find("input[type=hidden]").val(totalprice);
+                //     }
+                // });
             })
             function myAlert() {
                 alertify.error('Chưa có sản phẩm nào trong giỏ hàng');
@@ -291,7 +353,7 @@
     </head>
     <body>
     <div class="contenedor">
-        <nav class="navbar">
+        <nav class="navbar" style="background-color: chocolate;">
             <div class="navbar-center">
                 <a href="{{ route('home') }}">
                     <img  src="https://scontent.fsgn5-2.fna.fbcdn.net/v/t1.0-9/128796640_3503787783069204_4321913313741636998_o.jpg?_nc_cat=105&ccb=2&_nc_sid=09cbfe&_nc_ohc=EtbgkFHfpEUAX-OI7x6&_nc_ht=scontent.fsgn5-2.fna&oh=93f73358a6a32101756210deb5e0607f&oe=5FFD4429" alt="logo" class="hani-img" />
@@ -307,6 +369,24 @@
 {{--                    </button>--}}
 {{--                </form>--}}
 {{--            </div>--}}
+            <div class="dropdown" style="margin-left: 35px; ">
+                <button class="dropbtn" style="font-size: 20px;">
+                    <i class="far fa-user" style="margin-right: 150px;"></i>
+                </button>
+                @if(\Illuminate\Support\Facades\Auth::check())
+                    <div class="dropdown-content">
+                        <a class="dropdown-item" href="{{ route('order.cart') }}"><i class="fas fa-shopping-cart"></i><span> Giỏ hàng</span></a>
+                        <br>
+                        <a class="dropdown-item" href="{{ route('get.logout.user') }}"><i class="fas fa-sign-out-alt"></i><span> Thoát</span></a>
+                    </div>
+                @else
+                    <div class="dropdown-content">
+                        <a class="dropdown-item" href="{{ route('get.register') }}">Đăng ký</a>
+                        <br>
+                        <a class="dropdown-item" href="{{ route('get.login') }}">Đăng nhập</a>
+                    </div>
+                @endif
+            </div>
         </nav>
     </div>
     <div class="container-fluid" style="margin-top: 30px;">
@@ -452,7 +532,6 @@
                                                                 <div class="form-check form-check-inline">
                                                                     <input class="form-check-input" type="radio" name="size" id="sizeL" value="5000">
                                                                     <label class="form-check-label" for="inlineRadio2">L</label>
-                                                                    <span>&nbsp;(+5000đ)</span>
                                                                 </div>
                                                             </div>
                                                         </div>
