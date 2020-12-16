@@ -1,3 +1,5 @@
+
+   
 @extends('layouts.app')
 @section('content')
     <script>
@@ -82,6 +84,7 @@
     .categoria{
       font-family: 'Fredoka One', cursive;
     }
+    @import url('https://fonts.googleapis.com/css2?family=Hammersmith+One&family=Lobster&family=Ubuntu&display=swap');
 
     </style>
     </div> </a>
@@ -123,6 +126,7 @@
             <img src="{{ asset('theme_admin/image/129897150_3506155819499067_3945939008353199087_o.jpg') }}" alt="">
         </div>
     </section>
+<<<<<<< HEAD
     <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
 
     <!-- CSS -->
@@ -134,6 +138,40 @@
     <!-- Bootstrap theme -->
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css"/>
 <style>
+=======
+    <!-- Team-->
+    <section class="page-section bg-light" id="team">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase" style="font-family:'Fredoka One', cursive; font-size:40px;">Team </h2>
+                    <h3 class="section-subheading text-muted"></h3>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="team-member">
+                            <img class="mx-auto rounded-circle" src="https://scontent.fvca1-1.fna.fbcdn.net/v/t1.15752-9/s2048x2048/130707192_4768232733218252_2378370977946624771_n.jpg?_nc_cat=103&ccb=2&_nc_sid=ae9488&_nc_ohc=hLYqYsvU6iQAX8jQjp-&_nc_ht=scontent.fvca1-1.fna&tp=7&oh=7cff6dfb9b1bef1ce729a7e4b8c04d8b&oe=5FFFEF00" alt="" />
+                            <h4 style="font-family: 'Lobster', cursive;">Nguyễn Thị Diễm Mi</h4>
+                            <p class="text-muted" style="font-family: 'Lobster', cursive;" >18520310</p>
+                
+                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="team-member">
+                            <img class="mx-auto rounded-circle" src="https://scontent.fvca1-1.fna.fbcdn.net/v/t1.15752-9/s2048x2048/131536656_816586755585137_8153869061485756134_n.jpg?_nc_cat=105&ccb=2&_nc_sid=ae9488&_nc_ohc=bTcr_I-Ye5MAX9vC2-B&_nc_ht=scontent.fvca1-1.fna&tp=7&oh=4de7f6b732d46aaa781d962e6b308f3f&oe=5FFFBAE1" alt="" />
+                            <h4 style="font-family: 'Lobster', cursive;">Nguyễn Đức Huy </h4>
+                            <p class="text-muted" style="font-family: 'Lobster', cursive;">18520840</p>
+      
+                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+        
+        </section>
+    <style>
+/* NOEL*/
+>>>>>>> a144dd9f0664c0bc8dd9f44b5408ce3d080f91f0
 .noel-image{
   position: absolute;
   height: 300px;
@@ -208,6 +246,80 @@ svg{
             transform: rotate(-10deg);
   }
 }
+/* TEAM */
+.container,
+.container-fluid,
+.container-xl,
+.container-lg,
+.container-md,
+.container-sm {
+  width: 100%;
+  padding-right: 0.75rem;
+  padding-left: 0.9rem;
+  margin-right: auto;
+  margin-left: auto;
+}
+@media (min-width: 576px) {
+  .container-sm, .container {
+    max-width: 540px;
+  }
+}
+@media (min-width: 768px) {
+  .container-md, .container-sm, .container {
+    max-width: 720px;
+  }
+}
+@media (min-width: 992px) {
+  .container-lg, .container-md, .container-sm, .container {
+    max-width: 960px;
+  }
+}
+@media (min-width: 1200px) {
+  .container-xl, .container-lg, .container-md, .container-sm, .container {
+    max-width: 1140px;
+  }
+}
+.container {
+    min-width: 992px !important;
+  }
+  .row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -0.75rem;
+  margin-left: -0.75rem;
+}
+@media (min-width: 768px) {
+  .col-md {
+    flex-basis: 0;
+    flex-grow: 1;
+    max-width: 100%;
+}
+@media (min-width: 992px) {
+  .col-lg {
+    flex-basis: 0;
+    flex-grow: 1;
+    max-width: 100%;
+  }
+  .row-cols-xl-6 > * {
+    flex: 0 0 16.6666666667%;
+    max-width: 16.6666666667%;
+  }
+  .team-member {
+  margin-bottom: 3rem;
+  text-align: center;
+}
+.team-member img {
+  width: 17rem;
+  height: 14rem;
+  border: 0.5rem solid rgba(0, 0, 0, 0.3);
+}
+.team-member h4 {
+  margin-top: 1.5rem;
+  margin-bottom: 0;
+}
+.text-muted {
+  color: #6c757d !important;
+}@import url('https://fonts.googleapis.com/css2?family=Hammersmith+One&family=Ubuntu&display=swap');
 
 </style>
 @stop

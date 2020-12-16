@@ -72,23 +72,6 @@ body {
     color: #fca903;
 }
 
-  /*.navbar-center {*/
-  /*  width: 100%;*/
-  /*  max-width: 1170px;*/
-  /*  margin: 0 auto;*/
-  /*  display: flex;*/
-  /*  align-items: center;*/
-  /*  justify-content: space-between;*/
-  /*  padding: 0 1.5rem;*/
-  /*}*/
-  /*.navbar-center a {*/
-  /*  text-decoration: none;*/
-  /*  color:  #040507 ;*/
-  /*  font-weight: bold;*/
-  /*  font-size: 1.6rem;*/
-  /*  letter-spacing: 0.01rem;*/
-  /*  font-family: 'Quicksand', sans-serif;*/
-  /*}*/
     header {
     width: 100%;
     background: url('https://scontent.fsgn2-6.fna.fbcdn.net/v/t1.0-9/128428440_3503788439735805_8110969443695901063_o.jpg?_nc_cat=100&ccb=2&_nc_sid=e3f864&_nc_eui2=AeEe3asMHwEJtynclFkxoAUouHM6TMZ59q24czpMxnn2rYYlYooSrq-ST-LCnRltvWpHnOjaX5IYiL9eyYC7QiN9&_nc_ohc=wnl8P6a3z-cAX9aGEmz&_nc_ht=scontent.fsgn2-6.fna&oh=51f46df89acd484fdc865daf492ad48a&oe=5FF6225B');
@@ -197,7 +180,7 @@ body {
     margin-top: 0.6rem;
     padding-left: 3px;
     font-weight: lighter;
-    color : black;
+    color : rgb(252, 252, 252);
     letter-spacing: 0.05rem;
     font-family: 'M PLUS 1p', sans-serif;
     text-align: left;
@@ -208,7 +191,7 @@ body {
     margin-top: 0.6rem;
     padding-left: 3px;
     weight: 350px;
-    color : #737272  ;
+    color : #e0cdcd  ;
     letter-spacing: 0.05rem;
     font-family:"Open Sans", Arial, Verdana;
 
@@ -218,7 +201,7 @@ body {
  }
  .product-bar > a {
      text-decoration: none;
-     color:  #918F8F  ;
+     color:  #fdfafa  ;
      font-size: 1.2rem;
      letter-spacing: 0.01rem;
      font-family: 'Quicksand', sans-serif;
@@ -318,13 +301,7 @@ body {
     /*position: relative;*/
 }
 .main .content1 .foto{
-    /*position: absolute;*/
-    /*width: 50%;*/
-    /*height: 50%;*/
-    /*left: 190px;*/
-    /*top: -50px;*/     
-    /*z-index: 1;*/
-    /*box-shadow: 0px 0px 15px rgba(0, 0, 0, .5);*/
+   
     width: 85%;
     height: 100%;
     left: 190px;
@@ -332,9 +309,7 @@ body {
     z-index: 1;
 }
 .main .content1 .foto img{
-    /*vertical-align: top;*/
-    /*width: 85%;*/
-    /*overflow: hidden;*/
+ 
     vertical-align: top;
     width: 60%;
     overflow: hidden;
@@ -1282,7 +1257,6 @@ footer > .tittle-footer > h4:hover {
     color: #2C2D3F;
     font-weight: 500;
     font-size: 14px;
-    font-weight: 500;
     margin-top: 10px;
     display: block;
     margin-bottom: 10px;
