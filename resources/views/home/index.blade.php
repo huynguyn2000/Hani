@@ -1,5 +1,5 @@
 
-   
+
 @extends('layouts.app')
 @section('content')
     <script>
@@ -126,7 +126,6 @@
             <img src="{{ asset('theme_admin/image/129897150_3506155819499067_3945939008353199087_o.jpg') }}" alt="">
         </div>
     </section>
-<<<<<<< HEAD
     <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
 
     <!-- CSS -->
@@ -137,8 +136,7 @@
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/semantic.min.css"/>
     <!-- Bootstrap theme -->
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css"/>
-<style>
-=======
+
     <!-- Team-->
     <section class="page-section bg-light" id="team">
             <div class="container">
@@ -152,7 +150,7 @@
                             <img class="mx-auto rounded-circle" src="https://scontent.fvca1-1.fna.fbcdn.net/v/t1.15752-9/s2048x2048/130707192_4768232733218252_2378370977946624771_n.jpg?_nc_cat=103&ccb=2&_nc_sid=ae9488&_nc_ohc=hLYqYsvU6iQAX8jQjp-&_nc_ht=scontent.fvca1-1.fna&tp=7&oh=7cff6dfb9b1bef1ce729a7e4b8c04d8b&oe=5FFFEF00" alt="" />
                             <h4 style="font-family: 'Lobster', cursive;">Nguyễn Thị Diễm Mi</h4>
                             <p class="text-muted" style="font-family: 'Lobster', cursive;" >18520310</p>
-                
+
                             <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
                             <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-instagram"></i></a>
                         </div>
@@ -162,16 +160,16 @@
                             <img class="mx-auto rounded-circle" src="https://scontent.fvca1-1.fna.fbcdn.net/v/t1.15752-9/s2048x2048/131536656_816586755585137_8153869061485756134_n.jpg?_nc_cat=105&ccb=2&_nc_sid=ae9488&_nc_ohc=bTcr_I-Ye5MAX9vC2-B&_nc_ht=scontent.fvca1-1.fna&tp=7&oh=4de7f6b732d46aaa781d962e6b308f3f&oe=5FFFBAE1" alt="" />
                             <h4 style="font-family: 'Lobster', cursive;">Nguyễn Đức Huy </h4>
                             <p class="text-muted" style="font-family: 'Lobster', cursive;">18520840</p>
-      
+
                             <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
                             <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-instagram"></i></a>
                         </div>
                     </div>
-        
+                </div>
+            </div>
         </section>
-    <style>
+<style>
 /* NOEL*/
->>>>>>> a144dd9f0664c0bc8dd9f44b5408ce3d080f91f0
 .noel-image{
   position: absolute;
   height: 300px;
