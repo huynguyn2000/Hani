@@ -148,7 +148,6 @@
 
     </style>
     <script>
-
         $(function () {
             $('a[name="print"]').click(function () {
                 var pageTitle = 'Hóa dơn đặt hàng',
@@ -301,7 +300,7 @@
                             <tr>
                                 <th>Sản phẩm</th>
                                 <th>Số lượng</th>
-                                <th>Đơn giá</th>
+                                <th>Thành tiền</th>
                             </tr>
                             <tbody>
                             @foreach(\Illuminate\Support\Facades\Session::get('cart')->products as $item)
@@ -431,12 +430,5 @@
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/semantic.min.css"/>
 <!-- Bootstrap theme -->
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css"/>
-<script>
-    // $(document).ready(function(){
-    //     $(".btn-dh").click(function (){
-    //        alertify.success("Đã đặt hàng thành công");
-    //     });
-    // });
-</script>
 </body>
 </html>

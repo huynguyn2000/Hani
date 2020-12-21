@@ -44,10 +44,10 @@
                                     <div class="blog-detail">
 
                                     <h2 class="blog-title">{{ $article->a_name }}</h2>
-                                        <img style="width: 90%; margin-bottom: 20px;" src="{{ pare_url_file($article->a_avatar) }}">
+                                        <img style="height: 370px; width: 90%; margin-bottom: 20px;" src="{{ pare_url_file($article->a_avatar) }}">
                                     <div class="content">
                                         <p>
-                                            {{ substr($article->a_content,0,200) }} ...
+                                            {{ substr($article->a_content,0,400) }} ...
                                         </p>
                                     </div>
                                     <br>

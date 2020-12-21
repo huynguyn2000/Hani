@@ -80,6 +80,10 @@
             max-width: 600px;
         }
 
+        .col-sm-2 a{
+
+        }
+
         .img-container:hover .bag-btn1 {
             transform: translateX(-50%);
         }
@@ -330,35 +334,34 @@
                 }
             });
 
-            $("input[id='sizeL']").click( function(){
-                var productprice = $(this).parents(".col-lg-7").find("input[type=hidden]").val();
-
-                var sl = $(this).parents(".col-lg-7").find("input[type=text]").val()
-                var value = $(this).parents(".col-lg-7").children(".h4-responsive").text();
-                var res = value.substring(1,7)
-                var price = $(this).val();
-
-                console.log(productprice+" "+sl+" "+value+" "+res+" "+price)
-                if( $(this).is(':checked')){
-                    alert('CHECKED')
-                    // totalprice = parseInt(price) + parseInt(productprice)
-                    // addprice = parseInt(res) + (parseInt(sl)*parseInt(price));
-                    // var replace = value.replace(res,addprice);
-                    // console.log(totalprice+" "+addprice+" "+replace)
-                    // $(this).parents(".col-lg-7").children(".h4-responsive").text(replace);
-                    // $(this).parents(".col-lg-7").find("input[type=hidden]").val(totalprice);
-                }
-            });
+            // $("input[id='sizeL']").click( function(){
+            //     var productprice = $(this).parents(".col-lg-7").find("input[type=hidden]").val();
+            //
+            //     var sl = $(this).parents(".col-lg-7").find("input[type=text]").val()
+            //     var value = $(this).parents(".col-lg-7").children(".h4-responsive").text();
+            //     var res = value.substring(1,7)
+            //     var price = $(this).val();
+            //
+            //     console.log(productprice+" "+sl+" "+value+" "+res+" "+price)
+            //     if( $(this).is(':checked')){
+            //         alert('CHECKED')
+            //          totalprice = parseInt(price) + parseInt(productprice)
+            //          addprice = parseInt(res) + (parseInt(sl)*parseInt(price));
+            //          var replace = value.replace(res,addprice);
+            //          console.log(totalprice+" "+addprice+" "+replace)
+            //          $(this).parents(".col-lg-7").children(".h4-responsive").text(replace);
+            //          $(this).parents(".col-lg-7").find("input[type=hidden]").val(totalprice);
+            //     }
+            // });
         })
         function myAlert() {
             alertify.error('Chưa có sản phẩm nào trong giỏ hàng');
         }
     </script>
-
 </head>
 <body>
 <div class="contenedor">
-    <nav class="navbar" style="background-color: chocolate;">
+    <nav class="navbar" style="background-color: saddlebrown;">
         <div class="navbar-center">
             <a href="{{ route('home') }}">
                 <img  src="https://scontent.fsgn5-2.fna.fbcdn.net/v/t1.0-9/128796640_3503787783069204_4321913313741636998_o.jpg?_nc_cat=105&ccb=2&_nc_sid=09cbfe&_nc_ohc=EtbgkFHfpEUAX-OI7x6&_nc_ht=scontent.fsgn5-2.fna&oh=93f73358a6a32101756210deb5e0607f&oe=5FFD4429" alt="logo" class="hani-img" />
@@ -392,22 +395,15 @@
                 <h1 style="color:white; font-family: 'Fredoka One', cursive;">Drinks </h1>
                 @for($i=0; $i<count($odd); $i++)
                     @foreach($odd[$i] as $value)
-                        <a href="#{{ $value->c_name }}"  style="font-size:25px; font-family: 'Fredoka One', cursive;margin:20px">{{ $value->c_name }} <span class="float-right badge badge-light round">{{ $countProductOdd[$i] }}</span></a><br>
+                        <a href="#{{ $value->c_name }}"  style="font-size:20px; font-family: 'Fredoka One', cursive;margin:20px">{{ $value->c_name }} <span class="float-right badge badge-light round">{{ $countProductOdd[$i] }}</span></a><br>
                     @endforeach
                 @endfor
                 <h1 style="color:white; font-family: 'Fredoka One', cursive;">Foods </h1>
                 @for($i=0; $i<count($even); $i++)
                     @foreach($even[$i] as $value)
-                        <a href="#{{ $value->c_name }}"style="font-size:25px; font-family: 'Fredoka One', cursive;margin:20px">{{ $value->c_name }} <span class="float-right badge badge-light round">{{ $countProductEven[$i] }}</span></a><br>
+                        <a href="#{{ $value->c_name }}"style="font-size:20px; font-family: 'Fredoka One', cursive;margin:20px">{{ $value->c_name }} <span class="float-right badge badge-light round">{{ $countProductEven[$i] }}</span></a><br>
                     @endforeach
                 @endfor
-            @else
-                <h1>Drinks </h1>
-                <br>
-                <br>
-                <h1>Foods </h1>
-                <br>
-                <br>
             @endif
         </div>
         <div class="col-sm-4" style="background:url('https://scontent.fvca1-1.fna.fbcdn.net/v/t1.15752-9/131205997_380740783220519_1402897379155643903_n.jpg?_nc_cat=106&ccb=2&_nc_sid=ae9488&_nc_ohc=r1lN68iPkR0AX8JyyeY&_nc_ht=scontent.fvca1-1.fna&oh=1ab5f21cf21e56d3765cca05ba1c8ddc&oe=5FFE647D')">
@@ -684,12 +680,12 @@
             <p class="h2"  style ="font-family: 'Fredoka One', cursive;">Shopping Cart <span style="font-size: 17px; margin-left: 50px;  font-family: 'Fredoka One', cursive;"><a class="del-all" style="cursor: pointer; color: white;">Xóa tất cả</a></span></p>
             <hr>
             @if( \Illuminate\Support\Facades\Session::has("cart") != null)
-                <table id="gh"  style="font-size: 13px;color:white;border=1px">
+                <table id="gh"  style="font-size: 13px;color:white;" border="1">
                     <tr>
 
                         <th>Sản phẩm</th>
                         <th>Số lượng</th>
-                        <th>Đơn giá</th>
+                        <th>Thành tiền</th>
                         <th>Thao tác</th>
                     </tr>
                     <tbody>
@@ -722,10 +718,10 @@
                                 <button  class="minus" data-id="{{ $item['productInfo']->id }}" data-stt="{{ $item['i'] }}" style="border: none; color: white; float: right; font-size: 16px; background-color: unset"><i class="fas fa-minus-circle"></i></button>
                             </td>
                             <td>
-                                {{ number_format($item['productInfo']->pro_price) }}đ
+                                {{ number_format($item['productInfo']->pro_price*$item['quantity']) }}đ
                             </td>
                             <td class="thaotac">
-                                <button class="del" data-id="{{ $item['productInfo']->id }}" data-stt="{{ $item['i'] }}" style="border: none; color: white; font-size: 20px; background-color: unset"><i class="fas fa-times-circle"></i></button>
+                                <button class="del" data-id="{{ $item['productInfo']->id }}" data-stt="{{ $item['i'] }}" style="border: none; color: white; font-size: 20px; background-color: unset;"><i class="fas fa-times-circle"></i></button>
                             </td>
                         </tr>
                     @endforeach

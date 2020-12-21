@@ -48,6 +48,7 @@ class LoginController extends Controller
             // Authentication passed...
             return redirect()->route('menu.payment');
         }
+        $this->sendFailedLoginResponse($request);
     }
 
     public function getLogout(){

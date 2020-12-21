@@ -5,7 +5,7 @@
         <tr>
             <th>Sản phẩm</th>
             <th>Số lượng</th>
-            <th>Đơn giá</th>
+            <th>Thành tiền</th>
             <th>Thao tác</th>
         </tr>
         <tbody>
@@ -38,10 +38,10 @@
                     <button class="minus" data-id="{{ $item['productInfo']->id }}" data-stt="{{ $item['i'] }}" style="border: none; color: white; float: right; font-size: 16px; background-color: unset"><i class="fas fa-minus-circle"></i></button>
                 </td>
                 <td>
-                    {{ number_format($item['productInfo']->pro_price) }}đ
+                    {{ number_format($item['productInfo']->pro_price*$item['quantity']) }}đ
                 </td>
                 <td class="thaotac">
-                    <button class="del" data-id="{{ $item['productInfo']->id }}" data-stt="{{ $item['i'] }}" style="border: none; color: white; font-size: 20px;"><i class="fas fa-times-circle"></i></button>
+                    <button class="del" data-id="{{ $item['productInfo']->id }}" data-stt="{{ $item['i'] }}" style="border: none; color: white; font-size: 20px; background-color: unset;"><i class="fas fa-times-circle"></i></button>
                 </td>
             </tr>
         @endforeach

@@ -102,9 +102,7 @@
 
 </style>
 <script>
-    $(document).ready(function() {
         $(".textos").remove();
-    });
 </script>
 <div class="panel panel-default" style="margin: 100px 300px;">
     <div class="panel-heading">
@@ -141,9 +139,7 @@
                     <button type="submit" href="#" class="btn btn-primary pull-right"><i class="glyphicon glyphicon-log-in"></i> Log in</button>
                 </div>
             </div>
-
         </form>
-
     </div>
 </div>
 @endsection

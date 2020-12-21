@@ -14,8 +14,8 @@ class ArticleController extends FrontendController
 
     public function index()
     {
-        $articles = Article::simplePaginate(5);
-        $comments = Comment::paginate(5);
+        $articles = Article::simplePaginate(2);
+        $comments = Comment::paginate(10);
 
         $countCMT = count($comments);
         $viewData = [

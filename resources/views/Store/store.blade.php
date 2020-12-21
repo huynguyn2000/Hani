@@ -14,7 +14,7 @@
         <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
       </head>
-    
+
 <style>
 
 
@@ -106,7 +106,7 @@ address {
   margin-bottom: 1rem;
   font-style: normal;
   line-height: inherit;
-  
+
 }
 
 ol,
@@ -4018,7 +4018,7 @@ input[type=button].btn-block {
 .card-group > .card:not(:last-child) .card-header {
     border-top-right-radius: 0;
   }
- 
+
   .card-group > .card:not(:first-child) {
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
@@ -9410,7 +9410,7 @@ header.masthead .masthead-heading {
 
 @media (min-width: 768px) {
   header.masthead {
-    
+
   }
   header.masthead .masthead-subheading {
     font-size: 2.25rem;
@@ -9569,7 +9569,7 @@ header.masthead .masthead-heading {
   .navbar-center a:hover {
       opacity: 0.7;
   }
- 
+
   .dropbtn {
         background-color: transparent;
         color: white;
@@ -9659,9 +9659,9 @@ header.masthead .masthead-heading {
                 <div class="masthead-heading text-uppercase" style="background-color: #008B8B;font-size:70px;border-radius:20px"  >Hani Kafe&Kitchen</div>
                 <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" style="background-color: #008B8B" href="#services">Address</a>
             </div>
-  
+
 </header>
-      
+
         <!-- Services-GoogleAPI-->
         <section class="page-section" id="services">
             <div class="container">
@@ -9728,7 +9728,7 @@ header.masthead .masthead-heading {
                     <div class="col-lg-4 col-sm-6 mb-4">
                         <div class="portfolio-item">
                                 <img class="img-fluid" src="https://scontent.fsgn5-6.fna.fbcdn.net/v/t1.0-9/131126176_3526930690754913_2032370751743988658_o.jpg?_nc_cat=106&ccb=2&_nc_sid=8bfeb9&_nc_ohc=dAzJaniXHikAX8fQZ0A&_nc_ht=scontent.fsgn5-6.fna&oh=de25db5793f1e0b3840b8cbe5fab54c5&oe=5FFD3DC2" alt="" />
-                          
+
                             <div class="portfolio-caption">
                                 <div class="portfolio-caption-heading">Floor 3</div>
                                 <div class="portfolio-caption-subheading text-muted">Overwelmed</div>
@@ -9738,7 +9738,7 @@ header.masthead .masthead-heading {
                     <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
                         <div class="portfolio-item">
                                 <img class="img-fluid" src="https://scontent.fsgn5-3.fna.fbcdn.net/v/t1.0-9/130127703_3526929540755028_5731756180357590798_o.jpg?_nc_cat=111&ccb=2&_nc_sid=8bfeb9&_nc_ohc=U_KDtibG3kgAX_a3MHT&_nc_ht=scontent.fsgn5-3.fna&oh=a2d40211874d51424deb0a53b356f64f&oe=5FFA9CB8" alt="" />
-                            
+
                             <div class="portfolio-caption">
                                 <div class="portfolio-caption-heading">North</div>
                                 <div class="portfolio-caption-subheading text-muted">Contemporary</div>
@@ -9748,7 +9748,7 @@ header.masthead .masthead-heading {
                     <div class="col-lg-4 col-sm-6 mb-4 mb-sm-0">
                         <div class="portfolio-item">
                                 <img class="img-fluid" src="https://scontent.fsgn5-3.fna.fbcdn.net/v/t1.0-9/131154058_3526928724088443_4513756817598787294_o.jpg?_nc_cat=110&ccb=2&_nc_sid=8bfeb9&_nc_ohc=EPAvHIA-b-8AX9kGyA0&_nc_oc=AQl-BMA3ulGkSyi2XRGliGQCHoW8PAPIYu67InqMyD32X3wXNh1cub1_JhXlVnVu-X8&_nc_ht=scontent.fsgn5-3.fna&oh=9407d65a35d6dd04d4870f1c6e4783c3&oe=5FFB041D" alt="" />
-                        
+
                             <div class="portfolio-caption">
                                 <div class="portfolio-caption-heading">Southwest</div>
                                 <div class="portfolio-caption-subheading text-muted">Picturesque</div>
@@ -9757,9 +9757,9 @@ header.masthead .masthead-heading {
                     </div>
                     <div class="col-lg-4 col-sm-6">
                         <div class="portfolio-item">
-                           
+
                                 <img class="img-fluid" src="https://scontent.fsgn5-5.fna.fbcdn.net/v/t1.0-9/130081991_3526929010755081_415981242455520445_o.jpg?_nc_cat=108&ccb=2&_nc_sid=8bfeb9&_nc_ohc=d8fNZ1cKgKMAX_WYtkS&_nc_ht=scontent.fsgn5-5.fna&oh=66d70d086fd5e15092bd58f48aacec55&oe=5FFB194F" alt="" />
-    
+
                             <div class="portfolio-caption">
                                 <div class="portfolio-caption-heading">Eastsouth</div>
                                 <div class="portfolio-caption-subheading text-muted">Fascinating</div>
@@ -9769,9 +9769,9 @@ header.masthead .masthead-heading {
                 </div>
             </div>
         </section>
-        
-       
-       
+
+
+
         <!-- Footer-->
         <footer id="main-footer" style="background-color: lightgrey">
     <div class="info2">
@@ -9784,7 +9784,6 @@ header.masthead .masthead-heading {
         </p>
     </div>
 </footer>
-
         <!-- Bootstrap core JS-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -9795,9 +9794,6 @@ header.masthead .masthead-heading {
         <script src="assets/mail/contact_me.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
-    </body>
-
-    
     <script>
      (function ($) {
     "use strict"; // Start of use strict
@@ -9826,7 +9822,7 @@ header.masthead .masthead-heading {
         }
     });
 
-    
+
 })(jQuery);
 </script>
 </html>
