@@ -86,3 +86,11 @@ if (!function_exists('get_data_user'))
         return Auth::guard($type)->user() ? Auth::guard($type)->user()->$field : '';
     }
 }
+
+if (!function_exists('get_data_admin'))
+{
+    function get_data_admin($type,$field = 'id')
+    {
+        return Auth::guard($type)->admin() ? Auth::guard($type)->admin()->$field : '';
+    }
+}

@@ -4,7 +4,7 @@
     @if(isset($comments))
         @foreach($comments as $comment)
             <div class="single-comment">
-                <img src="https://via.placeholder.com/80x80" alt="#">
+                <img src="{{ asset('theme_admin/image/default-user-image.png') }}" alt="#">
                 <div class="content">
                     <h4>{{ $comment->cmt_name }}<span>At {{ $comment->created_at }}</span></h4>
                     <p>{{ $comment->cmt_content }}</p>

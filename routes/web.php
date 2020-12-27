@@ -22,10 +22,17 @@ Route::group(['namespace' => 'Auth'],function (){
     Route::get('dang-nhap','LoginController@getLogin')->name('get.login');
     Route::post('dang-nhap','LoginController@postLogin')->name('post.login');
 
+    Route::post('dang-nhap-modal','LoginController@postLoginAllPage')->name('allpage.post.login');
+    Route::post('dang-ky-modal','RegisterController@postRegisterAllPage')->name('allpage.post.register');
+
     Route::get('dang-xuat','LoginController@getLogout')->name('get.logout.user');
 });
 
 Route::get('/', 'HomeController@index')->name('home');
+Route::get('/userinfo', 'HomeController@userInfo')->name('userinfo');
+Route::get('/edit-Info/{id}','HomeController@editInfo');
+Route::post('/userinfo','HomeController@updateInfo');
+Route::get('/userinfo/history/{id}','HomeController@loadHistory')->name('userinfo.history');
 
 Route::post('/Load-Comment','ArticleController@loadComment');
 Route::post('/Send-Comment','ArticleController@sendComment');
@@ -62,10 +69,4 @@ Route::group(['prefix'=>'checkout'], function(){
     Route::post('/','PaymentController@saveInfo');
     Route::post('/check_coupon','PaymentController@checkCoupon');
     Route::get('/unset_coupon','PaymentController@unsetCoupon');
-
-    Route::group(['namespace' => 'Auth'],function (){
-        Route::get('dang-ky','RegisterController@getRegister')->name('checkout.get.register');
-        Route::get('dang-nhap','LoginController@getLogin')->name('checkout.get.login');
-        Route::post('dang-nhap','LoginController@postLoginCheckout')->name('checkout.post.login');
-    });
 });

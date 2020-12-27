@@ -137,6 +137,7 @@ body {
     overflow: hidden;
       width: 280px;
   }
+
   .bag-btn {
     position: absolute;
     top: 80%;
@@ -153,12 +154,15 @@ body {
     cursor: pointer;
     border-radius: 60px;
   }
+
   .bag-btn:hover {
     background-color: #6FBBFB ;
   }
+
   .fa-coffe {
     margin-right: 0.5rem;
   }
+
   .img-container:hover .bag-btn {
     transform: translateX(-60%);
   }
@@ -301,7 +305,7 @@ body {
     /*position: relative;*/
 }
 .main .content1 .foto{
-   
+
     width: 85%;
     height: 100%;
     left: 190px;
@@ -309,7 +313,7 @@ body {
     z-index: 1;
 }
 .main .content1 .foto img{
- 
+
     vertical-align: top;
     width: 60%;
     overflow: hidden;

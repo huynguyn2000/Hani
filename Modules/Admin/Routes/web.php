@@ -61,11 +61,22 @@ Route::prefix('admin')->middleware('CheckLoginAdmin')->group(function() {
         Route::get('/','AdminTransactionController@index')->name('admin.get.list.transaction');
         Route::get('/view/{id}','AdminTransactionController@viewOrder')->name('admin.get.view.order');
         Route::get('/action/{id}','AdminTransactionController@actionTransaction')->name('admin.get.active.transaction');
+        Route::get('/{id}','AdminTransactionController@deleteTransaction')->name('admin.get.action.transaction');
+
+    });
+
+    Route::group(['prefix'=>'delivery'], function(){
+        Route::get('/','AdminDeliveryController@index')->name('admin.get.list.delivery');
+        Route::get('/action/{id}','AdminDeliveryController@actionTransaction')->name('admin.get.active.delivery');
 
     });
 
     Route::group(['prefix'=>'user'], function(){
         Route::get('/','AdminUserController@index')->name('admin.get.list.user');
+        Route::get('/update/{id}','AdminUserController@edit')->name('admin.get.edit.user');
+        Route::post('/update/{id}','AdminUserController@update');
+        Route::get('/{id}','AdminUserController@deleteUser')->name('admin.get.action.user');
+
     });
 
     Route::group(['prefix'=>'coupon'], function(){

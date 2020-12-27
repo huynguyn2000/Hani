@@ -14,7 +14,7 @@ class ArticleController extends FrontendController
 
     public function index()
     {
-        $articles = Article::simplePaginate(2);
+        $articles = Article::simplePaginate(3);
         $comments = Comment::paginate(10);
 
         $countCMT = count($comments);
@@ -26,25 +26,6 @@ class ArticleController extends FrontendController
 
         return view('about.about',$viewData);
     }
-
-//    public function searchArticle(Request $request)
-//    {
-//        $arrUrl = (preg_split("/(-)/i",$request->segment(2)));
-//
-//       $id = array_pop($arrUrl);
-//
-//       if($id){
-//           $articleDetail = Article::find($id);
-//           $article = Article::paginate(10);
-//       }
-//
-//       $viewData = [
-//           'articleDetail' => $articleDetail,
-//           'article' => $article
-//       ];
-//
-//       return view('about.detail',$viewData);
-//    }
 
     public function getDetailArticle($id){
         if ($id) $article = Article::find($id);
@@ -58,9 +39,9 @@ class ArticleController extends FrontendController
 
     public function getArticleList(Request $request)
     {
-        $articles = Article::where('a_content','like','%'.$request->searchInfo.'%')->paginate(5);
+        $articles = Article::where('a_content','like','%'.$request->searchInfo.'%')->paginate(3);
 
-        $comments = Comment::paginate(5);
+        $comments = Comment::paginate(10);
 
         $countCMT = count($comments);
 
@@ -90,8 +71,8 @@ class ArticleController extends FrontendController
     public function sendComment(Request $request)
     {
         $comment = new Comment();
-        $comment->cmt_name = $request->comment_name;
-        $comment->cmt_content = $request->comment_content;
+        $comment->cmt_name = $request->input('comment_name');
+        $comment->cmt_content = $request->input('comment_content');
 
         $comment->save();
     }

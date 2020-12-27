@@ -41,15 +41,20 @@ class LoginController extends Controller
         $this->sendFailedLoginResponse($request);
     }
 
-    public function postLoginCheckout(Request $request){
+    public function getLoginCheckout(){
+        return view('auth.login');
+    }
+
+    public function postLoginAllPage(Request $request){
         $credentials = $request->only('email', 'password');
 
         if (\Auth::attempt($credentials)) {
             // Authentication passed...
-            return redirect()->route('menu.payment');
+            return redirect()->back();
         }
         $this->sendFailedLoginResponse($request);
     }
+
 
     public function getLogout(){
         Auth::logout();

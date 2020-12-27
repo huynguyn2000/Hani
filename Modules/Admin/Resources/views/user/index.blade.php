@@ -22,7 +22,8 @@
                                     <th>#</th>
                                     <th>Tên hiển thị</th>
                                     <th>Email</th>
-                                    <th>Phone</th>
+                                    <th>Số điện thoại</th>
+                                    <th>Điểm tích lũy</th>
                                     <th>Hình ảnh</th>
                                     <th>Thao tác</th>
                                 </tr>
@@ -32,7 +33,8 @@
                                     <th>#</th>
                                     <th>Tên hiển thị</th>
                                     <th>Email</th>
-                                    <th>Phone</th>
+                                    <th>Số điện thoại</th>
+                                    <th>Điểm tích lũy</th>
                                     <th>Hình ảnh</th>
                                     <th>Thao tác</th>
                                 </tr>
@@ -45,12 +47,13 @@
                                             <td>{{ $user->name}}</td>
                                             <td>{{ $user->email}}</td>
                                             <td>{{ $user->phone}}</td>
+                                            <td>{{ $user->total_pay*10 }}</td>
                                             <td>
                                                 <img src="{{ pare_url_file($user->avatar) }}" alt="" class="img img-responsive" style="width: 80px; height: 80px;">
                                             </td>
                                             <td>
-                                                <a style="padding: 5px 10px; border: 1px solid #eee; font-size: 11px;" href=""><i class="fas fa-pen"></i> Cập nhật</a>
-                                                <a style="padding: 5px 10px; border: 1px solid #eee; font-size: 11px;" href=""><i class="fas fa-trash-alt"></i> Xóa</a>
+                                                <a style="padding: 5px 10px; border: 1px solid #eee; font-size: 11px;" href="{{ route('admin.get.edit.user',$user->id) }}"><i class="fas fa-pen"></i> Cập nhật</a>
+                                                <a style="padding: 5px 10px; border: 1px solid #eee; font-size: 11px;" href="{{ route('admin.get.action.user',$user->id) }}"><i class="fas fa-trash-alt"></i> Xóa</a>
                                             </td>
                                         </tr>
                                     @endforeach

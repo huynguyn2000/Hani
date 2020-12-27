@@ -12,7 +12,7 @@ class AdminTransactionController extends Controller
 {
     public function index()
     {
-        $transactions = Transaction::with('user:id,name')->paginate(10);
+        $transactions = Transaction::with('user:id,name')->get();
         $viewData = [
             'transactions' => $transactions
         ];
@@ -38,6 +38,15 @@ class AdminTransactionController extends Controller
         $transaction->save();
 
         session()->flash('msg', 'Duyệt đơn hàng thành công');
+        return redirect()->back();
+    }
+
+    public function deleteTransaction($id){
+
+        $transaction = Transaction::find($id);
+
+        $transaction->delete();
+
         return redirect()->back();
     }
 }

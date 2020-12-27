@@ -6,13 +6,13 @@
             <div class="container-fluid">
                 <ol class="breadcrumb mb-4">
                     <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
-                    <li class="breadcrumb-item"><a href="{{ route('admin.get.list.transaction') }}">Đơn Hàng</a></li>
+                    <li class="breadcrumb-item"><a href="{{ route('admin.get.list.transaction') }}">Giao Hàng</a></li>
                     <li class="breadcrumb-item active">Trang danh sách</li>
                 </ol>
                 <div class="card mb-4">
                     <div class="card-header">
                         <i class="fas fa-table mr-1"></i>
-                        Đơn Hàng
+                        Giao Hàng
                     </div>
                     @if(Session::has('msg'))
                         <h5 style="color: green; margin: 20px 30px 0px 30px;"><i>{{  Session::get("msg") }}</i></h5>
@@ -26,10 +26,11 @@
                                     <th style="width: 80px">Tên khách hàng</th>
                                     <th style="width: 100px">Địa chỉ</th>
                                     <th>SĐT</th>
-                                    <th style="width: 100px">Ghi chú</th>
+                                    <th style="width: 200px">Ghi chú</th>
+                                    <th>Phí giao hàng</th>
                                     <th>Tổng tiền</th>
                                     <th>Trạng thái</th>
-                                    <th style="width: 80px;">Thao tác</th>
+                                    <th style="width: 10px;">Thao tác</th>
                                 </tr>
                                 </thead>
                                 <tfoot>
@@ -39,6 +40,7 @@
                                     <th>Địa chỉ</th>
                                     <th>SĐT</th>
                                     <th>Ghi chú</th>
+                                    <th>Phí giao hàng</th>
                                     <th>Tổng tiền</th>
                                     <th>Trạng thái</th>
                                     <th>Thao tác</th>
@@ -53,17 +55,17 @@
                                             <td>{{ $transaction->tr_address }}</td>
                                             <td>{{ $transaction->tr_phone }}</td>
                                             <td>{{ $transaction->tr_note }}</td>
+                                            <td>15,000đ</td>
                                             <td>{{ number_format($transaction->tr_total) }}đ</td>
                                             <td>
-                                                @if( $transaction->tr_status == 1)
-                                                    <a href="#" class="label label-success">Đã duyệt</a>
-                                                @else
-                                                    <a href="{{ route('admin.get.active.transaction',$transaction->id) }}" class="label label-default">Chờ xử lý</a>
+                                                @if( $transaction->tr_status == 1 && $transaction->tr_delivery == 0)
+                                                    <a href="{{ route('admin.get.active.delivery',$transaction->id) }}" class="label label-primary">Đang giao</a>
+                                                @elseif( $transaction->tr_delivery == 1 &&  $transaction->tr_status == 1)
+                                                    <a href="#" class="label label-success">Hoàn thành</a>
                                                 @endif
                                             </td>
                                             <td>
                                                 <a class="js_order_item" data-id="{{ $transaction->id }}"  style="padding: 5px 10px; border: 1px solid #eee; font-size: 11px;" href="{{ route('admin.get.view.order',$transaction->id) }}"><i class="fas fa-eye"></i></a>
-                                                <a class="btn_customer_action" style="padding: 5px 10px; border: 1px solid #eee; font-size: 11px;" href="{{ route('admin.get.action.transaction',$transaction->id) }}"><i class="fas fa-trash-alt"></i> Xóa</a>
                                             </td>
                                         </tr>
                                     @endforeach
@@ -96,7 +98,6 @@
             <!-- Modal content-->
             <div class="modal-content">
                 <div class="modal-header">
-                    <h3>Chi tiết đơn hàng</h3>
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
                 <div class="modal-body" id="md_content">

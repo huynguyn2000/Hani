@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Cart;
-use App\Models\Category;
+
 use App\Models\Coupon;
 use App\Models\Order;
+use App\Models\Product;
 use App\Models\Transaction;
+use App\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
@@ -27,6 +28,10 @@ class PaymentController extends CartController
             'address' => 'required'
         ]);
 
+        $user = User::find(get_data_user('web'));
+        $user->total_pay ++;
+        $user->save();
+
         $transactionId = Transaction::insertGetId([
             'tr_user_id' => get_data_user('web') ? get_data_user('web') : null,
             'tr_name' => $request->name,
@@ -37,6 +42,7 @@ class PaymentController extends CartController
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now()
         ]);
+
 
         if($transactionId){
             foreach($products as $product){
@@ -61,6 +67,10 @@ class PaymentController extends CartController
                             $details .= ", ".$product['detail'][$i];
                     }
                 }
+
+                $product_pay = Product::find($product['productInfo']->id);
+                $product_pay->pro_pay += $product['quantity'];
+                $product_pay->save();
 
                 Order::insert([
                     'or_transaction_id' => $transactionId,
@@ -93,7 +103,7 @@ class PaymentController extends CartController
                         $cou[] = array(
                             'cp_code' => $coupon->cp_code,
                             'cp_func' => $coupon->cp_func,
-                            'cp_value' => $coupon->cp_value
+                            'cp_value' => $coupon->cp_value,
                         );
                         Session::put('coupon',$cou);
                     }
@@ -101,7 +111,7 @@ class PaymentController extends CartController
                     $cou[] = array(
                         'cp_code' => $coupon->cp_code,
                         'cp_func' => $coupon->cp_func,
-                        'cp_value' => $coupon->cp_value
+                        'cp_value' => $coupon->cp_value,
                     );
                     Session::put('coupon',$cou);
                 }

@@ -373,7 +373,7 @@
             </button>
             @if(\Illuminate\Support\Facades\Auth::check())
                 <div class="dropdown-content">
-                    <a class="dropdown-item" href="{{ route('order.cart') }}"><i class="fas fa-shopping-cart"></i><span> Giỏ hàng</span></a>
+                    <a class="dropdown-item" href="{{ route('userinfo') }}"><i class="fas fa-user"></i><span> Thông tin</span></a>
                     <br>
                     <a class="dropdown-item" href="{{ route('get.logout.user') }}"><i class="fas fa-sign-out-alt"></i><span> Thoát</span></a>
                 </div>
@@ -421,7 +421,7 @@
                     @foreach($productsND[$i] as $key => $value)
                         <article class="product" style="width: 128px;">
                             <div class="img-container" style="width: 100%;">
-                                <img src="" alt="Kafe sữa" class="product-img1">
+                                <img src="{{ pare_url_file($value->pro_avatar) }}" alt="Kafe sữa" class="product-img1">
                             </div>
                             <h3 id="product-name"><b>{{ $value->pro_name }}</b></h3>
                             <h4>
@@ -489,7 +489,7 @@
                                                                  data-parent="#accordionEx">
                                                                 <span class="validateRadio" style="color: red; font-size: 10px;"><i>Vui lòng chọn</i></span><br>
                                                                 <div class="form-check form-check-inline" style=" margin-right: 7rem;">
-                                                                    <input class="form-check-input" type="radio" name="type" id="inlineRadio1" value="option1">
+                                                                    <input class="form-check-input" type="radio" name="type" id="inlineRadio1" value="option1" required>
                                                                     <label class="form-check-label" for="inlineRadio1">Nóng</label>
                                                                 </div>
                                                                 <div class="form-check form-check-inline">
@@ -517,13 +517,13 @@
                                                                  data-parent="#accordionEx">
                                                                 <span class="validateRadio" style="color: red; font-size: 10px;"><i>Vui lòng chọn</i></span><br>
                                                                 <div class="form-check form-check-inline" style=" margin-right: 7rem;">
-                                                                    <input class="form-check-input" type="radio" name="size" id="inlineRadio1" value="0">
+                                                                    <input class="form-check-input" type="radio" name="size" id="inlineRadio1" value="0" required>
                                                                     <label class="form-check-label" for="inlineRadio1">M</label>
                                                                 </div>
                                                                 <div class="form-check form-check-inline">
                                                                     <input class="form-check-input" type="radio" name="size" id="sizeL" value="5000">
                                                                     <label class="form-check-label" for="inlineRadio2">L</label>
-                                                                    <span>&nbsp;(+5000đ)</span>
+{{--                                                                    <span>&nbsp;(+5000đ)</span>--}}
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -546,7 +546,7 @@
                                                                  data-parent="#accordionEx">
                                                                 <span class="validateRadio" style="color: red; font-size: 10px;"><i>Vui lòng chọn</i></span><br>
                                                                 <div class="form-check form-check-inline" style=" margin-right: 7rem;">
-                                                                    <input class="form-check-input" type="radio" name="sugar" id="inlineRadio1" value="option1">
+                                                                    <input class="form-check-input" type="radio" name="sugar" id="inlineRadio1" value="option1" required>
                                                                     <label class="form-check-label" for="inlineRadio1">100%</label>
                                                                 </div>
                                                                 <div class="form-check form-check-inline">
@@ -589,7 +589,7 @@
                                                                  data-parent="#accordionEx">
                                                                 <span class="validateRadio" style="color: red; font-size: 10px;"><i>Vui lòng chọn</i></span><br>
                                                                 <div class="form-check form-check-inline" style=" margin-right: 7rem;">
-                                                                    <input class="form-check-input" type="radio" name="ice" id="inlineRadio1" value="option1">
+                                                                    <input class="form-check-input" type="radio" name="ice" id="inlineRadio1" value="option1" required>
                                                                     <label class="form-check-label" for="inlineRadio1">100%</label>
                                                                 </div>
                                                                 <div class="form-check form-check-inline">

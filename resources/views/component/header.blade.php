@@ -32,6 +32,8 @@
                         </button>
                         @if(\Illuminate\Support\Facades\Auth::check())
                         <div class="dropdown-content">
+                            <a class="dropdown-item" href="{{ route('userinfo') }}"><i class="fas fa-user"></i><span> Thông tin</span></a>
+                            <br>
                             <a class="dropdown-item" href="{{ route('order.cart') }}"><i class="fas fa-shopping-cart"></i><span> Giỏ hàng</span></a>
                             <br>
                             <a class="dropdown-item" href="{{ route('get.logout.user') }}"><i class="fas fa-sign-out-alt"></i><span> Thoát</span></a>

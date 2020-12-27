@@ -51,8 +51,25 @@ class RegisterController extends Controller
             return redirect()->route('get.login');
         }
         else{
-            
+
         }
+        return redirect()->back();
+    }
+
+    public function postRegisterAllPage(Request $request){
+        $user = new User();
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->phone = $request->phone;
+        $user->password = bcrypt($request->password);
+        $user->save();
+
+//        if($user->id){
+//            return redirect()->route('get.login');
+//        }
+//        else{
+//
+//        }
         return redirect()->back();
     }
     /**

@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class RequestArticle extends FormRequest
+class RequestUser extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,17 +24,19 @@ class RequestArticle extends FormRequest
     public function rules()
     {
         return [
-            'a_name' => 'required|unique:articles,a_name,'.$this->id,
-            'a_content' => 'required'
+            'name' => 'required',
+            'email' => 'required|unique:users,email,'.$this->id,
+            'phone' => 'required',
         ];
     }
 
     public function messages()
     {
         return [
-            'a_name.required' => 'Trường này không được để trống',
-            'a_name.unique' => 'Tên bài viết đã tồn tại',
-            'a_content.required' => 'Trường này không được để trống'
+            'name.required' => 'Trường này không được để trống',
+            'email.required' => 'Trường này không được để trống',
+            'email.unique' => 'Email đã tồn tại',
+            'phone.required' => 'Trường này không được để trống',
         ];
     }
 }

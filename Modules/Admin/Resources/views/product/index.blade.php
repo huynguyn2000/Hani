@@ -22,9 +22,11 @@
                                 <tr>
                                     <th>#</th>
                                     <th>Tên sản phẩm</th>
+                                    <th style="width: 200px">Mô tả</th>
                                     <th>Loại sản phẩm</th>
                                     <th>Hình ảnh</th>
-                                    <th>Trạng thái</th>
+                                    <th>Tổng lượng mua</th>
+{{--                                    <th>Trạng thái</th>--}}
                                     <th>Nổi bật</th>
                                     <th>Thao tác</th>
                                 </tr>
@@ -33,9 +35,11 @@
                                 <tr>
                                     <th>#</th>
                                     <th>Tên sản phẩm</th>
+                                    <th>Mô tả</th>
                                     <th>Loại sản phẩm</th>
                                     <th>Hình ảnh</th>
-                                    <th>Trạng thái</th>
+                                    <th>Tổng lượng mua</th>
+{{--                                    <th>Trạng thái</th>--}}
                                     <th>Nổi bật</th>
                                     <th>Thao tác</th>
                                 </tr>
@@ -52,13 +56,17 @@
                                                     <li><span><i class="fas fa-dollar-sign"></i> {{ $product->pro_sale }} (%)</span></li>
                                                 </ul>
                                             </td>
+                                            <td>{{ $product->pro_description }}</td>
                                             <td>{{ isset($product->category->c_name) ? $product->category->c_name : '[N\A]' }}</td>
                                             <td>
                                                 <img src="{{ pare_url_file($product->pro_avatar) }}" alt="" class="img img-responsive" style="width: 80px; height: 80px;">
                                             </td>
                                             <td>
-                                                <a href="{{ route('admin.get.action.product',['active',$product->id]) }}" class="label {{ $product->getStatus($product->pro_active)['class'] }} " >{{ $product->getStatus($product->pro_active)['name'] }}</a>
+                                                {{ $product->pro_pay }}
                                             </td>
+{{--                                            <td>--}}
+{{--                                                <a href="{{ route('admin.get.action.product',['active',$product->id]) }}" class="label {{ $product->getStatus($product->pro_active)['class'] }} " >{{ $product->getStatus($product->pro_active)['name'] }}</a>--}}
+{{--                                            </td>--}}
                                             <td>
                                                 <a href="{{ route('admin.get.action.product',['hot',$product->id]) }}" class="label {{ $product->getHot($product->pro_hot)['class'] }} " >{{ $product->getHot($product->pro_hot)['name'] }}</a>
                                             </td>

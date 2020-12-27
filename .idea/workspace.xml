@@ -23,19 +23,93 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a0aa81a3-ae5e-4e97-8f8e-f8bf5fb284b6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/uploads/2020/12/18/2020-12-18__125537618-3455312904583359-7629573274747194375-o.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/2020/12/18/2020-12-18__128216577-3437907522945382-8825273276796144154-n.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Modules/Admin/Http/Controllers/AdminDeliveryController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Modules/Admin/Resources/views/delivery/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Modules/Admin/Resources/views/user/edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Requests/RequestUser.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/theme_admin/image/default-user-image.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/2020/12/26/2020-12-26__121590463-3383587038422613-6285098734849760702-o.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/2020/12/26/2020-12-26__121730686-3383587331755917-181363019308981543-o.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/2020/12/26/2020-12-26__121809338-3383587175089266-3022362036300240644-o.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/2020/12/26/2020-12-26__122186450-3383587235089260-4371730816541789601-o.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/2020/12/26/2020-12-26__122715910-3407650399349610-5780878637494585517-o.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/2020/12/26/2020-12-26__123446462-3510273349021026-6018605048056851367-n.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/2020/12/26/2020-12-26__123619942-3426867387427911-1134164820402486916-n.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/2020/12/26/2020-12-26__125395121-3582743015152174-4492524273890206580-n.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/2020/12/26/2020-12-26__125537618-3455312904583359-7629573274747194375-o.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/2020/12/26/2020-12-26__126931340-5056290767746583-6578461444664496219-n.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/2020/12/26/2020-12-26__127325173-3378172842309803-8218280618840778171-n.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/2020/12/26/2020-12-26__128031180-3667510329979869-7165703315494978725-n.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/2020/12/26/2020-12-26__128216577-3437907522945382-8825273276796144154-n.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/2020/12/26/2020-12-26__128241421-3884405424936448-2163687566660616625-n.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/2020/12/26/2020-12-26__128793620-3771602569558404-4154469168189988869-n.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/2020/12/26/2020-12-26__130165973-3782597591805412-1453251658074766758-n.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/2020/12/26/2020-12-26__130290375-4248021395215301-950962831251281507-n.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/2020/12/26/2020-12-26__130463076-3530187167095932-3411529735407162505-o.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/2020/12/26/2020-12-26__130528697-4055794341117083-3103897839778438338-n.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/2020/12/26/2020-12-26__130847274-4689998154407128-3937506593221415377-n.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/2020/12/26/2020-12-26__131871054-3886431214751716-2727879093123011981-n.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/2020/12/26/2020-12-26__83117015-2678484475567119-1295343938697166848-n.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/2020/12/27/2020-12-27__image-5e091cd0af9ba600147b1d09-146896.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/history.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/user.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Admin/Http/Controllers/AdminArticleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Admin/Http/Controllers/AdminArticleController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Admin/Http/Controllers/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Admin/Http/Controllers/AdminController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Admin/Http/Controllers/AdminTransactionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Admin/Http/Controllers/AdminTransactionController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Admin/Http/Controllers/AdminUserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Admin/Http/Controllers/AdminUserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Admin/Resources/views/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Admin/Resources/views/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Admin/Resources/views/layouts/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Admin/Resources/views/layouts/master.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Admin/Resources/views/product/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Admin/Resources/views/product/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Admin/Resources/views/transaction/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Admin/Resources/views/transaction/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Admin/Resources/views/user/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Admin/Resources/views/user/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Admin/Routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Admin/Routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Helpers/function.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Helpers/function.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ArticleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ArticleController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Store/store.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Store/store.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PaymentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PaymentController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/RequestAddCart.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/RequestArticle.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/RequestArticle.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Admin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/theme_admin/css/Hani11.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/theme_admin/css/Hani11.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/2020/11/20/2020-11-20__1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/2020/11/20/2020-11-20__1024px-love-coffee.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/2020/11/202020-11-20__1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/2020/11/21/2020-11-21__120199541-3324887317625919-8047858071268706537-o.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/2020/11/22/2020-11-22__1024px-love-coffee.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/2020/11/28/2020-11-28__120199541-3324887317625919-8047858071268706537-o.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/2020/11/28/2020-11-28__120495948-3338449076269743-8317661418530527880-o.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/2020/11/28/2020-11-28__120540052-3338448509603133-6340957194455703467-o.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/2020/11/28/2020-11-28__120757130-3338448682936449-3847794334232231967-o.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/2020/11/28/2020-11-28__121590463-3383587038422613-6285098734849760702-o.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/2020/11/28/2020-11-28__121730686-3383587331755917-181363019308981543-o.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/2020/11/28/2020-11-28__121809338-3383587175089266-3022362036300240644-o.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/2020/11/28/2020-11-28__122008309-3383586945089289-531595751030932536-o.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/2020/11/28/2020-11-28__122186450-3383587235089260-4371730816541789601-o.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/2020/11/28/2020-11-28__122872342-3407650219349628-1328568537868304878-o.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/2020/11/28/2020-11-28__95612180-2903470383100950-7348392888281071616-o.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/2020/11/29/2020-11-29__120199541-3324887317625919-8047858071268706537-o.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/2020/11/29/2020-11-29__122872342-3407650219349628-1328568537868304878-o.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/2020/11/29/2020-11-29__43436625-1875836072531058-1103145281777565696-o.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/2020/12/15/2020-12-15__122715910-3407650399349610-5780878637494585517-o.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/2020/12/15/2020-12-15__83117015-2678484475567119-1295343938697166848-n.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/2020/12/18/2020-12-18__123619942-3426867387427911-1134164820402486916-n.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/2020/12/18/2020-12-18__125537618-3455312904583359-7629573274747194375-o.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/2020/12/18/2020-12-18__128216577-3437907522945382-8825273276796144154-n.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/about/about.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/about/about.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/about/comment.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/about/comment.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/about/detail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/about/detail.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/component/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/component/header.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/menu/cart.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/menu/cart.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/menu/order.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/menu/order.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/menu/payment.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/menu/payment.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/menu/shoppingcart.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/menu/shoppingcart.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -179,22 +253,22 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Modules/Admin/Resources/views/delivery" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\Laravel Projects\firstProject\app\Models" />
-      <recent name="C:\xampp\htdocs\Laravel Projects\firstProject\resources\views\menu" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\Laravel_Projects\firstProject\Modules\Admin\Resources\views\delivery" />
       <recent name="C:\xampp\htdocs\Laravel Projects\firstProject\Modules\Admin\Resources\views\coupon" />
       <recent name="C:\xampp\htdocs\Laravel Projects\firstProject\app\Http\Middleware" />
       <recent name="C:\xampp\htdocs\Laravel Projects\firstProject\public\theme_admin\css" />
       <recent name="C:\xampp\htdocs\Laravel Projects\firstProject\Modules\Admin\Resources\views\article" />
-      <recent name="C:\xampp\htdocs\Laravel Projects\firstProject\Modules\Admin\Resources\views\product" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\Laravel Projects\firstProject\app\Models" />
+      <recent name="C:\xampp\htdocs\Laravel Projects\firstProject\resources\views\menu" />
     </key>
   </component>
   <component name="RunManager">
@@ -272,7 +346,14 @@
       <workItem from="1608196041107" duration="1627000" />
       <workItem from="1608221433306" duration="4890000" />
       <workItem from="1608315331798" duration="1706000" />
-      <workItem from="1608572116483" duration="2200000" />
+      <workItem from="1608572116483" duration="2864000" />
+      <workItem from="1608775923868" duration="124000" />
+      <workItem from="1608777029930" duration="684000" />
+      <workItem from="1608781719515" duration="334000" />
+      <workItem from="1608942444231" duration="15919000" />
+      <workItem from="1608964256701" duration="11552000" />
+      <workItem from="1609001700213" duration="2617000" />
+      <workItem from="1609036417838" duration="11719000" />
     </task>
     <servers />
   </component>
@@ -299,18 +380,18 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="309" y="42" key="#Inspections/0.0.1366.728@0.0.1366.728" timestamp="1607095411661" />
-    <state x="441" y="166" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1607625928090">
+    <state x="441" y="166" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1608964638944">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="441" y="166" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1607625928090" />
+    <state x="441" y="166" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1608964638944" />
     <state x="413" y="111" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1605964732441">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="413" y="111" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1605964732441" />
-    <state x="747" y="66" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1608572756556">
+    <state x="747" y="66" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1609043997499">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="747" y="66" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1608572756556" />
+    <state x="747" y="66" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1609043997499" />
     <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1607245307821">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -319,10 +400,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="366" y="87" key="NewPhpClassDialog/0.0.1366.728@0.0.1366.728" timestamp="1607247382893" />
-    <state x="517" y="287" key="NewPhpFileDialog" timestamp="1608062119119">
+    <state x="517" y="287" key="NewPhpFileDialog" timestamp="1608947145700">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="517" y="287" key="NewPhpFileDialog/0.0.1366.728@0.0.1366.728" timestamp="1608062119119" />
+    <state x="517" y="287" key="NewPhpFileDialog/0.0.1366.728@0.0.1366.728" timestamp="1608947145700" />
     <state x="184" y="9" key="SettingsEditor" timestamp="1605282948270">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -339,9 +420,9 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1606940907379" />
-    <state x="346" y="49" width="672" height="160" key="search.everywhere.popup" timestamp="1607888289862">
+    <state x="346" y="49" width="672" height="160" key="search.everywhere.popup" timestamp="1609049244655">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="346" y="49" width="672" height="160" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1607888289862" />
+    <state x="346" y="49" width="672" height="160" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1609049244655" />
   </component>
 </project>

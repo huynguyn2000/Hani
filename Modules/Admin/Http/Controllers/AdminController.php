@@ -2,6 +2,7 @@
 
 namespace Modules\Admin\Http\Controllers;
 
+use App\Models\Transaction;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
@@ -14,7 +15,17 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('admin::index');
+        $total = Transaction::sum('tr_total');
+        $complete = Transaction::where('tr_delivery','1')->count('tr_delivery');
+        $notApprove = Transaction::where('tr_status','0')->count('tr_status');
+
+        $viewData = [
+            'total' => $total,
+            'complete' => $complete,
+            'notApprove' => $notApprove
+        ];
+
+        return view('admin::index',$viewData);
     }
 
     /**

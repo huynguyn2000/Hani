@@ -13,6 +13,7 @@
     <link rel="canonical" href="https://getbootstrap.com/docs/3.3/examples/dashboard/">
     <link href="{{ asset('theme_admin/css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('theme_admin/css/dashboard.css') }}" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
 
     <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js" crossorigin="anonymous"></script>
@@ -76,7 +77,7 @@
                     <div class="sb-sidenav-menu-heading"><span>Core</span></div>
                     <a class="nav-link" href="{{ route('admin.home') }}">
                         <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                        Dashboard
+                        Trang chủ
                     </a>
                     <div class="sb-sidenav-menu-heading"><span>Addons</span></div>
                     <a class="nav-link" href="{{ route('admin.get.list.category') }}">
@@ -91,10 +92,6 @@
                         <div class="sb-nav-link-icon"><i class="far fa-newspaper"></i></div>
                         Bài Viết
                     </a>
-                    <a class="nav-link" href="{{ route('admin.get.list.transaction') }}">
-                        <div class="sb-nav-link-icon"><i class="fas fa-file-invoice-dollar"></i></div>
-                        Đơn Hàng
-                    </a>
                     <a class="nav-link" href="{{ route('admin.get.list.user') }}">
                         <div class="sb-nav-link-icon"><i class="fas fa-users"></i></div>
                         Thành Viên
@@ -106,6 +103,14 @@
                     <a class="nav-link" href="{{ route('admin.get.list.comment') }}">
                         <div class="sb-nav-link-icon"><i class="fas fa-comments"></i></div>
                         Bình Luận
+                    </a>
+                    <a class="nav-link" href="{{ route('admin.get.list.transaction') }}">
+                        <div class="sb-nav-link-icon"><i class="fas fa-file-invoice-dollar"></i></div>
+                        Đơn Hàng
+                    </a>
+                    <a class="nav-link" href="{{ route('admin.get.list.delivery') }}">
+                        <div class="sb-nav-link-icon"><i class="fas fa-shipping-fast"></i></div>
+                        Giao Hàng
                     </a>
                 </div>
             </div>
