@@ -20,7 +20,7 @@
                             <div class="row" style="padding: 10px 200px 50px 200px;">
                                 <div class="col-sm-12">
                                     <div class="form-group">
-                                        <label for="a_name">Tên thành viên: </label>
+                                        <label for="name">Tên thành viên: </label>
                                         <input type="text" class="form-control" placeholder="Tên thành viên" value="{{ old('name',isset($user->name) ? $user->name : '') }}" name="name">
                                         @if($errors->has('name'))
                                             <span class="error-text">
@@ -29,7 +29,7 @@
                                         @endif
                                     </div>
                                     <div class="form-group">
-                                        <label for="a_description">Email: </label>
+                                        <label for="email">Email: </label>
                                         <input type="email" class="form-control" placeholder="Email" value="{{ old('email',isset($user->email) ? $user->email : '') }}" name="email">
                                         @if($errors->has('email'))
                                             <span class="error-text">
@@ -38,7 +38,7 @@
                                         @endif
                                     </div>
                                     <div class="form-group">
-                                        <label for="a_content">Số điện thoại: </label>
+                                        <label for="phone">Số điện thoại: </label>
                                         <input type="text" class="form-control" placeholder="Số điện thoại" value="{{ old('phone',isset($user->phone) ? $user->phone : '') }}" name="phone">
                                         @if($errors->has('phone'))
                                             <span class="error-text">

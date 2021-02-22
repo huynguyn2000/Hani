@@ -11,7 +11,6 @@ use Illuminate\Contracts\Session\Session;
 
 class CartController extends FrontendController
 {
-    public $totalPrice = 0;
 
     public function __construct()
     {
@@ -79,11 +78,11 @@ class CartController extends FrontendController
         $i = $request->input('i');
 
         $product = DB::table('products')->where('id', $id)->first();
+
         if ($product != null) {
             $oldCart = Session('cart') ? Session('cart') : null;
             $newCart = new Cart($oldCart);
             $newCart->AddCart($product, $id, $quantity, $detail, $i);
-            $this->totalPrice += $newCart->totalPrice;
 
             //1 session key la` Cart, object la $newCart
             $request->session()->put('cart', $newCart);

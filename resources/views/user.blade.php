@@ -37,7 +37,7 @@
 </script>
 <html>
 <body>
-<div class="panel panel-default" style="margin: 100px 300px;">
+<div class="panel panel-default" style="margin: 0px 300px 50px;">
       <div class="panel-heading">
             <div class="panel-title text-center">
                 <b style="font-size: 20px; text-align: center">THÔNG TIN KHÁCH HÀNG</b>

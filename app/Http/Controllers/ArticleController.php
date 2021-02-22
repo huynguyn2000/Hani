@@ -75,5 +75,7 @@ class ArticleController extends FrontendController
         $comment->cmt_content = $request->input('comment_content');
 
         $comment->save();
+
+        return redirect()->back();
     }
 }

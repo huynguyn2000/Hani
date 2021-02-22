@@ -1,8 +1,8 @@
-<header>
+<header style="background: url({{ asset('theme_admin/image/home.jpg') }}) ; height: 600px">
     <div class="contenedor" id="contenedor">
         <nav style="position: fixed; width: 100%;" class="navbar">
             <div class="navbar-header">
-                    <img src="https://scontent.fsgn5-2.fna.fbcdn.net/v/t1.0-9/128796640_3503787783069204_4321913313741636998_o.jpg?_nc_cat=105&ccb=2&_nc_sid=09cbfe&_nc_ohc=EtbgkFHfpEUAX-OI7x6&_nc_ht=scontent.fsgn5-2.fna&oh=93f73358a6a32101756210deb5e0607f&oe=5FFD4429" alt="logo" class="hani-img"/>
+                    <img style="border-radius: 50%" src="{{ asset('theme_admin/image/logo.jpg') }}" alt="logo" class="hani-img"/>
             </div>
             <ul class="nav navbar-nav">
                 <li class="active"><a href="{{ route('home') }}">Home</a></li>
@@ -50,8 +50,8 @@
         </nav>
     </div>
     <div class="textos">
-        <h1 class="nombre">Hani <span> kafé & kitchen </span></h1>
-        <h3>A bad day with coffee is better than a good day without it.</h3>
+        <h1 style="padding-left: 50px" class="nombre">Hani <span> kafé & kitchen </span></h1>
+        <h3 style="padding-left: 100px">A bad day with coffee is better than a good day without it.</h3>
     </div>
     <style>
         .dropbtn {

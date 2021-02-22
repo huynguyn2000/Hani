@@ -19,6 +19,14 @@ class PaymentController extends CartController
     }
 
     public function saveInfo(Request $request){
+        $coupon = Session::get('coupon');
+
+        $couponn = Coupon::find($coupon[0]['id']);
+        if($couponn){
+            $couponn->cp_qty--;
+            $couponn->save();
+        }
+
         $totalPrice = Session::get('cart')->totalPrice+15000;
         $products = Session::get('cart')->products;
 
@@ -27,22 +35,53 @@ class PaymentController extends CartController
             'phone' => 'required',
             'address' => 'required'
         ]);
+        if(get_data_user('web')){
+            $user = User::find(get_data_user('web'));
+            $user->total_pay ++;
+            $user->save();
+        }
 
-        $user = User::find(get_data_user('web'));
-        $user->total_pay ++;
-        $user->save();
-
-        $transactionId = Transaction::insertGetId([
-            'tr_user_id' => get_data_user('web') ? get_data_user('web') : null,
-            'tr_name' => $request->name,
-            'tr_total' => $totalPrice,
-            'tr_note' => $request->note,
-            'tr_address' => $request->address,
-            'tr_phone' => $request->phone,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
-        ]);
-
+        if($coupon){
+            if($coupon[0]['cp_func']==1){
+                $transactionId = Transaction::insertGetId([
+                    'tr_user_id' => get_data_user('web') ? get_data_user('web') : null,
+                    'tr_name' => $request->name,
+                    'tr_total' => $totalPrice-$coupon[0]['cp_value'],
+                    'tr_note' => $request->note,
+                    'tr_address' => $request->address,
+                    'tr_phone' => $request->phone,
+                    'tr_coupon' => 1,
+                    'created_at' => Carbon::now(),
+                    'updated_at' => Carbon::now()
+                ]);
+            }
+            elseif($coupon[0]['cp_func']==0){
+                $transactionId = Transaction::insertGetId([
+                    'tr_user_id' => get_data_user('web') ? get_data_user('web') : null,
+                    'tr_name' => $request->name,
+                    'tr_total' => ($totalPrice-$totalPrice*($coupon[0]['cp_value']/100)),
+                    'tr_note' => $request->note,
+                    'tr_address' => $request->address,
+                    'tr_phone' => $request->phone,
+                    'tr_coupon' => 1,
+                    'created_at' => Carbon::now(),
+                    'updated_at' => Carbon::now()
+                ]);
+            }
+        }
+        else{
+            $transactionId = Transaction::insertGetId([
+                'tr_user_id' => get_data_user('web') ? get_data_user('web') : null,
+                'tr_name' => $request->name,
+                'tr_total' => $totalPrice,
+                'tr_note' => $request->note,
+                'tr_address' => $request->address,
+                'tr_phone' => $request->phone,
+                'tr_coupon' => 0,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ]);
+        }
 
         if($transactionId){
             foreach($products as $product){
@@ -83,6 +122,7 @@ class PaymentController extends CartController
             }
         }
         Session::forget('cart');
+        Session::forget('coupon');
 
         session()->flash('success', 'Đặt hàng thành công');
         return redirect('/');
@@ -101,17 +141,21 @@ class PaymentController extends CartController
                     $is_available = 0;
                     if($is_available == 0){
                         $cou[] = array(
+                            'id' => $coupon->id,
                             'cp_code' => $coupon->cp_code,
                             'cp_func' => $coupon->cp_func,
                             'cp_value' => $coupon->cp_value,
+                            'cp_qty' => $coupon->cp_qty,
                         );
                         Session::put('coupon',$cou);
                     }
                 }else{
                     $cou[] = array(
+                        'id' => $coupon->id,
                         'cp_code' => $coupon->cp_code,
                         'cp_func' => $coupon->cp_func,
                         'cp_value' => $coupon->cp_value,
+                        'cp_qty' => $coupon->cp_qty,
                     );
                     Session::put('coupon',$cou);
                 }

@@ -8,9 +8,9 @@
                 <div class="content">
                     <h4>{{ $comment->cmt_name }}<span>At {{ $comment->created_at }}</span></h4>
                     <p>{{ $comment->cmt_content }}</p>
-                    <div class="button">
-                        <a href="#" class="btn"><i class="fa fa-reply" aria-hidden="true"></i>Reply</a>
-                    </div>
+{{--                    <div class="button">--}}
+{{--                        <a href="#" class="btn"><i class="fa fa-reply" aria-hidden="true"></i>Reply</a>--}}
+{{--                    </div>--}}
                 </div>
             </div>
     @endforeach

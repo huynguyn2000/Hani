@@ -35,12 +35,13 @@ Route::post('/userinfo','HomeController@updateInfo');
 Route::get('/userinfo/history/{id}','HomeController@loadHistory')->name('userinfo.history');
 
 Route::post('/Load-Comment','ArticleController@loadComment');
-Route::post('/Send-Comment','ArticleController@sendComment');
+
 Route::get('/article-Detail/{id}','ArticleController@getDetailArticle');
 
 Route::group(['prefix'=>'about'], function(){
     Route::get('/','ArticleController@index')->name('article');
     Route::get('/bai-viet','ArticleController@getArticleList')->name('get.article.list');
+    Route::post('/','ArticleController@sendComment');
 
 });
 

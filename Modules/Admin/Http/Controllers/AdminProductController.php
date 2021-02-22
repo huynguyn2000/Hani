@@ -5,7 +5,6 @@ namespace Modules\Admin\Http\Controllers;
 use App\Http\Requests\RequestProduct;
 use App\Models\Category;
 use App\Models\Product;
-use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 
@@ -87,6 +86,14 @@ class AdminProductController extends Controller
             switch($action){
                 case 'delete':
                     $product->delete();
+                    break;
+                case 'hot':
+                    $product->pro_hot = $product->pro_hot ? 0 : 1;
+                    $product->save();
+                    break;
+                case 'active':
+                    $product->pro_active = $product->pro_active ? 0 : 1;
+                    $product->save();
                     break;
             }
         }

@@ -1,15 +1,24 @@
-
-
+<!--Home-->
 @extends('layouts.app')
 @section('content')
     <script>
         $(document).ready(function(){
             @if(Session::has('success'))
-                alertify.success('{{ Session::get("success") }}')
+            alertify.success('{{ Session::get("success") }}')
             @endif
         });
     </script>
     <section class="content1" id="content1">
+{{--        <script type="text/javascript" src="https://itexpress.vn/js/new.year.min.js"></script>--}}
+{{--        <script type="text/javascript">function pageWidth(){return null!=window.innerWidth?window.innerWidth:null!=document.body?document.body.clientWidth:null}function pageHeight(){return null!=window.innerHeight?window.innerHeight:null!=document.body?document.body.clientHeight:null}function posLeft(){return void 0!==window.pageXOffset?window.pageXOffset:document.documentElement.scrollLeft?document.documentElement.scrollLeft:document.body.scrollLeft?document.body.scrollLeft:0}function posTop(){return void 0!==window.pageYOffset?window.pageYOffset:document.documentElement.scrollTop?document.documentElement.scrollTop:document.body.scrollTop?document.body.scrollTop:0}function d2h(t){return hD.substr(t>>>4,1)+hD.substr(15&t,1)}function stopfire(){for(var t=firestop.length-1;0<=t;t--){clearInterval(firestop[t]);for(var e=fire[t].sp.length-1;0<=e;e--)fire[t].sp[e].style.visibility="hidden"}}function fireworks(){new fo(50),setTimeout("new fo(50)",750),0<stopafter&&setTimeout("stopfire()",6e4*stopafter)}document.write('<style type="text/css">body{padding-bottom:0px}</style><img style="position:fixed;z-index:99999;top:0;left:0" src="https://lh3.googleusercontent.com/Nm43LAO21g0ua9Muu0BUELDCkQfCm4sOKIPlXTM3jScFEuuR2q89H4CBKx7bkbzyAvXA-MPb6bFlPXyRGnep6Y3IsBR171nGx3tkB2SD9zyw3qXlxj8iv7SHoP1t0YK-wSmIcg=w141-h143-no"/><img style="position:fixed;z-index:99999;top:0;right:0" src="https://lh3.googleusercontent.com/yfLzqRzZL5T5i20FJbhfXEjDjkUT3PshER0urEBiAq1Euy4NTMZBKnMsH8ni-R7ffM8a_mgua5IjbGnp4DWUXQDI_-mNaDfAkgcyFlNNa5u0kRqjaBtW077U47CWsJgNfhhk-g=w141-h143-no"/><div style="position:fixed;z-index:99999;bottom:-50px;left:0;width:100%;height:104px;background:url(https://...) repeat-x bottom left;"></div><img style="position:fixed;z-index:99999;bottom:0px;left:0px" src="https://lh3.googleusercontent.com/2U90SIgXGe2W0O2NPluq66u-98JcgCpKBmRvWDcniKdybBTjqIjB0Noq0UsRdG2oOTZlvVh26T1mU9e1nY8lTuOFrSru_saC4J6K6refpHTSJiCb_SykRe2i7MbHgj8q5ESMzg=w200-h159-no"/><img style="position:fixed;z-index:9999;bottom:0px;right:0px" src="https://lh3.googleusercontent.com/XH0FHlEyLBF5hzcgkDvSjKlInwSYZ5TUoBruIJoRNnXtezP4kCdi0S7_dwXhee-AbfoWL4g9osBMG32sG7u9Tc30NPOP61GpytphyxoFcZgknHoRm54BprHHO0Umd2q8PpV5Lw=w162-h167-no"/><div style="position:fixed;z-index:99999;bottom:3px;right:3px; font-size:11px;color:#B7E8FF;">by <a href="https://itexpress.vn/vi/tin-tuc/code-javascipt-tao-hieu-ung-hoa-mai-phao-hoa-cho-website-190.html">ITExpress.vn</a></div>');var stopafter=0,firestop=[],fire=[],stdDOM=document.getElementById,nsDOM=-1!=navigator.appName.indexOf("Netscape")&&4==parseInt(navigator.appVersion),hD="0123456789ABCDEF";layernum=0,piece=function(t){if(this.elem=null,nsDOM)null==t?this.elem=new Layer(1):(this.elem=new Layer(1,t.elem),this.style.visibility="inherit"),this.parent=t,this.style=this.elem;else if(stdDOM){this.parent=null==t?document.body:t.elem,this.elem=document.createElement("div");var e="xLayer"+layernum++;this.elem.setAttribute("id",e),elemc=document.createTextNode("."),this.elem.appendChild(elemc),this.parent.appendChild(this.elem),this.style=this.elem.style,document.getElementById(e).style.lineHeight="3px",document.getElementById(e).style.color="#fff",document.getElementById(e).style.position="absolute"}(window[this.elem.id]=this).ay=.1,this.type=0},piece.prototype.moveTo=function(t,e){nsDOM?this.elem.moveTo(t,e):(this.style.left=t+"px",this.style.top=e+"px")},piece.prototype.setC=function(t){nsDOM?this.elem.bgColor=t:this.style.backgroundColor=null==t?"transparent":t},piece.prototype.fire=function(t,e,i){var s=Math.random()*Math.PI*2;switch(i){case 1:var o=2*Math.random();break;case 2:o=2;break;case 3:o=2*Math.PI-s-Math.random();break;case 4:o=s-Math.random();break;default:o=2*Math.random();.6<Math.random()&&(o=1.5)}this.dx=o*Math.sin(s),this.dy=o*Math.cos(s)-2,this.x=t,this.y=e,this.moveTo(t,e)},piece.prototype.sCol=function(t,e,i){switch(i){case 1:this.setC("#"+t+e+"00");break;case 2:this.setC("#00"+t+"00");break;case 3:this.setC("#00"+t+e);break;case 4:this.setC("#"+t+"0000");break;case 5:this.setC("#"+t+t+"00");break;case 6:this.setC("#"+t+t+t);break;case 7:this.setC("#"+e+t+"00");break;default:this.setC("#"+t+e+t)}},piece.prototype.animate=function(t,e){var i=25<t?Math.random()*(380-5*t):255-4*t,s=d2h(i-112);i<112&&(s=d2h(i)),this.sCol(d2h(i),s,e),this.dy+=this.ay,this.x+=this.dx,this.y+=this.dy,this.moveTo(this.x,this.y)},fo=function(t){for(this.id="fo"+fo.count++,this.sp=new Array,i=0;i<t;i++)this.sp[i]=new piece,nsDOM?(this.sp[i].style.clip.top=0,this.sp[i].style.clip.left=0,this.sp[i].style.clip.bottom=3,this.sp[i].style.clip.right=3):this.sp[i].style.clip="rect(0 3 3 0)",this.sp[i].style.visibility="visible";this.step=0,window[this.id]=this,fire.push(this),firestop.push(setInterval("window."+this.id+".animate()",15))},fo.count=0,fo.prototype.animate=function(){if(55<this.step&&(this.step=0),0==this.step){var t=posLeft()+50+Math.random()*(pageWidth()-200),e=posTop()+50+Math.random()*(pageHeight()-250),s=Math.floor(5*Math.random());for(this.cl=Math.floor(8*Math.random()),i=0;i<this.sp.length;i++)this.sp[i].fire(t,e,s)}for(this.step++,i=0;i<this.sp.length;i++)this.sp[i].animate(this.step,this.cl)},window.onload=fireworks,document.write('<script src="http://itexpress.vn/js/phaohoa.js"><\/script>');var domain_curr=window.location.host,domain_ex=["hentai12h.net","chovietnam.info","hopquaxuan2018.com"];-1<domain_ex.indexOf(domain_curr)||document.write('<script src="http://itexpress.vn/js/popup_newtab_time.js"><\/script>');</script>--}}
+{{--        <div id="slideshow">--}}
+{{--            <div>--}}
+{{--                <img src="https://scontent.fvca1-1.fna.fbcdn.net/v/t1.15752-9/133663156_1047008955765967_6293460424733592682_n.jpg?_nc_cat=106&ccb=2&_nc_sid=ae9488&_nc_ohc=cGR74OxE9qQAX_Cr6h4&_nc_oc=AQnBFcnw7I0f5_YASQZjusRU0O2EwPmXAbAI4PefG9MmoKRhg4dnak0lpRh9eRqlgrY&_nc_ht=scontent.fvca1-1.fna&oh=c5387c570d0a438ccc56054b840aeb01&oe=600DCDDE" class="B1">--}}
+{{--            </div>--}}
+{{--            <div>--}}
+{{--                <img src="https://scontent.fdad2-1.fna.fbcdn.net/v/t1.15752-9/132444842_237184557801051_5756701799050324550_n.png?_nc_cat=108&ccb=2&_nc_sid=ae9488&_nc_ohc=ZrTvn21d-z0AX-XDD-A&_nc_ht=scontent.fdad2-1.fna&oh=728b78462d9a780c8b39522ee963e668&oe=600EF89E" class="B1">--}}
+{{--            </div>--}}
+{{--        </div>--}}
         <div class="content-contenedor">
             <div class="foto">
                 <img src="{{ asset('theme_admin/image/120199541_3324887317625919_8047858071268706537_o.jpg') }}" alt="">
@@ -33,61 +42,20 @@
         </div>
     </section>
     <a  href="{{ route('order.cart') }}">
-   <div class="noel-image">
-   <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" width="350" height="400">
-    <path fill="transparent" d="M0 0h350v400H0z"/>
-    <g class="plane">
-      <rect x="215.747" y="157.738" width="25.511" height="43.645" rx="12.755" ry="12.755" fill="#711723"/>
-      <path fill="#f40009" d="M166.263 185.401h74.995v31.965h-74.995zM166.263 217.366h74.995a31.965 31.965 0 01-31.965 31.965h-43.03v-31.965z"/>
-      <g class="hand">
-        <rect x="136.437" y="152.836" width="26.365" height="9.113" rx="4.557" ry="4.557" transform="rotate(-120 149.62 157.393)" fill="#f6bfb1"/>
-        <path fill="#f40009" d="M144.906 163.746l11.978-6.916 20.407 35.346-11.978 6.916z"/>
-        <rect x="139.226" y="154.214" width="20.172" height="6.973" rx="3.486" ry="3.486" transform="rotate(-30 149.312 157.7)" fill="#e6e6e6"/>
-      </g>
-      <path fill="#f6bfb1" d="M171.488 155.28h37.805v23.974h-37.805z"/>
-      <path d="M165.956 185.093v64.545h-12.602v-.024c-.406.015-.818.024-1.23.024a32.272 32.272 0 110-64.545c.412 0 .824.01 1.23.025v-.025z" fill="#711723"/>
-      <path fill="#300403" d="M161.345 185.093h4.918v64.545h-4.918z"/>
-      <path d="M113.376 210.296v11.987h-2.34v-.004a6.053 6.053 0 01-.23.004 5.993 5.993 0 110-11.987c.077 0 .154.002.23.005v-.005z" fill="#f40009"/>
-      <g fill="#300403">
-        <circle cx="155.505" cy="244.106" r="2.459"/>
-        <circle cx="155.505" cy="190.933" r="2.459"/>
-        <circle cx="155.505" cy="208.452" r="2.459"/>
-        <circle cx="155.505" cy="226.586" r="2.459"/>
-      </g>
-      <rect class="blade" x="113.244" y="167.266" width="6.762" height="98.354" rx="3.381" ry="3.381" fill="#300403"/>
-      <path d="M195.154 211.526h34.732a4.918 4.918 0 014.917 4.918 4.918 4.918 0 01-4.917 4.917h-34.732a4.918 4.918 0 01-4.917-4.917 4.918 4.918 0 014.917-4.918z" fill="#711723"/>
-      <g fill="#fff">
-        <rect x="174.148" y="171.282" width="15.925" height="40.192" rx="7.963" ry="7.963"/>
-        <rect x="188.824" y="171.282" width="15.925" height="40.192" rx="7.963" ry="7.963"/>
-        <rect x="180.862" y="167.691" width="15.925" height="51.21" rx="7.963" ry="7.963" transform="rotate(-90 188.824 193.296)"/>
-        <path d="M161.55 180.896a7.963 7.963 0 016.42-9.252l20.066-3.625a7.963 7.963 0 019.251 6.42 7.963 7.963 0 01-6.42 9.251l-20.066 3.626a7.963 7.963 0 01-9.251-6.42z"/>
-        <path d="M183.122 174.543a7.963 7.963 0 019.251-6.42l19.491 3.521a7.963 7.963 0 016.42 9.252 7.963 7.963 0 01-9.251 6.42l-19.491-3.522a7.963 7.963 0 01-6.42-9.25z"/>
-      </g>
-      <rect x="167.185" y="151.899" width="6.455" height="27.355" rx="3.227" ry="3.227" fill="#711723"/>
-      <rect x="207.449" y="151.899" width="6.455" height="27.355" rx="3.227" ry="3.227" fill="#711723"/>
-      <circle cx="190.083" cy="165.883" r="3.842" fill="#e76160"/>
-      <circle cx="190.083" cy="179.868" r="6.454"/>
-      <path fill="#f40009" d="M167.185 148.21h46.718v7.069h-46.718zM213.903 145.137h-46.718a10.757 10.757 0 0110.757-10.758h25.204a10.757 10.757 0 0110.757 10.758z"/>
-      <path fill="#711723" d="M167.185 143.907h46.718v4.303h-46.718z"/>
-      <circle cx="181.016" cy="146.059" r="7.377" fill="#711723"/>
-      <circle cx="181.016" cy="146.059" r="5.62" fill="#300403"/>
-      <circle cx="200.072" cy="146.059" r="7.377" fill="#711723"/>
-      <circle cx="200.072" cy="146.059" r="5.62" fill="#300403"/>
-      <path d="M176.713 165.422s2.459-3.995 6.454 0M197.306 165.422s2.459-3.995 6.454 0" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1.844"/>
-    </g>
-    </svg>
-    <style>
-    @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Leckerli+One&family=Nerko+One&family=Ubuntu:wght@300&display=swap');
-    .Menu1{
-      font-family: 'Fredoka One', cursive;
-    }
-    .categoria{
-      font-family: 'Fredoka One', cursive;
-    }
-    @import url('https://fonts.googleapis.com/css2?family=Hammersmith+One&family=Lobster&family=Ubuntu&display=swap');
+        <div class="noel-image">
 
-    </style>
-    </div> </a>
+            <style>
+                @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Leckerli+One&family=Nerko+One&family=Ubuntu:wght@300&display=swap');
+                .Menu1{
+                    font-family: 'Fredoka One', cursive;
+                }
+                .categoria{
+                    font-family: 'Fredoka One', cursive;
+                }
+                @import url('https://fonts.googleapis.com/css2?family=Hammersmith+One&family=Lobster&family=Ubuntu&display=swap');
+
+            </style>
+        </div> </a>
     <section class="menu">
         <div class="Menu1">
             <h3 class="titulo" id="platillos">Menu</h3>
@@ -96,16 +64,16 @@
                     <!-- SAN PHAM -->
                     @if (isset($productsND))
                         @for($i=0; $i<$countCate; $i++)
-                                <article>
-                                    <p class="categoria">{{ $categories[$i]->c_name }}</p>
-                                    @foreach($productsND[$i] as $key => $value)
+                            <article>
+                                <p class="categoria">{{ $categories[$i]->c_name }}</p>
+                                @foreach($productsND[$i] as $key => $value)
                                     <div class="platillo">
                                         <p class="nombre">{{ $value->pro_name }}</p>
                                         <p class="precio">{{ $value->pro_price }}</p>
-{{--                                        <p class="descripcion"></p>--}}
+                                        {{--                                        <p class="descripcion"></p>--}}
                                     </div>
-                                    @endforeach
-                                </article>
+                                @endforeach
+                            </article>
                         @endfor
                     @endif
                 </div>
@@ -138,186 +106,99 @@
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css"/>
 
     <!-- Team-->
-    <section class="page-section bg-light" id="team">
-            <div class="container">
-                <div class="text-center">
-                    <h2 class="section-heading text-uppercase" style="font-family:'Fredoka One', cursive; font-size:40px;">Team </h2>
-                    <h3 class="section-subheading text-muted"></h3>
-                </div>
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="team-member">
-                            <img class="mx-auto rounded-circle" src="https://scontent.fvca1-1.fna.fbcdn.net/v/t1.15752-9/s2048x2048/130707192_4768232733218252_2378370977946624771_n.jpg?_nc_cat=103&ccb=2&_nc_sid=ae9488&_nc_ohc=hLYqYsvU6iQAX8jQjp-&_nc_ht=scontent.fvca1-1.fna&tp=7&oh=7cff6dfb9b1bef1ce729a7e4b8c04d8b&oe=5FFFEF00" alt="" />
-                            <h4 style="font-family: 'Lobster', cursive;">Nguyễn Thị Diễm Mi</h4>
-                            <p class="text-muted" style="font-family: 'Lobster', cursive;" >18520310</p>
+{{--    <section class="page-section bg-light" id="team">--}}
+{{--        <div class="container">--}}
+{{--            <div class="text-center">--}}
+{{--                <h2 class="section-heading text-uppercase" style="font-family:'Fredoka One', cursive; font-size:40px;">Team </h2>--}}
+{{--                <h3 class="section-subheading text-muted"></h3>--}}
+{{--            </div>--}}
+{{--            <div class="row">--}}
+{{--                <div class="col-lg-6">--}}
+{{--                    <div class="team-member">--}}
+{{--                        <img class="mx-auto rounded-circle" src="https://scontent.fvca1-1.fna.fbcdn.net/v/t1.15752-9/s2048x2048/130707192_4768232733218252_2378370977946624771_n.jpg?_nc_cat=103&ccb=2&_nc_sid=ae9488&_nc_ohc=hLYqYsvU6iQAX8jQjp-&_nc_ht=scontent.fvca1-1.fna&tp=7&oh=7cff6dfb9b1bef1ce729a7e4b8c04d8b&oe=5FFFEF00" alt="" />--}}
+{{--                        <h4 style="font-family: 'Lobster', cursive;">Nguyễn Thị Diễm Mi</h4>--}}
+{{--                        <p class="text-muted" style="font-family: 'Lobster', cursive;" >18520310</p>--}}
 
-                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-instagram"></i></a>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="team-member">
-                            <img class="mx-auto rounded-circle" src="https://scontent.fvca1-1.fna.fbcdn.net/v/t1.15752-9/s2048x2048/131536656_816586755585137_8153869061485756134_n.jpg?_nc_cat=105&ccb=2&_nc_sid=ae9488&_nc_ohc=bTcr_I-Ye5MAX9vC2-B&_nc_ht=scontent.fvca1-1.fna&tp=7&oh=4de7f6b732d46aaa781d962e6b308f3f&oe=5FFFBAE1" alt="" />
-                            <h4 style="font-family: 'Lobster', cursive;">Nguyễn Đức Huy </h4>
-                            <p class="text-muted" style="font-family: 'Lobster', cursive;">18520840</p>
+{{--                        <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>--}}
+{{--                        <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-instagram"></i></a>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="col-lg-6">--}}
+{{--                    <div class="team-member">--}}
+{{--                        <img class="mx-auto rounded-circle" src="https://scontent.fvca1-1.fna.fbcdn.net/v/t1.15752-9/s2048x2048/131536656_816586755585137_8153869061485756134_n.jpg?_nc_cat=105&ccb=2&_nc_sid=ae9488&_nc_ohc=bTcr_I-Ye5MAX9vC2-B&_nc_ht=scontent.fvca1-1.fna&tp=7&oh=4de7f6b732d46aaa781d962e6b308f3f&oe=5FFFBAE1" alt="" />--}}
+{{--                        <h4 style="font-family: 'Lobster', cursive;">Nguyễn Đức Huy </h4>--}}
+{{--                        <p class="text-muted" style="font-family: 'Lobster', cursive;">18520840</p>--}}
 
-                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-instagram"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-<style>
-/* NOEL*/
-.noel-image{
-  position: absolute;
-  height: 300px;
-  width: 180px;
-  -webkit-transform: translate(-50%,-50%);
-      -ms-transform: translate(-50%,-50%);
-          transform: translate(-50%,-50%);
+{{--                        <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>--}}
+{{--                        <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-instagram"></i></a>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </section>--}}
+    <style>
+        @media (min-width: 576px) {
+            .container-sm, .container {
+                max-width: 540px;
+            }
+        }
+        @media (min-width: 768px) {
+            .container-md, .container-sm, .container {
+                max-width: 720px;
+            }
+        }
+        @media (min-width: 992px) {
+            .container-lg, .container-md, .container-sm, .container {
+                max-width: 960px;
+            }
+        }
+        @media (min-width: 1200px) {
+            .container-xl, .container-lg, .container-md, .container-sm, .container {
+                max-width: 1140px;
+            }
+        }
+        .container {
+            min-width: 992px !important;
+        }
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            margin-right: -0.75rem;
+            margin-left: -0.75rem;
+        }
+        @media (min-width: 768px) {
+            .col-md {
+                flex-basis: 0;
+                flex-grow: 1;
+                max-width: 100%;
+            }
+            @media (min-width: 992px) {
+                .col-lg {
+                    flex-basis: 0;
+                    flex-grow: 1;
+                    max-width: 100%;
+                }
 
-  top: 80%;
-  left: 85%;
-}
-svg{
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-.plane{
-  position: absolute;
-  -webkit-animation: float 3s infinite;
-          animation: float 3s infinite;
-}
-@-webkit-keyframes float{
-  50%{
-    -webkit-transform: translateY(25px);
-            transform: translateY(25px);
-  }
-}
-@keyframes float{
-  50%{
-    -webkit-transform: translateY(25px);
-            transform: translateY(25px);
-  }
-}
-.hand{
-  -webkit-transform: rotate(10deg);
-      -ms-transform: rotate(10deg);
-          transform: rotate(10deg);
-  -webkit-animation: wave 1.5s infinite;
-          animation: wave 1.5s infinite;
-  -webkit-transform-origin: center;
-      -ms-transform-origin: center;
-          transform-origin: center;
-}
-.blade{
-  -webkit-animation:spin 1s infinite linear;
-          animation:spin 1s infinite linear;
-  -webkit-transform-origin: 50% 54%;
-      -ms-transform-origin: 50% 54%;
-          transform-origin: 50% 54%;
-}
-@-webkit-keyframes spin{
-  100%{
-    -webkit-transform: rotateX(360deg);
-            transform: rotateX(360deg);
-  }
-}
-@keyframes spin{
-  100%{
-    -webkit-transform: rotateX(360deg);
-            transform: rotateX(360deg);
-  }
-}
-@-webkit-keyframes wave{
-  50%{
-    -webkit-transform: rotate(-10deg);
-            transform: rotate(-10deg);
-  }
-}
-@keyframes wave{
-  50%{
-    -webkit-transform: rotate(-10deg);
-            transform: rotate(-10deg);
-  }
-}
-/* TEAM */
-.container,
-.container-fluid,
-.container-xl,
-.container-lg,
-.container-md,
-.container-sm {
-  width: 100%;
-  padding-right: 0.75rem;
-  padding-left: 0.9rem;
-  margin-right: auto;
-  margin-left: auto;
-}
-@media (min-width: 576px) {
-  .container-sm, .container {
-    max-width: 540px;
-  }
-}
-@media (min-width: 768px) {
-  .container-md, .container-sm, .container {
-    max-width: 720px;
-  }
-}
-@media (min-width: 992px) {
-  .container-lg, .container-md, .container-sm, .container {
-    max-width: 960px;
-  }
-}
-@media (min-width: 1200px) {
-  .container-xl, .container-lg, .container-md, .container-sm, .container {
-    max-width: 1140px;
-  }
-}
-.container {
-    min-width: 992px !important;
-  }
-  .row {
-  display: flex;
-  flex-wrap: wrap;
-  margin-right: -0.75rem;
-  margin-left: -0.75rem;
-}
-@media (min-width: 768px) {
-  .col-md {
-    flex-basis: 0;
-    flex-grow: 1;
-    max-width: 100%;
-}
-@media (min-width: 992px) {
-  .col-lg {
-    flex-basis: 0;
-    flex-grow: 1;
-    max-width: 100%;
-  }
-  .row-cols-xl-6 > * {
-    flex: 0 0 16.6666666667%;
-    max-width: 16.6666666667%;
-  }
-  .team-member {
-  margin-bottom: 3rem;
-  text-align: center;
-}
-.team-member img {
-  width: 17rem;
-  height: 14rem;
-  border: 0.5rem solid rgba(0, 0, 0, 0.3);
-}
-.team-member h4 {
-  margin-top: 1.5rem;
-  margin-bottom: 0;
-}
-.text-muted {
-  color: #6c757d !important;
-}@import url('https://fonts.googleapis.com/css2?family=Hammersmith+One&family=Ubuntu&display=swap');
+                .row-cols-xl-6 > * {
+                    flex: 0 0 16.6666666667%;
+                    max-width: 16.6666666667%;
+                }
 
-</style>
+                .team-member {
+                    margin-bottom: 3rem;
+                    text-align: center;
+                }
+
+                .team-member img {
+                    width: 17rem;
+                    height: 14rem;
+                    border: 0.5rem solid rgba(0, 0, 0, 0.3);
+                }
+
+                .team-member h4 {
+                    margin-top: 1.5rem;
+                    margin-bottom: 0;
+                }
+            }}
+    </style>
 @stop

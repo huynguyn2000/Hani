@@ -2,6 +2,7 @@
 
 namespace Modules\Admin\Http\Controllers;
 
+use App\Models\Product;
 use App\Models\Transaction;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
@@ -19,10 +20,13 @@ class AdminController extends Controller
         $complete = Transaction::where('tr_delivery','1')->count('tr_delivery');
         $notApprove = Transaction::where('tr_status','0')->count('tr_status');
 
+        $products = Product::orderByDesc('pro_pay')->paginate(5);
+
         $viewData = [
             'total' => $total,
             'complete' => $complete,
-            'notApprove' => $notApprove
+            'notApprove' => $notApprove,
+            'products' => $products
         ];
 
         return view('admin::index',$viewData);

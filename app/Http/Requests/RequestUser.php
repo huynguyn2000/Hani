@@ -35,7 +35,7 @@ class RequestUser extends FormRequest
         return [
             'name.required' => 'Trường này không được để trống',
             'email.required' => 'Trường này không được để trống',
-            'email.unique' => 'Email đã tồn tại',
+            'email.unique' => 'Email đã tồn tạ',
             'phone.required' => 'Trường này không được để trống',
         ];
     }

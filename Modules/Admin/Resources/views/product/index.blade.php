@@ -26,9 +26,9 @@
                                     <th>Loại sản phẩm</th>
                                     <th>Hình ảnh</th>
                                     <th>Tổng lượng mua</th>
-{{--                                    <th>Trạng thái</th>--}}
+                                    <th>Trạng thái</th>
                                     <th>Nổi bật</th>
-                                    <th>Thao tác</th>
+                                    <th style="width: 150px">Thao tác</th>
                                 </tr>
                                 </thead>
                                 <tfoot>
@@ -39,7 +39,7 @@
                                     <th>Loại sản phẩm</th>
                                     <th>Hình ảnh</th>
                                     <th>Tổng lượng mua</th>
-{{--                                    <th>Trạng thái</th>--}}
+                                    <th>Trạng thái</th>
                                     <th>Nổi bật</th>
                                     <th>Thao tác</th>
                                 </tr>
@@ -64,9 +64,9 @@
                                             <td>
                                                 {{ $product->pro_pay }}
                                             </td>
-{{--                                            <td>--}}
-{{--                                                <a href="{{ route('admin.get.action.product',['active',$product->id]) }}" class="label {{ $product->getStatus($product->pro_active)['class'] }} " >{{ $product->getStatus($product->pro_active)['name'] }}</a>--}}
-{{--                                            </td>--}}
+                                            <td>
+                                                <a href="{{ route('admin.get.action.product',['active',$product->id]) }}" class="label {{ $product->getStatus($product->pro_active)['class'] }} " >{{ $product->getStatus($product->pro_active)['name'] }}</a>
+                                            </td>
                                             <td>
                                                 <a href="{{ route('admin.get.action.product',['hot',$product->id]) }}" class="label {{ $product->getHot($product->pro_hot)['class'] }} " >{{ $product->getHot($product->pro_hot)['name'] }}</a>
                                             </td>

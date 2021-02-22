@@ -29,7 +29,7 @@
                                 <tr>
                                     <th>ID</th>
                                     <th>Tên danh mục</th>
-                                    <th>Start date</th>
+                                    <th>Thao tác</th>
                                 </tr>
                                 </tfoot>
                                 <tbody>

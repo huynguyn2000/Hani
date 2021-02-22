@@ -35,7 +35,7 @@
 <script>
         $(".textos").remove();
 </script>
-<div class="panel panel-default" style="margin: 100px 300px;">
+<div class="panel panel-default" style="margin: 0px 300px 50px;">
     <div class="panel-heading">
         <div class="panel-title text-center"><h4><b>ĐĂNG NHẬP</b></h4></div>
     </div>

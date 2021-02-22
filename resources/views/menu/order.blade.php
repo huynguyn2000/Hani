@@ -47,6 +47,32 @@
         -webkit-animation-timing-function: linear;
     }
 
+    .new-tag {
+        position: absolute;
+        bottom: 16px;
+        left: 10px;
+
+        color: #000;
+        font-family: 'montserrat';
+        font-size: 3vw;
+        //letter-spacing: 2vw;
+        max-width: 700px;
+        background: rgba(255, 253, 160, 1);
+        background: -webkit-linear-gradient( left, #00ffff 0%, #97fba0 25%, #97b1fb 50%, #00ffff 100%) repeat;
+        -webkit-background-clip: text;
+        -ms-background-clip: text;
+        -moz-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        -ms-text-fill-color: transparent;
+        -moz-text-fill-color: transparent;
+        text-fill-color: transparent;
+        -webkit-animation-name: masked-animation;
+        -webkit-animation-duration: 50s;
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-timing-function: linear;
+    }
+
     @-webkit-keyframes masked-animation {
         0% {
             background-position: 0 0;
@@ -110,13 +136,18 @@
 
 
                     <a href="{{ route('order.cart') }}">
-                        <button class="bag-btn" data-id="1">
+                        <button class="bag-btn" style="z-index: 2" data-id="1">
                             <i class="fa fa-coffee"></i>
                             Đặt hàng
                         </button>
                     </a>
+
+                    @if($value->pro_active == 1)
+                        <div class="new-tag"><b>New</b></div>
+                    @endif
+
                     @if($value->pro_hot == 1)
-                            <div class="bs-tag"><i class="fas fa-thumbs-up"></i></div>
+                            <div class="bs-tag"><i class="fas fa-crown"></i></div>
                     @endif
                 </div>
                 <h3 style="color: black;"><i>{{ $value->pro_name }}</i></h3>

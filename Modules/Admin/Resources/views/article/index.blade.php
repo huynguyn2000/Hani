@@ -22,6 +22,7 @@
                                 <tr>
                                     <th>#</th>
                                     <th style="width: 20%;">Tên bài viết</th>
+                                    <th style="width: 30%">Nội dung</th>
                                     <th >Hình ảnh</th>
                                     <th >Ngày tạo</th>
                                     <th>Thao tác</th>
@@ -31,6 +32,7 @@
                                 <tr>
                                     <th>#</th>
                                     <th style="width: 20%;">Tên bài viết</th>
+                                    <th>Nội dung</th>
                                     <th >Hình ảnh</th>
                                     <th >Ngày tạo</th>
                                     <th>Thao tác</th>
@@ -43,6 +45,9 @@
                                             <td>{{ $article->id }}</td>
                                             <td>
                                                 {{ $article->a_name }}
+                                            </td>
+                                            <td>
+                                                {{ substr($article->a_content,0,100) }} ...
                                             </td>
                                             <td>
                                                 <img src="{{ pare_url_file($article->a_avatar) }}" alt="" class="img img-responsive" style="width: 80px; height: 80px;">

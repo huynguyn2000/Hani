@@ -18,7 +18,7 @@
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Lobster&family=Mukta&display=swap');
-        @import url(https://fonts.googleapis.com/css?family=Open+Sans);
+        @import url('https://fonts.googleapis.com/css?family=Open+Sans');
         /* product*/
         .h1 {
             color: white;
@@ -251,6 +251,62 @@
 
         .dropdown:hover .dropdown-content {display: block;}
 
+        .bs-tag {
+            position: absolute;
+            top: 8px;
+            right: 0px;
+
+            color: #000;
+            font-family: 'montserrat';
+            font-size: 1.5vw;
+            letter-spacing: 1vw;
+            max-width: 700px;
+            background: rgba(255, 253, 160, 1);
+            background: -webkit-linear-gradient( left, #00ffff 0%, #97fba0 25%, #97b1fb 50%, #00ffff 100%) repeat;
+            -webkit-background-clip: text;
+            -ms-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            -ms-text-fill-color: transparent;
+            -moz-text-fill-color: transparent;
+            text-fill-color: transparent;
+            -webkit-animation-name: masked-animation;
+            -webkit-animation-duration: 50s;
+            -webkit-animation-iteration-count: infinite;
+            -webkit-animation-timing-function: linear;
+        }
+
+        .new-tag {
+            position: absolute;
+            bottom: 0px;
+            left: 10px;
+
+            color: #000;
+            font-family: 'montserrat';
+            font-size: 2vw;
+        //letter-spacing: 1vw;
+            max-width: 700px;
+            background: rgba(255, 253, 160, 1);
+            background: -webkit-linear-gradient( left, #00ffff 0%, #97fba0 25%, #97b1fb 50%, #00ffff 100%) repeat;
+            -webkit-background-clip: text;
+            -ms-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            -ms-text-fill-color: transparent;
+            -moz-text-fill-color: transparent;
+            text-fill-color: transparent;
+            -webkit-animation-name: masked-animation;
+            -webkit-animation-duration: 50s;
+            -webkit-animation-iteration-count: infinite;
+            -webkit-animation-timing-function: linear;
+        }
+
+        @-webkit-keyframes masked-animation {
+            0% {
+                background-position: 0 0;
+            }
+            100% {
+                background-position: -8000px -3000px;
+            }
+        }
     </style>
     <script>
         $(document).ready(function(){
@@ -333,26 +389,6 @@
                     $(this).parents(".col-lg-7").find("input[type=hidden]").val(totalprice);
                 }
             });
-
-            // $("input[id='sizeL']").click( function(){
-            //     var productprice = $(this).parents(".col-lg-7").find("input[type=hidden]").val();
-            //
-            //     var sl = $(this).parents(".col-lg-7").find("input[type=text]").val()
-            //     var value = $(this).parents(".col-lg-7").children(".h4-responsive").text();
-            //     var res = value.substring(1,7)
-            //     var price = $(this).val();
-            //
-            //     console.log(productprice+" "+sl+" "+value+" "+res+" "+price)
-            //     if( $(this).is(':checked')){
-            //         alert('CHECKED')
-            //          totalprice = parseInt(price) + parseInt(productprice)
-            //          addprice = parseInt(res) + (parseInt(sl)*parseInt(price));
-            //          var replace = value.replace(res,addprice);
-            //          console.log(totalprice+" "+addprice+" "+replace)
-            //          $(this).parents(".col-lg-7").children(".h4-responsive").text(replace);
-            //          $(this).parents(".col-lg-7").find("input[type=hidden]").val(totalprice);
-            //     }
-            // });
         })
         function myAlert() {
             alertify.error('Chưa có sản phẩm nào trong giỏ hàng');
@@ -364,7 +400,7 @@
     <nav class="navbar" style="background-color: saddlebrown;">
         <div class="navbar-center">
             <a href="{{ route('home') }}">
-                <img  src="https://scontent.fsgn5-2.fna.fbcdn.net/v/t1.0-9/128796640_3503787783069204_4321913313741636998_o.jpg?_nc_cat=105&ccb=2&_nc_sid=09cbfe&_nc_ohc=EtbgkFHfpEUAX-OI7x6&_nc_ht=scontent.fsgn5-2.fna&oh=93f73358a6a32101756210deb5e0607f&oe=5FFD4429" alt="logo" class="hani-img" />
+                <img src="{{ asset('theme_admin/image/logo.jpg') }}" alt="logo" class="hani-img" />
             </a>
         </div>
         <div class="dropdown" style="margin-left: 35px; ">
@@ -390,31 +426,29 @@
 <div class="container-fluid" style="margin-top: 30px;">
 
     <div class="row">
-        <div class="col-sm-2" style="background:url('https://scontent.fvca1-2.fna.fbcdn.net/v/t1.0-9/130463076_3530187167095932_3411529735407162505_o.jpg?_nc_cat=107&ccb=2&_nc_sid=8bfeb9&_nc_ohc=9u6PTOeHS70AX_zT2Bx&_nc_ht=scontent.fvca1-2.fna&oh=ef71b7bc782911f66e05385d5dca0455&oe=5FFE7D03'); padding: 10px 10px 0px 10px;">
+        <div class="col-sm-2" style="background: saddlebrown; padding: 10px 10px 0px 10px; border: 4px solid black; height: 300px;">
             @if( isset($odd) && isset($even))
                 <h1 style="color:white; font-family: 'Fredoka One', cursive;">Drinks </h1>
                 @for($i=0; $i<count($odd); $i++)
                     @foreach($odd[$i] as $value)
-                        <a href="#{{ $value->c_name }}"  style="font-size:20px; font-family: 'Fredoka One', cursive;margin:20px">{{ $value->c_name }} <span class="float-right badge badge-light round">{{ $countProductOdd[$i] }}</span></a><br>
+                        <a href="#{{ $value->c_name }}"  style="color: white; font-size:20px; font-family: 'Fredoka One', cursive;margin:20px">{{ $value->c_name }} <span class="float-right badge badge-light round">{{ $countProductOdd[$i] }}</span></a><br>
                     @endforeach
                 @endfor
                 <h1 style="color:white; font-family: 'Fredoka One', cursive;">Foods </h1>
                 @for($i=0; $i<count($even); $i++)
                     @foreach($even[$i] as $value)
-                        <a href="#{{ $value->c_name }}"style="font-size:20px; font-family: 'Fredoka One', cursive;margin:20px">{{ $value->c_name }} <span class="float-right badge badge-light round">{{ $countProductEven[$i] }}</span></a><br>
+                        <a href="#{{ $value->c_name }}"style="color: white; font-size:20px; font-family: 'Fredoka One', cursive;margin:20px">{{ $value->c_name }} <span class="float-right badge badge-light round">{{ $countProductEven[$i] }}</span></a><br>
                     @endforeach
                 @endfor
             @endif
         </div>
-        <div class="col-sm-4" style="background:url('https://scontent.fvca1-1.fna.fbcdn.net/v/t1.15752-9/131205997_380740783220519_1402897379155643903_n.jpg?_nc_cat=106&ccb=2&_nc_sid=ae9488&_nc_ohc=r1lN68iPkR0AX8JyyeY&_nc_ht=scontent.fvca1-1.fna&oh=1ab5f21cf21e56d3765cca05ba1c8ddc&oe=5FFE647D')">
+        <div class="col-sm-4" style="background: saddlebrown; border: 4px solid black;">
             <h1 class="h1" style="padding-left: 150px;  font-family: 'Fredoka One', cursive;">Menu</h1>
             <hr>
 
             @for($i=0; $i<$countCate; $i++)
                 @if( isset($categories))
                     <h2 id="{{ $categories[$i]->c_name }}" style="margin-top: 50px; border-left: 4px solid orangered; padding-left: 20px; color:white">{{ $categories[$i]->c_name }}</h2>
-                @else
-                    <h2 id="searchProducts" style="margin-top: 50px; border-left: 4px solid orangered; padding-left: 20px;font-family: 'Lobster', cursive;">Sản phẩm tìm kiếm</h2>
                 @endif
 
                 <div class="products-center1">
@@ -422,6 +456,12 @@
                         <article class="product" style="width: 128px;">
                             <div class="img-container" style="width: 100%;">
                                 <img src="{{ pare_url_file($value->pro_avatar) }}" alt="Kafe sữa" class="product-img1">
+                                @if($value->pro_hot == 1)
+                                    <div class="bs-tag"><i class="fas fa-crown"></i></div>
+                                @endif
+                                @if($value->pro_active == 1)
+                                    <div class="new-tag"><b>New</b></div>
+                                @endif
                             </div>
                             <h3 id="product-name"><b>{{ $value->pro_name }}</b></h3>
                             <h4>
@@ -468,6 +508,7 @@
                                                             <div class="btn-plus"><span class="glyphicon glyphicon-plus"></span></div>
                                                         </div>
                                                     </div>
+                                                    <p class="note" style="color: red"><i>Lưu ý: Nếu không chọn Hani sẽ lấy mặc định cho khách: Lạnh, M, 100% đường, 100% đá</i></p>
                                                     <!--Accordion wrapper-->
                                                     <div class="accordion md-accordion" id="accordionEx" role="tablist" aria-multiselectable="true">
 
@@ -652,17 +693,15 @@
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        {{--                                                        <!-- Accordion wrapper -->--}}
-                                                        {{--    --}}{{--                                                        href="{{ url('Add-Cart/'.$value->id) }}"--}}
-                                                        {{--                                                        <!-- Add to Cart -->--}}
+                                                        <!-- Accordion wrapper -->
+                                                         <!-- Add to Cart -->
                                                         <div class="card-body">
                                                             <div class="text-center">
                                                                 <a style="color: white" class="btn btn-secondary" data-dismiss="modal">Thoát</a>
                                                                 <a style="color: white" alt="{{ $value->id }}" class="btn btn-primary" name="buy-btn">Chọn mua<i class="fas fa-cart-plus ml-2" aria-hidden="true"></i></a>
                                                             </div>
                                                         </div>
-                                                        {{--                                                        <!-- /.Add to Cart -->--}}
-                                                        {{--                                                    </div>--}}
+                                                        <!-- /.Add to Cart -->
                                                     </div>
                                                 </div>
                                             </div>
@@ -676,7 +715,7 @@
             @endfor
         </div>
         {{--            SHOPPING CARTTTTTTTTTTTTTTTT--}}
-        <div class="col-sm-5"  style="background:url('https://scontent.fvca1-1.fna.fbcdn.net/v/t1.15752-9/131010219_413416446449745_2564012190437146186_n.jpg?_nc_cat=102&ccb=2&_nc_sid=ae9488&_nc_ohc=duu5jWJ-y94AX9glqUz&_nc_oc=AQkQMxGtmi0Qtb3lv7kqIofpSyW2rXyNGOlsbyL0acLNI0Nsg-q3OD23CEEvy8MV1B8&_nc_ht=scontent.fvca1-1.fna&oh=a9a95271539dd6fa8391246acb7a271c&oe=5FFD0C7E');"  id="shopping-cart">
+        <div class="col-sm-5"  style="background: saddlebrown; border: 4px solid black;"  id="shopping-cart">
             <p class="h2"  style ="font-family: 'Fredoka One', cursive;">Shopping Cart <span style="font-size: 17px; margin-left: 50px;  font-family: 'Fredoka One', cursive;"><a class="del-all" style="cursor: pointer; color: white;">Xóa tất cả</a></span></p>
             <hr>
             @if( \Illuminate\Support\Facades\Session::has("cart") != null)
@@ -692,16 +731,19 @@
                     @foreach(\Illuminate\Support\Facades\Session::get('cart')->products as $item)
                         <tr>
                             <td>
-                                <b>{{ $item['productInfo']->pro_name }} {{ $item['detail'][1] ? "(".$item['detail'][1].")" : ""}}</b>
+                                <b>{{ $item['productInfo']->pro_name }}</b>
                                 <ul>
-                                    @if($item['detail'][0])
+                                    @if(isset($item['detail'][1]))
+                                        <li>{{ $item['detail'][1]}}</li>
+                                    @endif
+                                    @if(isset($item['detail'][0]))
                                         <li>{{ $item['detail'][0]}}</li>
                                     @endif
-                                    @if($item['detail'][2])
-                                        <li>{{ $item['detail'][2] }} đường</li>
+                                    @if(isset($item['detail'][2]))
+                                        <li>{{ $item['detail'][2] }}</li>
                                     @endif
-                                    @if($item['detail'][3])
-                                        <li>{{ $item['detail'][3] }} đá</li>
+                                    @if( isset($item['detail'][3]))
+                                        <li>{{ $item['detail'][3] }}</li>
                                     @endif
                                 </ul>
                                 @if(isset($item['topping']))
@@ -816,13 +858,14 @@
         });
 
         @if( isset($categories))
-        @for($i=0; $i<$countCate; $i++)
-        @if($i%2==0)
-        @foreach($productsND[$i] as $key => $value)
-        $("#{{ $value->pro_slug }}").find(".card").remove();
+        @foreach($productsND[0] as $key => $value)
+            $("#{{ $value->pro_slug }}").find(".card").remove();
+            $("#{{ $value->pro_slug }}").find(".note").remove();
         @endforeach
-        @endif
-        @endfor
+        @foreach($productsND[3] as $key => $value)
+        $("#{{ $value->pro_slug }}").find(".card").remove();
+        $("#{{ $value->pro_slug }}").find(".note").remove();
+    @endforeach
         @endif
     });
 

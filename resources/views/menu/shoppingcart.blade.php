@@ -12,16 +12,19 @@
         @foreach(\Illuminate\Support\Facades\Session::get('cart')->products as $item)
             <tr>
                 <td>
-                    <b>{{ $item['productInfo']->pro_name }} {{ $item['detail'][1] ? "(".$item['detail'][1].")" : ""}}</b>
+                    <b>{{ $item['productInfo']->pro_name }}</b>
                     <ul>
-                        @if($item['detail'][0])
+                        @if(isset($item['detail'][1]))
+                            <li>{{ $item['detail'][1]}}</li>
+                        @endif
+                        @if(isset($item['detail'][0]))
                             <li>{{ $item['detail'][0]}}</li>
                         @endif
-                        @if($item['detail'][2])
-                            <li>{{ $item['detail'][2] }} đường</li>
+                        @if(isset($item['detail'][2]))
+                            <li>{{ $item['detail'][2] }}</li>
                         @endif
-                        @if($item['detail'][3])
-                            <li>{{ $item['detail'][3] }} đá</li>
+                        @if(isset($item['detail'][3]))
+                            <li>{{ $item['detail'][3] }}</li>
                         @endif
                     </ul>
                     @if(isset($item['topping']))

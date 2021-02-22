@@ -28,7 +28,9 @@
                                     <th>SĐT</th>
                                     <th style="width: 100px">Ghi chú</th>
                                     <th>Tổng tiền</th>
+                                    <th>Khuyến mãi</th>
                                     <th>Trạng thái</th>
+                                    <th>Admin duyệt</th>
                                     <th style="width: 80px;">Thao tác</th>
                                 </tr>
                                 </thead>
@@ -40,7 +42,9 @@
                                     <th>SĐT</th>
                                     <th>Ghi chú</th>
                                     <th>Tổng tiền</th>
+                                    <th>Khuyến mãi</th>
                                     <th>Trạng thái</th>
+                                    <th>Admin duyệt</th>
                                     <th>Thao tác</th>
                                 </tr>
                                 </tfoot>
@@ -55,10 +59,24 @@
                                             <td>{{ $transaction->tr_note }}</td>
                                             <td>{{ number_format($transaction->tr_total) }}đ</td>
                                             <td>
+                                                @if($transaction->tr_coupon == 0)
+                                                    <a class="label label-default">Not</a>
+                                                @else
+                                                    <a class="label label-warning">Coupon</a>
+                                                @endif
+                                            </td>
+                                            <td>
                                                 @if( $transaction->tr_status == 1)
                                                     <a href="#" class="label label-success">Đã duyệt</a>
                                                 @else
                                                     <a href="{{ route('admin.get.active.transaction',$transaction->id) }}" class="label label-default">Chờ xử lý</a>
+                                                @endif
+                                            </td>
+                                            <td>
+                                                @if( $transaction->tr_status == 1)
+                                                    <span><b>Huy</b></span>
+                                                @else
+                                                    <span><b>Chưa có</b></span>
                                                 @endif
                                             </td>
                                             <td>

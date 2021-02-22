@@ -87,10 +87,3 @@ if (!function_exists('get_data_user'))
     }
 }
 
-if (!function_exists('get_data_admin'))
-{
-    function get_data_admin($type,$field = 'id')
-    {
-        return Auth::guard($type)->admin() ? Auth::guard($type)->admin()->$field : '';
-    }
-}

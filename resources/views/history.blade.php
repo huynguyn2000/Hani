@@ -37,10 +37,10 @@
 </script>
     <html>
     <body>
-    <div class="panel panel-default" style="margin: 100px 300px;">
+    <div class="panel panel-default" style="margin: 0px 300px 50px;">
         <div class="panel-heading">
             <div class="panel-title text-center">
-                <b style="font-size: 20px; text-align: center">LỊCH SỬ ĐẶT HÀNG</b>
+                <b style="font-size: 20px; text-align: center; margin-left: 150px;">LỊCH SỬ ĐẶT HÀNG</b>
                 <span style="float: right">
                     <a href="{{ route('userinfo') }}" >Thông tin khách hàng</a>
                 </span>
@@ -57,6 +57,7 @@
                             <th>SĐT</th>
                             <th style="width: 100px">Ghi chú</th>
                             <th>Tổng tiền</th>
+                            <th>Khuyến mãi</th>
                             <th>Ngày giờ đặt</th>
                             <th style="width: 80px;">Thao tác</th>
                         </tr>
@@ -68,6 +69,7 @@
                             <th>SĐT</th>
                             <th>Ghi chú</th>
                             <th>Tổng tiền</th>
+                            <th>Khuyến mãi</th>
                             <th>Ngày giờ đặt</th>
                             <th>Thao tác</th>
                         </tr>
@@ -82,6 +84,13 @@
                                     <td>{{ $transaction->tr_phone }}</td>
                                     <td>{{ $transaction->tr_note }}</td>
                                     <td>{{ number_format($transaction->tr_total) }}đ</td>
+                                    <td>
+                                        @if($transaction->tr_coupon == 0)
+                                            Không
+                                        @else
+                                            Có
+                                        @endif
+                                    </td>
                                     <td>{{ $transaction->created_at }}</td>
                                     <td>
                                         <a class="js_order_item" data-id="{{ $transaction->id }}"  style="padding: 5px 10px; border: 1px solid #eee; font-size: 11px;" href="{{ route('admin.get.view.order',$transaction->id) }}"><i class="fas fa-eye"></i></a>

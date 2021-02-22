@@ -27,7 +27,7 @@
                     <label style="font-size: 17px;">Avatar:</label>
                     <input class="form-control" type="file" name="avatar">
                 </div>
-                <button style="float: right; margin-right: 40px;" type="submit" class="btn btn-success">Submit</button>
+                <button style="float: right; margin-right: 40px;" type="submit" class="btn btn-success">Lưu thông tin</button>
             </form>
     </div>
 </div>

@@ -9,7 +9,7 @@
                @if($errors->has('a_name'))
                    <span class="error-text">
                     {{$errors->first('a_name')}}
-                </span>
+                    </span>
                @endif
            </div>
            <div class="form-group">

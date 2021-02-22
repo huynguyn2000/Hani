@@ -184,9 +184,9 @@
                                             <div class="content">
                                                 <h4>{{ $comment->cmt_name }}<span>At {{ $comment->created_at }}</span></h4>
                                                 <p>{{ $comment->cmt_content }}</p>
-                                                <div class="button">
-                                                    <a href="#" class="btn"><i class="fa fa-reply" aria-hidden="true"></i>Reply</a>
-                                                </div>
+{{--                                                <div class="button">--}}
+{{--                                                    <a href="#" class="btn"><i class="fa fa-reply" aria-hidden="true"></i>Reply</a>--}}
+{{--                                                </div>--}}
                                             </div>
                                         </div>
                                         @endforeach
@@ -200,27 +200,28 @@
                                             <h2 class="reply-title">Bình luận</h2>
                                             @if(\Illuminate\Support\Facades\Auth::check())
                                             <!-- Comment Form -->
-                                            <form>
+                                            <form method="post">
+                                                @csrf
                                                 <div class="form-group">
                                                     <label>Tên:</label>
-                                                    <input type="text" class="comment_name" name="comment_name" required>
+                                                    <input type="text" class="comment_name" name="comment_name" value="{{ get_data_user('web','name') }}">
                                                 </div>
                                                 <div class="form-group">
                                                     <label>Email:</label>
-                                                    <input type="email" name="email">
+                                                    <input type="email" name="email" value="{{ get_data_user('web','email') }}">
                                                 </div>
                                                 <div class="form-group">
                                                     <label>Nội dung:</label>
                                                     <textarea name="comment_content" class="comment_content" required></textarea>
                                                 </div>
                                                     <button id="btnAddCmt" class="btn btn-primary send-comment">Đăng bình luận</button>
+                                            </form>
                                                 @else
                                                     <button class="btn btn-primary send-comment" data-toggle="modal" data-target="#loginModal">
                                                         Đăng nhập để bình luận
                                                     </button>
                                                 @endif
                                                 <div id="notify-comment"></div>
-                                            </form>
                                             <!-- End Comment Form -->
                                         </div>
                                     </div>
@@ -449,10 +450,9 @@
             var comment_content = $('.comment_content').val();
             console.log(comment_name)
             $.ajax({
-                url: 'Send-Comment',
+                url: '/',
                 type: 'POST',
                 data: {
-                    _token: "{{ csrf_token() }}",
                     comment_name : comment_name,
                     comment_content : comment_content
                 },

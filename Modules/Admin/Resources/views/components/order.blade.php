@@ -7,7 +7,7 @@
             <th style="text-align: center">Hình ảnh</th>
             <th>Chi tiết</th>
             <th>Topping</th>
-            <th>Giá</th>
+            <th>Đơn giá</th>
             <th>Số lượng</th>
             <th>Thành tiền</th>
         </tr>
@@ -22,7 +22,7 @@
                 <td>{{ $order->or_topping != null ? $order->or_topping : 'Không có topping' }}</td>
                 <td>{{ number_format($order->or_price)  }}</td>
                 <td>{{ $order->or_qty  }}</td>
-                <td>{{ number_format($order->or_price*$order->or_qty)  }}</td>
+                <td>{{ number_format($order->or_price*$order->or_qty)}}</td>
 {{--                <td>--}}
 {{--                    <a style="padding: 5px 10px; border: 1px solid #eee; font-size: 11px;" href="{{ route('admin.get.action.article',['delete',$order->id]) }}"><i class="fas fa-trash-alt"></i> Xóa</a>--}}
 {{--                </td>--}}
